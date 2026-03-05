@@ -79,60 +79,60 @@ export default function PricingPage() {
             </div>
           </div>
 
-          {/* What your fee covers — image integrated with copy */}
+          {/* What your fee covers — bold image cards */}
           <div className="mt-16 max-w-4xl mx-auto">
             <h2 className="text-2xl font-semibold text-brand-900 text-center mb-8">What Your Fee Covers</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex gap-4 items-start">
+              <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
                 <Image
                   src="/images/service-visitation.webp"
                   alt="Father and daughter reading together at a library table during a supervised visit"
-                  width={120}
-                  height={90}
-                  className="shrink-0 w-24 h-18 rounded-lg object-cover shadow-sm"
+                  width={400}
+                  height={200}
+                  className="w-full h-40 object-cover object-[center_35%]"
                 />
-                <div>
-                  <h3 className="text-sm font-semibold text-brand-900">Neutral Professional Monitoring</h3>
-                  <p className="mt-1 text-sm text-brand-700">A trained monitor present during every minute of your visit, focused on your child&apos;s safety.</p>
+                <div className="p-5">
+                  <h3 className="text-base font-semibold text-brand-900">Neutral Professional Monitoring</h3>
+                  <p className="mt-2 text-sm text-brand-700">A trained monitor present during every minute of your visit, focused on your child&apos;s safety.</p>
                 </div>
               </div>
-              <div className="flex gap-4 items-start">
+              <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
                 <Image
                   src="/images/service-documentation.webp"
                   alt="Professional writing visit notes on a court documentation clipboard"
-                  width={120}
-                  height={90}
-                  className="shrink-0 w-24 h-18 rounded-lg object-cover shadow-sm"
+                  width={400}
+                  height={200}
+                  className="w-full h-40 object-cover object-[center_35%]"
                 />
-                <div>
-                  <h3 className="text-sm font-semibold text-brand-900">Court-Ready Documentation</h3>
-                  <p className="mt-1 text-sm text-brand-700">Written reports after each session, available to parents and courts. Testimony when requested.</p>
+                <div className="p-5">
+                  <h3 className="text-base font-semibold text-brand-900">Court-Ready Documentation</h3>
+                  <p className="mt-2 text-sm text-brand-700">Written reports after each session, available to parents and courts. Testimony when requested.</p>
                 </div>
               </div>
-              <div className="flex gap-4 items-start">
+              <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
                 <Image
                   src="/images/park-visit-2.webp"
                   alt="Father and son drawing together at an outdoor park table"
-                  width={120}
-                  height={90}
-                  className="shrink-0 w-24 h-18 rounded-lg object-cover shadow-sm"
+                  width={400}
+                  height={200}
+                  className="w-full h-40 object-cover object-[center_35%]"
                 />
-                <div>
-                  <h3 className="text-sm font-semibold text-brand-900">Child-Centered Structure</h3>
-                  <p className="mt-1 text-sm text-brand-700">Safe, calm environment designed to protect the child and reduce conflict between parents.</p>
+                <div className="p-5">
+                  <h3 className="text-base font-semibold text-brand-900">Child-Centered Structure</h3>
+                  <p className="mt-2 text-sm text-brand-700">Safe, calm environment designed to protect the child and reduce conflict between parents.</p>
                 </div>
               </div>
-              <div className="flex gap-4 items-start">
+              <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
                 <Image
                   src="/images/private-hallway.webp"
                   alt="Private office hallway with secure door — discretion and safety"
-                  width={120}
-                  height={90}
-                  className="shrink-0 w-24 h-18 rounded-lg object-cover shadow-sm"
+                  width={400}
+                  height={200}
+                  className="w-full h-40 object-cover object-[center_35%]"
                 />
-                <div>
-                  <h3 className="text-sm font-semibold text-brand-900">Scheduling &amp; Coordination</h3>
-                  <p className="mt-1 text-sm text-brand-700">SafeProvider handles intake and scheduling so you can focus on your family.</p>
+                <div className="p-5">
+                  <h3 className="text-base font-semibold text-brand-900">Scheduling &amp; Coordination</h3>
+                  <p className="mt-2 text-sm text-brand-700">SafeProvider handles intake and scheduling so you can focus on your family.</p>
                 </div>
               </div>
             </div>
