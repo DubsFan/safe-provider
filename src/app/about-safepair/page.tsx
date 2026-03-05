@@ -91,31 +91,35 @@ export default function AboutSafePairPage() {
       {/* Mission */}
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center mb-8">
-            <Image
-              src="/images/safepair-logo.png"
-              alt="SafePair — professional supervised visitation provider"
-              width={300}
-              height={300}
-              className="w-48 sm:w-64 h-auto safepair-logo"
-            />
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div className="shrink-0">
+              <Image
+                src="/images/safepair-logo.png"
+                alt="SafePair — professional supervised visitation provider"
+                width={300}
+                height={300}
+                className="w-40 sm:w-52 md:w-60 h-auto safepair-logo"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-text-heading mb-6">
+                SafePair&apos;s Mission
+              </h2>
+              <p className="text-text-body text-lg leading-relaxed mb-6">
+                At SafePair, our mission is to provide professional, reliable, and
+                child-focused supervised visitation services that ensure families can
+                maintain meaningful connections in a safe and neutral environment.
+              </p>
+              <p className="text-text-body text-lg leading-relaxed">
+                We believe every child deserves a safe space to stay connected with
+                their family, even during difficult times. Founded by{" "}
+                <strong className="text-text-heading">Winston Franklin</strong>, a
+                Certified Professional Supervised Visitation Provider based in
+                Oakland, our work follows California&apos;s highest standards to
+                ensure visits are always neutral, safe, and child-focused.
+              </p>
+            </div>
           </div>
-          <h2 className="text-3xl font-bold text-text-heading mb-6">
-            SafePair&apos;s Mission
-          </h2>
-          <p className="text-text-body text-lg leading-relaxed mb-6">
-            At SafePair, our mission is to provide professional, reliable, and
-            child-focused supervised visitation services that ensure families can
-            maintain meaningful connections in a safe and neutral environment.
-          </p>
-          <p className="text-text-body text-lg leading-relaxed">
-            We believe every child deserves a safe space to stay connected with
-            their family, even during difficult times. Founded by{" "}
-            <strong className="text-text-heading">Winston Franklin</strong>, a
-            Certified Professional Supervised Visitation Provider based in
-            Oakland, our work follows California&apos;s highest standards to
-            ensure visits are always neutral, safe, and child-focused.
-          </p>
         </div>
       </section>
 
