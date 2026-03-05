@@ -33,6 +33,13 @@ const COUNTY_DETAILS: Record<string, { courthouse: string; address: string; cour
   },
 };
 
+const COUNTY_IMAGES: Record<string, string> = {
+  "santa-clara": "/images/father-son-library.webp",
+  alameda: "/images/community-coloring.webp",
+  "contra-costa": "/images/park-visit-1.webp",
+  "san-francisco": "/images/virtual-visit-boy.webp",
+};
+
 const CHECKLIST = [
   "A valid government-issued photo ID for each adult",
   "Your court order or stipulation (if you have one)",
@@ -97,23 +104,25 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
         dangerouslySetInnerHTML={{ __html: faqSchema(faqItems) }}
       />
 
-      {/* Hero banner */}
+      {/* Video hero */}
       <section className="relative bg-brand-900 overflow-hidden">
-        <Image
-          src="/images/father-son-library.webp"
-          alt={`Father and son reading together during a supervised visit in ${countyData.name}`}
-          width={2400}
-          height={1792}
-          className="w-full h-64 sm:h-80 object-cover object-[center_25%] opacity-40"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={COUNTY_IMAGES[county] ?? "/images/landing-hero.webp"}
+          className="w-full h-64 sm:h-80 object-cover object-[center_30%] opacity-40"
+        >
+          <source src="/images/hero-loop.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
             <h1 className="text-3xl sm:text-4xl font-bold text-white max-w-3xl mx-auto">
               Supervised Visitation and Exchange in {countyData.name}
             </h1>
             <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
-              Court-compliant intake for families in {countyData.name}.
+              Court-compliant intake for families in {countyData.name}. Standard 5.20 certified providers.
             </p>
           </div>
         </div>
@@ -132,46 +141,75 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Main content */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 space-y-10">
 
+              {/* Courthouse info — paired with county image */}
               {details && (
-                <div className="mt-8 rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
-                  <h2 className="text-xl font-semibold text-brand-900 mb-4">Courthouse Information</h2>
-                  <p className="text-brand-700"><strong>Court:</strong> {details.courthouse}</p>
-                  <p className="text-brand-700 mt-1"><strong>Address:</strong> {details.address}</p>
-                  {details.courtSource && (
-                    <p className="text-brand-700 mt-1">
-                      <strong>Source:</strong>{" "}
-                      <a href={details.courtSource} target="_blank" rel="noopener noreferrer" className="text-accent-600 hover:text-accent-500">
-                        Court provider list
-                      </a>
-                    </p>
-                  )}
-                  <p className="text-brand-700 mt-3 text-sm">{details.localNote}</p>
+                <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+                  <div className="flex flex-col sm:flex-row">
+                    <div className="shrink-0 sm:w-48">
+                      <Image
+                        src={COUNTY_IMAGES[county] ?? "/images/father-son-library.webp"}
+                        alt={`Supervised visitation in ${countyData.name}`}
+                        width={192}
+                        height={280}
+                        className="w-full h-44 sm:h-full object-cover object-[center_25%]"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h2 className="text-xl font-semibold text-brand-900 mb-3">Courthouse Information</h2>
+                      <p className="text-brand-700"><strong>Court:</strong> {details.courthouse}</p>
+                      <p className="text-brand-700 mt-1"><strong>Address:</strong> {details.address}</p>
+                      {details.courtSource && (
+                        <p className="text-brand-700 mt-1">
+                          <strong>Source:</strong>{" "}
+                          <a href={details.courtSource} target="_blank" rel="noopener noreferrer" className="text-accent-600 hover:text-accent-500">
+                            Court provider list
+                          </a>
+                        </p>
+                      )}
+                      <p className="text-brand-700 mt-3 text-sm">{details.localNote}</p>
+                    </div>
+                  </div>
                 </div>
               )}
 
-              {/* Services */}
-              <div className="mt-8">
+              {/* Services — cards with images */}
+              <div>
                 <h2 className="text-2xl font-semibold text-brand-900 mb-4">Available Services</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {SERVICES.map((service) => (
-                    <Link
-                      key={service.slug}
-                      href={`/counties/${county}/${service.slug}`}
-                      className="rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
-                    >
-                      <h3 className="text-lg font-semibold text-brand-900">{service.name}</h3>
-                      <span className="mt-2 inline-block text-sm font-semibold text-accent-600">
-                        View details &rarr;
-                      </span>
-                    </Link>
-                  ))}
+                  {SERVICES.map((service) => {
+                    const isVis = service.slug === "supervised-visitation";
+                    return (
+                      <Link
+                        key={service.slug}
+                        href={`/counties/${county}/${service.slug}`}
+                        className="rounded-xl border border-brand-500/20 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+                      >
+                        <Image
+                          src={isVis ? "/images/father-son-library.webp" : "/images/exchange-school.webp"}
+                          alt={isVis ? "Father and son during supervised visit" : "Neutral monitor facilitating custody exchange"}
+                          width={400}
+                          height={200}
+                          className={`w-full h-32 object-cover ${isVis ? "object-[center_25%]" : "object-[center_40%]"}`}
+                        />
+                        <div className="p-4">
+                          <h3 className="text-lg font-semibold text-brand-900">{service.name}</h3>
+                          <p className="mt-1 text-sm text-brand-600">
+                            {isVis ? "Neutral monitoring during parent-child time" : "Structured, conflict-free custody handoffs"}
+                          </p>
+                          <span className="mt-2 inline-block text-sm font-semibold text-accent-600">
+                            View details &rarr;
+                          </span>
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
 
               {/* What to have ready — image paired with checklist */}
-              <div className="mt-8 rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+              <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
                 <div className="flex flex-col sm:flex-row">
                   <div className="shrink-0 sm:w-40">
                     <Image
@@ -196,25 +234,38 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                 </div>
               </div>
 
-              {/* Compliance — text pills instead of dumped image */}
-              <div className="mt-8 rounded-xl bg-brand-100 p-6">
-                <h2 className="text-xl font-semibold text-brand-900 mb-3">Provider Compliance</h2>
-                <ul className="space-y-2">
-                  {COMPLIANCE_BULLETS.map((bullet, i) => (
-                    <li key={i} className="text-sm text-brand-700">{bullet}</li>
-                  ))}
-                </ul>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {["Background Checks", "Certified Training", "Strict Confidentiality", "Neutral Supervision", "Flexible Scheduling", "Court-Ready Docs"].map((label) => (
-                    <span key={label} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-brand-700 shadow-sm">
-                      {label}
-                    </span>
-                  ))}
+              {/* Compliance — with trust image */}
+              <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+                <div className="flex flex-col sm:flex-row-reverse">
+                  <div className="shrink-0 sm:w-48">
+                    <Image
+                      src="/images/secure-entrance.webp"
+                      alt="Secure entrance with family safety icon"
+                      width={192}
+                      height={280}
+                      className="w-full h-44 sm:h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 flex-1">
+                    <h2 className="text-xl font-semibold text-brand-900 mb-3">Provider Compliance</h2>
+                    <ul className="space-y-2">
+                      {COMPLIANCE_BULLETS.map((bullet, i) => (
+                        <li key={i} className="text-sm text-brand-700">{bullet}</li>
+                      ))}
+                    </ul>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {["Background Checks", "Certified Training", "Strict Confidentiality", "Neutral Supervision", "Flexible Scheduling", "Court-Ready Docs"].map((label) => (
+                        <span key={label} className="rounded-full bg-brand-100 px-3 py-1 text-xs font-medium text-brand-700">
+                          {label}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
 
               {/* Standard 5.20 */}
-              <div className="mt-8 rounded-xl bg-brand-100 p-6">
+              <div className="rounded-xl bg-brand-100 p-6">
                 <h2 className="text-xl font-semibold text-brand-900 mb-3">What Does California Standard 5.20 Mean for You?</h2>
                 <p className="text-brand-700">
                   It means the person supervising your visit has passed a criminal background check, completed mandated training on child safety and domestic violence, and follows court-defined rules for neutrality, confidentiality, and documentation. It is the standard family courts use to verify provider qualifications.
@@ -222,13 +273,13 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
               </div>
 
               {/* FAQ */}
-              <div className="mt-12">
-                <h2 className="text-2xl font-semibold text-brand-900 mb-4">FAQ</h2>
+              <div>
+                <h2 className="text-2xl font-semibold text-brand-900 mb-4">Frequently Asked Questions</h2>
                 <FaqAccordion items={faqItems} />
               </div>
 
               {/* Sibling counties */}
-              <div className="mt-12">
+              <div>
                 <h2 className="text-xl font-semibold text-brand-900 mb-4">Also Serving</h2>
                 <div className="flex flex-wrap gap-3">
                   {liveCounties.filter((c) => c.slug !== county).map((c) => (
@@ -246,43 +297,71 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
 
             {/* Pricing sidebar */}
             <div>
-              <div className="sticky top-24 rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
-                <h3 className="text-xl font-semibold text-brand-900 mb-4">Pricing</h3>
-                <ul className="space-y-3 text-brand-700">
-                  <li className="flex justify-between">
-                    <span>Intake (per person)</span>
-                    <span className="font-semibold text-brand-900">
-                      {centsToUSD(rates[0]?.intake_per_adult_cents ?? FALLBACK_RATES.intake_per_adult_cents)}
-                    </span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Hourly rate</span>
-                    <span className="font-semibold text-brand-900">
-                      {centsToUSD(rates[0]?.hourly_rate_cents ?? FALLBACK_RATES.hourly_rate_cents)}
-                    </span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Exchange fee</span>
-                    <span className="font-semibold text-brand-900">
-                      {centsToUSD(rates[0]?.exchange_fee_cents ?? FALLBACK_RATES.exchange_fee_cents)}
-                    </span>
-                  </li>
-                  <li className="flex justify-between border-t border-brand-500/20 pt-3">
-                    <span>Platform fee</span>
-                    <span className="font-semibold text-brand-900">
-                      {centsToUSD(rates[0]?.platform_fee_cents ?? FALLBACK_RATES.platform_fee_cents)}
-                    </span>
-                  </li>
-                </ul>
-                <Link
-                  href={`/start?county=${county}`}
-                  className="mt-6 block w-full rounded-lg bg-accent-600 px-6 py-3 text-center text-base font-semibold text-white shadow-sm hover:bg-accent-500 transition-colors"
-                >
-                  Start Intake for {countyData.name}
-                </Link>
-                <p className="mt-3 text-xs text-brand-500 text-center">
-                  Get an intake response within 8 hours or by the end of the business day.
-                </p>
+              <div className="sticky top-24 space-y-6">
+                <div className="rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
+                  <h3 className="text-xl font-semibold text-brand-900 mb-4">Pricing</h3>
+                  <ul className="space-y-3 text-brand-700">
+                    <li className="flex justify-between">
+                      <span>Intake (per person)</span>
+                      <span className="font-semibold text-brand-900">
+                        {centsToUSD(rates[0]?.intake_per_adult_cents ?? FALLBACK_RATES.intake_per_adult_cents)}
+                      </span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Hourly rate</span>
+                      <span className="font-semibold text-brand-900">
+                        {centsToUSD(rates[0]?.hourly_rate_cents ?? FALLBACK_RATES.hourly_rate_cents)}
+                      </span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Exchange fee</span>
+                      <span className="font-semibold text-brand-900">
+                        {centsToUSD(rates[0]?.exchange_fee_cents ?? FALLBACK_RATES.exchange_fee_cents)}
+                      </span>
+                    </li>
+                    <li className="flex justify-between border-t border-brand-500/20 pt-3">
+                      <span>Platform fee</span>
+                      <span className="font-semibold text-brand-900">
+                        {centsToUSD(rates[0]?.platform_fee_cents ?? FALLBACK_RATES.platform_fee_cents)}
+                      </span>
+                    </li>
+                  </ul>
+                  <Link
+                    href={`/start?county=${county}`}
+                    className="mt-6 block w-full rounded-lg bg-accent-600 px-6 py-3 text-center text-base font-semibold text-white shadow-sm hover:bg-accent-500 transition-colors"
+                  >
+                    Start Intake for {countyData.name}
+                  </Link>
+                  <p className="mt-3 text-xs text-brand-500 text-center">
+                    Response within 8 hours or by end of business day.
+                  </p>
+                </div>
+
+                {/* Team headshots in sidebar */}
+                <div className="rounded-xl overflow-hidden shadow-sm">
+                  <Image
+                    src="/images/team-headshots.webp"
+                    alt="SafePair supervised visitation providers"
+                    width={400}
+                    height={300}
+                    className="w-full h-48 object-cover object-top"
+                  />
+                  <div className="bg-brand-50 p-4">
+                    <p className="text-sm font-semibold text-brand-900">Your Provider Team</p>
+                    <p className="text-xs text-brand-600 mt-1">Background-checked, certified, and committed to your child&apos;s safety.</p>
+                  </div>
+                </div>
+
+                {/* Quick links */}
+                <div className="rounded-xl border border-brand-500/20 bg-white p-5 shadow-sm">
+                  <h3 className="text-sm font-semibold text-brand-900 mb-3">Quick Links</h3>
+                  <ul className="space-y-2 text-sm">
+                    <li><Link href="/pricing" className="text-accent-600 hover:text-accent-500">Full pricing breakdown &rarr;</Link></li>
+                    <li><Link href="/how-it-works" className="text-accent-600 hover:text-accent-500">5-step process &rarr;</Link></li>
+                    <li><Link href="/faq" className="text-accent-600 hover:text-accent-500">FAQ &rarr;</Link></li>
+                    <li><Link href="/for-attorneys" className="text-accent-600 hover:text-accent-500">For attorneys &rarr;</Link></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

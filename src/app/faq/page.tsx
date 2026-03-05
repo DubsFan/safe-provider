@@ -42,6 +42,37 @@ const ATTORNEY_FAQ = [
 
 const ALL_FAQ = [...COST_FAQ, ...PROCESS_FAQ, ...TRUST_FAQ, ...ATTORNEY_FAQ];
 
+const SECTIONS = [
+  {
+    title: "Cost and Pricing",
+    items: COST_FAQ,
+    link: "/pricing",
+    linkLabel: "See full pricing",
+    image: { src: "/images/service-visitation.webp", alt: "Father and daughter reading at a library during a supervised visit" },
+  },
+  {
+    title: "Process",
+    items: PROCESS_FAQ,
+    link: "/how-it-works",
+    linkLabel: "See 5-step process",
+    image: { src: "/images/process-steps.webp", alt: "5-step intake to visit process" },
+  },
+  {
+    title: "Trust and Safety",
+    items: TRUST_FAQ,
+    link: "/counties",
+    linkLabel: "View counties",
+    image: { src: "/images/trust-compliance.webp", alt: "Four compliance pillars: background checks, training, confidentiality, neutral supervision" },
+  },
+  {
+    title: "For Attorneys",
+    items: ATTORNEY_FAQ,
+    link: "/for-attorneys",
+    linkLabel: "Attorney resources",
+    image: { src: "/images/attorney-review-2.webp", alt: "Professional reviewing court documents" },
+  },
+];
+
 export default function FaqPage() {
   return (
     <>
@@ -52,105 +83,93 @@ export default function FaqPage() {
 
       {/* Hero banner */}
       <section className="relative bg-brand-900 overflow-hidden">
-        <Image
-          src="/images/father-son-library.webp"
-          alt="Father reading with his son at a library table during a supervised visit"
-          width={2400}
-          height={1792}
-          className="w-full h-64 sm:h-80 object-cover object-[center_25%] opacity-40"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/virtual-visit-boy.webp"
+          className="w-full h-64 sm:h-80 object-cover object-[center_30%] opacity-40"
+        >
+          <source src="/images/visitation-loop.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
             <h1 className="text-3xl sm:text-4xl font-bold text-white max-w-3xl mx-auto">Frequently Asked Questions</h1>
             <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
-              Answers to the most common questions about supervised visitation and exchange intake.
+              Everything you need to know about supervised visitation and exchange intake.
             </p>
           </div>
         </div>
       </section>
 
       <div className="py-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
 
-          <div className="mt-12 space-y-12">
-            <div>
-              <div className="flex items-baseline justify-between mb-4">
-                <h2 className="text-xl font-semibold text-brand-900">Cost and Pricing</h2>
-                <Link href="/pricing" className="text-sm font-semibold text-accent-600 hover:text-accent-500">See full pricing &rarr;</Link>
-              </div>
-              <FaqAccordion items={COST_FAQ} />
-            </div>
+          {/* FAQ sections — each with image header */}
+          <div className="space-y-16">
+            {SECTIONS.map((section, idx) => (
+              <div key={section.title}>
+                {/* Section header with image */}
+                <div className={`flex flex-col sm:flex-row gap-6 items-center mb-6 ${idx % 2 === 1 ? "sm:flex-row-reverse" : ""}`}>
+                  <div className="shrink-0 w-full sm:w-56">
+                    <Image
+                      src={section.image.src}
+                      alt={section.image.alt}
+                      width={224}
+                      height={150}
+                      className="w-full h-36 object-cover rounded-xl shadow-sm"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-baseline justify-between mb-1">
+                      <h2 className="text-xl font-semibold text-brand-900">{section.title}</h2>
+                      <Link href={section.link} className="text-sm font-semibold text-accent-600 hover:text-accent-500 hidden sm:inline">
+                        {section.linkLabel} &rarr;
+                      </Link>
+                    </div>
+                    <p className="text-sm text-brand-600">
+                      {section.items.length} questions answered
+                    </p>
+                    <Link href={section.link} className="text-sm font-semibold text-accent-600 hover:text-accent-500 sm:hidden mt-1 inline-block">
+                      {section.linkLabel} &rarr;
+                    </Link>
+                  </div>
+                </div>
 
-            <div>
-              <div className="flex items-baseline justify-between mb-4">
-                <h2 className="text-xl font-semibold text-brand-900">Process</h2>
-                <Link href="/how-it-works" className="text-sm font-semibold text-accent-600 hover:text-accent-500">See 5-step process &rarr;</Link>
+                {/* Accordion */}
+                <FaqAccordion items={section.items} />
               </div>
-              <FaqAccordion items={PROCESS_FAQ} />
-            </div>
-
-            <div>
-              <div className="flex items-baseline justify-between mb-4">
-                <h2 className="text-xl font-semibold text-brand-900">Trust and Safety</h2>
-                <Link href="/counties" className="text-sm font-semibold text-accent-600 hover:text-accent-500">View counties &rarr;</Link>
-              </div>
-              <FaqAccordion items={TRUST_FAQ} />
-            </div>
-
-            <div>
-              <div className="flex items-baseline justify-between mb-4">
-                <h2 className="text-xl font-semibold text-brand-900">For Attorneys</h2>
-                <Link href="/for-attorneys" className="text-sm font-semibold text-accent-600 hover:text-accent-500">Attorney resources &rarr;</Link>
-              </div>
-              <FaqAccordion items={ATTORNEY_FAQ} />
-            </div>
+            ))}
           </div>
 
-          {/* Still have questions — image with reassurance copy */}
+          {/* Still have questions — with provider image */}
           <div className="mt-16 rounded-xl bg-brand-50 overflow-hidden">
             <div className="flex flex-col sm:flex-row">
-              <div className="shrink-0 sm:w-48">
+              <div className="shrink-0 sm:w-56">
                 <Image
-                  src="/images/private-hallway.webp"
-                  alt="Private office hallway with secure door — discretion and safety"
-                  width={192}
-                  height={240}
-                  className="w-full h-40 sm:h-full object-cover"
+                  src="/images/provider-review.webp"
+                  alt="SafePair provider reviewing case documentation"
+                  width={224}
+                  height={280}
+                  className="w-full h-44 sm:h-full object-cover object-top"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col justify-center">
                 <h2 className="text-xl font-semibold text-brand-900 mb-2">Still Have Questions?</h2>
-                <p className="text-brand-700 mb-3">
+                <p className="text-brand-700 mb-4">
                   Every family&apos;s situation is different. If your question isn&apos;t answered above, reach out directly — we respond within 8 business hours.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <Link href="/contact" className="text-sm font-semibold text-accent-600 hover:text-accent-500">Contact us &rarr;</Link>
-                  <Link href="/how-it-works" className="text-sm font-semibold text-accent-600 hover:text-accent-500">See how it works &rarr;</Link>
+                  <Link href="/contact" className="rounded-lg bg-accent-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-accent-500 transition-colors">
+                    Contact Us
+                  </Link>
+                  <Link href="/start" className="rounded-lg border border-brand-500/20 px-5 py-2.5 text-sm font-semibold text-brand-900 hover:bg-brand-100 transition-colors">
+                    Start Intake
+                  </Link>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Compliance pills */}
-          <div className="mt-8 text-center">
-            <p className="text-sm text-brand-600 mb-3">Every session backed by California Standard 5.20 compliance</p>
-            <div className="flex flex-wrap justify-center gap-2">
-              {["Background Checks", "Certified Training", "Strict Confidentiality", "Neutral Supervision", "Court-Ready Docs"].map((label) => (
-                <span key={label} className="rounded-full bg-brand-100 px-3 py-1 text-xs font-medium text-brand-700">
-                  {label}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-10 text-center">
-            <Link
-              href="/start"
-              className="rounded-lg bg-accent-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-accent-500 transition-colors"
-            >
-              Start Intake
-            </Link>
           </div>
         </div>
       </div>

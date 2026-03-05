@@ -27,16 +27,18 @@ export default function PricingPage() {
         dangerouslySetInnerHTML={{ __html: faqSchema(PRICING_FAQ) }}
       />
 
-      {/* Hero banner */}
+      {/* Hero banner — clipboard video */}
       <section className="relative bg-brand-900 overflow-hidden">
-        <Image
-          src="/images/father-son-library.webp"
-          alt="Father reading with his son at a library table"
-          width={2400}
-          height={1792}
-          className="w-full h-64 sm:h-80 object-cover object-[center_25%] opacity-40"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/intake-flatlay.webp"
+          className="w-full h-64 sm:h-80 object-cover opacity-40"
+        >
+          <source src="/images/clipboard-loop.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
             <h1 className="text-3xl sm:text-4xl font-bold text-white max-w-3xl mx-auto">Simple, Transparent Pricing</h1>
