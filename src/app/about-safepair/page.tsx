@@ -72,7 +72,7 @@ export default function AboutSafePairPage() {
           alt="SafePair supervised visitation services"
           width={1920}
           height={600}
-          className="w-full h-64 sm:h-80 object-cover object-top opacity-40"
+          className="w-full h-72 sm:h-96 object-cover object-center opacity-40"
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center">
