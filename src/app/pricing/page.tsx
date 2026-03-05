@@ -181,7 +181,7 @@ export default function PricingPage() {
                   alt="Neutral monitor facilitating a supervised custody exchange between parents"
                   width={400}
                   height={160}
-                  className="w-full h-32 object-cover object-[center_35%]"
+                  className="w-full h-32 object-cover object-[center_25%]"
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-brand-900 mb-1">Supervised Exchange Starter</h3>
