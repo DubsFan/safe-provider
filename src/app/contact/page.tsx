@@ -131,7 +131,7 @@ export default function ContactPage() {
                   muted
                   playsInline
                   poster="/images/virtual-visit-boy.webp"
-                  className="w-full h-44 sm:h-full object-cover object-top"
+                  className="w-full h-44 sm:h-full object-cover object-[center_35%]"
                 >
                   <source src="/images/father-daughter-loop.mp4" type="video/mp4" />
                 </video>
@@ -161,7 +161,7 @@ export default function ContactPage() {
                 alt="Provider reviewing case documentation"
                 width={400}
                 height={200}
-                className="w-full h-36 object-cover object-top rounded-lg mb-4"
+                className="w-full h-36 object-cover object-[center_35%] rounded-lg mb-4"
               />
               <h3 className="text-base font-semibold text-brand-900 mb-2">Fast Response</h3>
               <p className="text-sm text-brand-700">

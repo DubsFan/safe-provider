@@ -89,7 +89,7 @@ export default function FaqPage() {
           muted
           playsInline
           poster="/images/virtual-visit-boy.webp"
-          className="w-full h-64 sm:h-80 object-cover object-[center_30%] opacity-40"
+          className="w-full h-64 sm:h-80 object-cover object-[center_35%] opacity-40"
         >
           <source src="/images/visitation-loop.mp4" type="video/mp4" />
         </video>
@@ -152,7 +152,7 @@ export default function FaqPage() {
                   alt="SafePair provider reviewing case documentation"
                   width={224}
                   height={280}
-                  className="w-full h-44 sm:h-full object-cover object-top"
+                  className="w-full h-44 sm:h-full object-cover object-[center_35%]"
                 />
               </div>
               <div className="p-6 flex flex-col justify-center">

@@ -42,7 +42,7 @@ export default function HowItWorksPage() {
           muted
           playsInline
           poster="/images/community-coloring.webp"
-          className="w-full h-64 sm:h-80 object-cover object-[center_30%] opacity-40"
+          className="w-full h-64 sm:h-80 object-cover object-[center_35%] opacity-40"
         >
           <source src="/images/library-loop.mp4" type="video/mp4" />
         </video>
@@ -122,7 +122,7 @@ export default function HowItWorksPage() {
                     alt="SafePair provider reviewing case documentation"
                     width={400}
                     height={300}
-                    className="w-full h-48 object-cover object-top"
+                    className="w-full h-48 object-cover object-[center_35%]"
                   />
                   <div className="bg-brand-50 p-4">
                     <p className="text-xs text-brand-700">SafePair reviews every case independently within 1-2 business days before accepting.</p>

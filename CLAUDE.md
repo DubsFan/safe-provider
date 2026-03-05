@@ -101,6 +101,13 @@ supabase/
   migrations/
   seed.sql
 
+## Image rules
+1. Every image or video poster showing people MUST use object-position that keeps faces visible. Use object-[center_35%] or lower — never object-top or object-center on people photos.
+2. Visually verify every image on the live site before declaring done. User-test before = done.
+3. No two pages may share the same hero image or video poster. Each page gets a unique hero.
+4. Use all available video loops. Prefer video heroes over static images.
+5. Images must be integrated with copy (side-by-side, overlaid, etc.) — never floating standalone.
+
 ## Done criteria
 1. Code compiles. pnpm build passes.
 2. pnpm lint passes with 0 errors.
@@ -108,6 +115,7 @@ supabase/
 4. New env vars documented.
 5. New schema changes have migration files.
 6. Changelog summary provided.
+7. All images with people visually verified — faces fully visible, not cropped.
 
 ## Working rules
 1. Read this file and all referenced .md files first.

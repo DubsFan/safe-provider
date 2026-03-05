@@ -60,7 +60,7 @@ export default function ForAttorneysPage() {
           muted
           playsInline
           poster="/images/attorney-review-2.webp"
-          className="w-full h-64 sm:h-80 object-cover object-[center_30%] opacity-40"
+          className="w-full h-64 sm:h-80 object-cover object-[center_35%] opacity-40"
         >
           <source src="/images/clipboard-loop.mp4" type="video/mp4" />
         </video>

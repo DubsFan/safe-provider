@@ -38,7 +38,7 @@ export default async function SupervisedVisitationPage() {
           muted
           playsInline
           poster="/images/father-son-library.webp"
-          className="w-full h-64 sm:h-80 object-cover object-[center_25%] opacity-40"
+          className="w-full h-64 sm:h-80 object-cover object-[center_35%] opacity-40"
         >
           <source src="/images/visitation-loop.mp4" type="video/mp4" />
         </video>

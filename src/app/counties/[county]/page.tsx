@@ -112,7 +112,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
           muted
           playsInline
           poster={COUNTY_IMAGES[county] ?? "/images/landing-hero.webp"}
-          className="w-full h-64 sm:h-80 object-cover object-[center_30%] opacity-40"
+          className="w-full h-64 sm:h-80 object-cover object-[center_35%] opacity-40"
         >
           <source src="/images/hero-loop.mp4" type="video/mp4" />
         </video>
@@ -153,7 +153,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                         alt={`Supervised visitation in ${countyData.name}`}
                         width={192}
                         height={280}
-                        className="w-full h-44 sm:h-full object-cover object-[center_25%]"
+                        className="w-full h-44 sm:h-full object-cover object-[center_35%]"
                       />
                     </div>
                     <div className="p-6">
@@ -191,7 +191,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                           alt={isVis ? "Father and son during supervised visit" : "Neutral monitor facilitating custody exchange"}
                           width={400}
                           height={200}
-                          className={`w-full h-32 object-cover ${isVis ? "object-[center_25%]" : "object-[center_40%]"}`}
+                          className={`w-full h-32 object-cover ${isVis ? "object-[center_35%]" : "object-[center_40%]"}`}
                         />
                         <div className="p-4">
                           <h3 className="text-lg font-semibold text-brand-900">{service.name}</h3>
@@ -344,7 +344,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                     alt="SafePair supervised visitation providers"
                     width={400}
                     height={300}
-                    className="w-full h-48 object-cover object-top"
+                    className="w-full h-48 object-cover object-[center_35%]"
                   />
                   <div className="bg-brand-50 p-4">
                     <p className="text-sm font-semibold text-brand-900">Your Provider Team</p>

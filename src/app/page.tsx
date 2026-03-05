@@ -39,7 +39,7 @@ export default function HomePage() {
           muted
           playsInline
           poster="/images/father-son-library.webp"
-          className="w-full h-[28rem] sm:h-[34rem] object-cover object-[center_25%]"
+          className="w-full h-[28rem] sm:h-[34rem] object-cover object-[center_35%]"
         >
           <source src="/images/hero-loop.mp4" type="video/mp4" />
         </video>
@@ -129,7 +129,7 @@ export default function HomePage() {
                 alt="Mother and child coloring together with crayons at a community center table"
                 width={800}
                 height={800}
-                className="w-full h-56 sm:h-64 object-cover object-top"
+                className="w-full h-56 sm:h-64 object-cover object-[center_35%]"
               />
               <div className="p-5">
                 <h3 className="text-base font-semibold text-brand-900">Coloring Together</h3>
@@ -144,7 +144,7 @@ export default function HomePage() {
                 alt="Father and daughter drawing together with markers at a park bench"
                 width={800}
                 height={800}
-                className="w-full h-56 sm:h-64 object-cover object-top"
+                className="w-full h-56 sm:h-64 object-cover object-[center_35%]"
               />
               <div className="p-5">
                 <h3 className="text-base font-semibold text-brand-900">Drawing at the Park</h3>
@@ -177,7 +177,7 @@ export default function HomePage() {
                 alt="Young boy participating in a supervised virtual visit on a laptop with headphones"
                 width={2752}
                 height={1536}
-                className="w-full h-56 sm:h-64 object-cover object-top"
+                className="w-full h-56 sm:h-64 object-cover object-[center_35%]"
               />
               <div className="p-5">
                 <h3 className="text-base font-semibold text-brand-900">Virtual Visits</h3>

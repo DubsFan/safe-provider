@@ -29,7 +29,7 @@ export default function CountiesPage() {
           muted
           playsInline
           poster="/images/park-visit-1.webp"
-          className="w-full h-64 sm:h-80 object-cover object-[center_30%] opacity-40"
+          className="w-full h-64 sm:h-80 object-cover object-[center_35%] opacity-40"
         >
           <source src="/images/father-daughter-loop.mp4" type="video/mp4" />
         </video>
@@ -69,7 +69,7 @@ export default function CountiesPage() {
                       alt={img.alt}
                       width={600}
                       height={300}
-                      className="w-full h-40 object-cover object-[center_25%] group-hover:scale-[1.02] transition-transform duration-300"
+                      className="w-full h-40 object-cover object-[center_35%] group-hover:scale-[1.02] transition-transform duration-300"
                     />
                   )}
                   <div className="p-5">
