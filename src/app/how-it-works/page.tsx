@@ -56,118 +56,154 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-    {/* At a glance — process graphic with intro copy */}
-    <section className="bg-brand-50 py-12">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-xl font-semibold text-brand-900 mb-2">Your Journey at a Glance</h2>
-        <p className="text-brand-600 text-sm mb-6">
-          From your first click to your child&apos;s first supervised visit — here&apos;s the full path.
-        </p>
-        <Image
-          src="/images/process-steps.webp"
-          alt="5-step visual: intake form, calendar scheduling, intake meeting, supervised visit activity, documentation report"
-          width={720}
-          height={180}
-          className="w-full max-w-xl mx-auto rounded-xl"
-        />
-        <p className="mt-4 text-xs text-brand-400">
-          Intake &rarr; Scheduling &rarr; Meeting &rarr; Visit &rarr; Documentation
-        </p>
-      </div>
-    </section>
+      {/* Steps with process graphic integrated */}
+      <div className="py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
 
-    {/* Detailed steps */}
-    <div className="py-16">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-12">
+            {/* Left: Steps */}
+            <div className="flex-1">
+              <h2 className="text-2xl font-semibold text-brand-900 mb-2">The 5 Steps</h2>
+              <p className="text-brand-600 mb-8">
+                Each step moves you forward without surprises. Read through them, then start when you&apos;re ready.
+              </p>
 
-        <h2 className="text-2xl font-semibold text-brand-900 text-center mb-4">The 5 Steps in Detail</h2>
-        <p className="text-brand-600 text-center mb-12 max-w-xl mx-auto">
-          Each step is designed to move you forward without surprises. Read through them, then start when you&apos;re ready.
-        </p>
-
-        <div className="space-y-10">
-          {STEPS.map((item, idx) => (
-            <div key={item.step} className="flex gap-5">
-              <div className="shrink-0 flex flex-col items-center">
-                <div className="w-10 h-10 rounded-full bg-accent-600 text-white flex items-center justify-center font-bold">
-                  {item.step}
-                </div>
-                {idx < STEPS.length - 1 && (
-                  <div className="w-px flex-1 bg-brand-200 mt-2" />
-                )}
-              </div>
-              <div className="pb-2">
-                <h3 className="text-xl font-semibold text-brand-900">{item.title}</h3>
-                <p className="mt-1 text-brand-700">{item.desc}</p>
-                {"link" in item && item.link && (
-                  <Link href={item.link} className="mt-2 inline-block text-sm font-semibold text-accent-600 hover:text-accent-500">
-                    {item.linkLabel} &rarr;
-                  </Link>
-                )}
+              <div className="space-y-8">
+                {STEPS.map((item, idx) => (
+                  <div key={item.step} className="flex gap-4">
+                    <div className="shrink-0 flex flex-col items-center">
+                      <div className="w-10 h-10 rounded-full bg-accent-600 text-white flex items-center justify-center font-bold">
+                        {item.step}
+                      </div>
+                      {idx < STEPS.length - 1 && (
+                        <div className="w-px flex-1 bg-brand-200 mt-2" />
+                      )}
+                    </div>
+                    <div className="pb-2">
+                      <h3 className="text-lg font-semibold text-brand-900">{item.title}</h3>
+                      <p className="mt-1 text-sm text-brand-700">{item.desc}</p>
+                      {"link" in item && item.link && (
+                        <Link href={item.link} className="mt-2 inline-block text-sm font-semibold text-accent-600 hover:text-accent-500">
+                          {item.linkLabel} &rarr;
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* Transition copy into compliance section */}
-        <div className="mt-16 text-center">
-          <p className="text-brand-600 max-w-xl mx-auto">
-            Every step above follows California&apos;s rules for supervised visitation providers. Here&apos;s what that means for your family.
-          </p>
-        </div>
+            {/* Right: Sticky sidebar with images */}
+            <div className="lg:w-80 shrink-0">
+              <div className="lg:sticky lg:top-24 space-y-6">
+                {/* Process graphic */}
+                <div className="rounded-xl border border-brand-500/20 bg-white p-4 shadow-sm">
+                  <p className="text-xs font-semibold text-brand-500 uppercase tracking-wider mb-3">Your Journey</p>
+                  <Image
+                    src="/images/process-steps.webp"
+                    alt="5-step visual: intake form, calendar scheduling, intake meeting, supervised visit activity, documentation report"
+                    width={720}
+                    height={180}
+                    className="w-full rounded-lg"
+                  />
+                  <div className="mt-3 flex justify-between text-[10px] text-brand-400 font-medium">
+                    <span>Intake</span>
+                    <span>Schedule</span>
+                    <span>Meet</span>
+                    <span>Visit</span>
+                    <span>Docs</span>
+                  </div>
+                </div>
 
-        {/* Standard 5.20 */}
-        <div className="mt-6 rounded-xl bg-brand-100 p-6">
-          <h2 className="text-xl font-semibold text-brand-900 mb-3">What Does California Standard 5.20 Mean for You?</h2>
-          <p className="text-brand-700">
-            It means the person supervising your visit has passed a criminal background check, completed mandated training on child safety and domestic violence, and follows court-defined rules for neutrality, confidentiality, and documentation. It is the standard family courts use to verify provider qualifications.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            {["Background Checks", "Certified Training", "Strict Confidentiality", "Neutral Supervision", "Flexible Scheduling", "Court-Ready Docs"].map((label) => (
-              <span key={label} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-brand-700 shadow-sm">
-                {label}
-              </span>
-            ))}
+                {/* Provider review image */}
+                <div className="rounded-xl overflow-hidden shadow-sm">
+                  <Image
+                    src="/images/provider-review.webp"
+                    alt="SafePair provider reviewing case documentation"
+                    width={400}
+                    height={300}
+                    className="w-full h-48 object-cover object-top"
+                  />
+                  <div className="bg-brand-50 p-4">
+                    <p className="text-xs text-brand-700">SafePair reviews every case independently within 1-2 business days before accepting.</p>
+                  </div>
+                </div>
+
+                {/* Trust badge */}
+                <div className="rounded-xl bg-brand-100 p-4">
+                  <p className="text-xs font-semibold text-brand-900 mb-2">California Standard 5.20</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {["Background Checks", "Certified Training", "Confidentiality", "Neutral Supervision", "Court-Ready Docs"].map((label) => (
+                      <span key={label} className="rounded-full bg-white px-2.5 py-0.5 text-[10px] font-medium text-brand-700 shadow-sm">
+                        {label}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Compliance section */}
+          <div className="mt-16 rounded-xl bg-brand-100 p-6 flex flex-col sm:flex-row gap-6 items-start">
+            <Image
+              src="/images/secure-entrance.webp"
+              alt="Secure entrance to supervised visitation facility"
+              width={400}
+              height={224}
+              className="shrink-0 w-full sm:w-48 h-32 sm:h-full rounded-lg object-cover"
+            />
+            <div>
+              <h2 className="text-xl font-semibold text-brand-900 mb-3">What Does California Standard 5.20 Mean for You?</h2>
+              <p className="text-brand-700">
+                It means the person supervising your visit has passed a criminal background check, completed mandated training on child safety and domestic violence, and follows court-defined rules for neutrality, confidentiality, and documentation. It is the standard family courts use to verify provider qualifications.
+              </p>
+            </div>
+          </div>
+
+          {/* Checklist with image */}
+          <div className="mt-12 rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+            <div className="flex flex-col sm:flex-row">
+              <div className="shrink-0 sm:w-48">
+                <Image
+                  src="/images/intake-flatlay.webp"
+                  alt="Notebook, pen, and ID badge on a desk — ready for intake"
+                  width={200}
+                  height={300}
+                  className="w-full h-40 sm:h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h2 className="text-xl font-semibold text-brand-900 mb-4">What to Have Ready</h2>
+                <ol className="space-y-2">
+                  {CHECKLIST.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-brand-700">
+                      <span className="shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-900 flex items-center justify-center text-sm font-semibold">{i + 1}</span>
+                      {item}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          {/* Final CTA */}
+          <div className="mt-16 text-center">
+            <p className="text-brand-700 mb-6 max-w-md mx-auto">
+              The intake form takes about 5 minutes. You&apos;ll see your total cost before you pay, and SafePair will review your case within 1-2 business days.
+            </p>
+            <Link
+              href="/start"
+              className="rounded-lg bg-accent-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-accent-500 transition-colors"
+            >
+              Start Intake
+            </Link>
+            <p className="mt-3 text-sm text-brand-500">
+              Get an intake response within 8 hours or by the end of the business day.
+            </p>
           </div>
         </div>
-
-        {/* Transition into checklist */}
-        <div className="mt-16 text-center">
-          <p className="text-brand-600 max-w-xl mx-auto">
-            Before you begin intake, gather these items. Having them ready makes the process faster.
-          </p>
-        </div>
-
-        {/* What to have ready */}
-        <div className="mt-6 rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
-          <h2 className="text-xl font-semibold text-brand-900 mb-4">What to Have Ready</h2>
-          <ol className="space-y-2">
-            {CHECKLIST.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-brand-700">
-                <span className="shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-900 flex items-center justify-center text-sm font-semibold">{i + 1}</span>
-                {item}
-              </li>
-            ))}
-          </ol>
-        </div>
-
-        {/* Final CTA with reassurance */}
-        <div className="mt-16 text-center">
-          <p className="text-brand-700 mb-6 max-w-md mx-auto">
-            The intake form takes about 5 minutes. You&apos;ll see your total cost before you pay, and SafePair will review your case within 1-2 business days.
-          </p>
-          <Link
-            href="/start"
-            className="rounded-lg bg-accent-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-accent-500 transition-colors"
-          >
-            Start Intake
-          </Link>
-          <p className="mt-3 text-sm text-brand-500">
-            Get an intake response within 8 hours or by the end of the business day.
-          </p>
-        </div>
       </div>
-    </div>
     </>
   );
 }
