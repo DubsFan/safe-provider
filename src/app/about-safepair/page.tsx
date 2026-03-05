@@ -65,16 +65,18 @@ const VIDEOS = [
 export default function AboutSafePairPage() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero — video with faces and kid */}
       <section className="relative bg-brand-900 overflow-hidden">
-        <Image
-          src="/images/safepair-hero.avif"
-          alt="SafePair supervised visitation services"
-          width={1920}
-          height={600}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/safepair-hero.avif"
           className="w-full h-72 sm:h-80 md:h-96 lg:h-[28rem] object-cover object-[center_35%] opacity-40"
-          priority
-        />
+        >
+          <source src="/images/dancing-park-loop.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
             <h1 className="text-4xl font-bold text-white sm:text-5xl">
@@ -88,85 +90,91 @@ export default function AboutSafePairPage() {
         </div>
       </section>
 
-      {/* Mission */}
-      <section className="bg-surface-accent py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-accent-200 bg-surface-card p-8 md:p-12 shadow-sm">
-            <div className="flex flex-col items-center text-center mb-8">
-              <div className="rounded-full bg-surface-accent p-5 mb-6">
-                <Image
-                  src="/images/safepair-logo.png"
-                  alt="SafePair — professional supervised visitation provider"
-                  width={120}
-                  height={120}
-                  className="w-20 md:w-24 h-auto safepair-logo"
-                />
-              </div>
-              <h2 className="text-3xl font-bold text-text-heading">
-                SafePair&apos;s Mission
-              </h2>
-            </div>
-            <div className="max-w-2xl mx-auto space-y-5">
-              <p className="text-text-body text-lg leading-relaxed">
-                At SafePair, our mission is to provide professional, reliable, and
-                child-focused supervised visitation services that ensure families can
-                maintain meaningful connections in a safe and neutral environment.
-              </p>
-              <p className="text-text-body text-lg leading-relaxed">
-                We believe every child deserves a safe space to stay connected with
-                their family, even during difficult times. Founded by{" "}
-                <strong className="text-text-heading">Winston Franklin</strong>, a
-                Certified Professional Supervised Visitation Provider based in
-                Oakland, our work follows California&apos;s highest standards to
-                ensure visits are always neutral, safe, and child-focused.
-              </p>
-            </div>
-          </div>
+      {/* Mission — logo large, centered, calming layout */}
+      <section className="py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <Image
+            src="/images/safepair-logo.png"
+            alt="SafePair — professional supervised visitation provider"
+            width={200}
+            height={200}
+            className="w-32 sm:w-40 md:w-48 h-auto mx-auto mb-8 safepair-logo"
+          />
+          <h2 className="text-3xl sm:text-4xl font-bold text-text-heading mb-8">
+            SafePair&apos;s Mission
+          </h2>
+          <p className="text-text-body text-lg leading-relaxed mb-6">
+            At SafePair, our mission is to provide professional, reliable, and
+            child-focused supervised visitation services that ensure families can
+            maintain meaningful connections in a safe and neutral environment.
+          </p>
+          <p className="text-text-body text-lg leading-relaxed">
+            We believe every child deserves a safe space to stay connected with
+            their family, even during difficult times. Founded by{" "}
+            <strong className="text-text-heading">Winston Franklin</strong>, a
+            Certified Professional Supervised Visitation Provider based in
+            Oakland, our work follows California&apos;s highest standards to
+            ensure visits are always neutral, safe, and child-focused.
+          </p>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-16">
+      {/* Warm divider video */}
+      <div className="mx-auto max-w-5xl px-4">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-48 sm:h-56 rounded-2xl object-cover object-[center_35%] shadow-sm"
+        >
+          <source src="/images/Mother_And_Son_Reading_Together.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      {/* Services — clean cards, warm images, no videos */}
+      <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-text-heading text-center mb-8">
+          <h2 className="text-2xl font-bold text-text-heading text-center mb-10">
             What SafePair Provides
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: "Home & Community Visits",
                 desc: "Supervised visitation at home or within the community — wherever is safest and most comfortable for the child.",
-                video: "/images/library-loop.mp4",
+                img: "/images/park-visit-2.webp",
+                alt: "Father and child at a park visit",
               },
               {
                 title: "Reports to Parents & Courts",
                 desc: "Detailed documentation provided to parents and/or courts after each visit or exchange.",
-                video: "/images/Hands_Filling_Form_On_Tablet.mp4",
+                img: "/images/service-documentation.webp",
+                alt: "Professional documentation for court reports",
               },
               {
                 title: "Witness Testimony",
                 desc: "Witness testimonies provided as needed or requested by parents, attorneys, or courts.",
-                video: "/images/Child_Walking_Between_Adults_Loop.mp4",
+                img: "/images/attorney-review-2.webp",
+                alt: "Attorney reviewing supervised visitation documentation",
               },
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden"
+                className="rounded-2xl border border-border-default bg-surface-card shadow-sm overflow-hidden"
               >
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-36 object-cover object-[center_35%]"
-                >
-                  <source src={item.video} type="video/mp4" />
-                </video>
-                <div className="p-5">
+                <Image
+                  src={item.img}
+                  alt={item.alt}
+                  width={400}
+                  height={200}
+                  className="w-full h-40 object-cover object-[center_35%]"
+                />
+                <div className="p-6">
                   <h3 className="text-base font-semibold text-text-heading mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-text-body text-sm">{item.desc}</p>
+                  <p className="text-text-body text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
