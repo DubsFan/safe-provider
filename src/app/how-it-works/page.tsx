@@ -76,31 +76,6 @@ export default function HowItWorksPage() {
           ))}
         </div>
 
-        {/* Inline images */}
-        <div className="mt-12 grid grid-cols-3 gap-4">
-          <Image
-            src="/images/community-coloring.webp"
-            alt="Parent and child drawing together at a community center"
-            width={300}
-            height={225}
-            className="w-full rounded-xl shadow-sm"
-          />
-          <Image
-            src="/images/service-visitation.webp"
-            alt="Parent and child reading together at a library table"
-            width={300}
-            height={225}
-            className="w-full rounded-xl shadow-sm"
-          />
-          <Image
-            src="/images/park-visit-1.webp"
-            alt="Father and daughter drawing together on a park bench"
-            width={300}
-            height={225}
-            className="w-full rounded-xl shadow-sm"
-          />
-        </div>
-
         {/* Process steps graphic */}
         <div className="mt-12">
           <Image
@@ -118,13 +93,13 @@ export default function HowItWorksPage() {
           <p className="text-brand-700">
             It means the person supervising your visit has passed a criminal background check, completed mandated training on child safety and domestic violence, and follows court-defined rules for neutrality, confidentiality, and documentation. It is the standard family courts use to verify provider qualifications.
           </p>
-          <div className="mt-4">
+          <div className="mt-4 max-w-sm mx-auto">
             <Image
               src="/images/trust-icons.webp"
-              alt="Trust icons: background checks, certified training, strict confidentiality, neutral supervision, flexible scheduling, court-ready documentation"
-              width={800}
-              height={200}
-              className="w-full rounded-lg"
+              alt="Background checks, certified training, confidentiality, neutral supervision"
+              width={400}
+              height={100}
+              className="w-full rounded-lg opacity-80"
             />
           </div>
         </div>

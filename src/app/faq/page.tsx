@@ -125,14 +125,14 @@ export default function FaqPage() {
             />
           </div>
 
-          {/* Trust badges */}
-          <div className="mt-8">
+          {/* Trust badges — compact */}
+          <div className="mt-8 max-w-sm mx-auto">
             <Image
               src="/images/trust-icons.webp"
-              alt="Trust icons: background checks, certified training, strict confidentiality, neutral supervision, flexible scheduling, court-ready documentation"
-              width={800}
-              height={200}
-              className="w-full rounded-xl"
+              alt="Background checks, certified training, confidentiality, neutral supervision"
+              width={400}
+              height={100}
+              className="w-full rounded-lg opacity-80"
             />
           </div>
 

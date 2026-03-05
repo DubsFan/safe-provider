@@ -68,27 +68,13 @@ export default function CountiesPage() {
           </p>
         </div>
 
-        {/* Inline images */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {/* Accent image */}
+        <div className="mt-12 max-w-xs mx-auto">
           <Image
-            src="/images/service-visitation.webp"
-            alt="Parent and child reading together at a library table"
-            width={400}
-            height={300}
-            className="w-full rounded-xl shadow-sm"
-          />
-          <Image
-            src="/images/hero-exchange.webp"
-            alt="Neutral monitor facilitating a supervised custody exchange"
-            width={400}
-            height={300}
-            className="w-full rounded-xl shadow-sm"
-          />
-          <Image
-            src="/images/park-visit-2.webp"
-            alt="Father and son drawing together at an outdoor park table"
-            width={400}
-            height={300}
+            src="/images/community-coloring.webp"
+            alt="Parent and child drawing together at a community center"
+            width={320}
+            height={240}
             className="w-full rounded-xl shadow-sm"
           />
         </div>

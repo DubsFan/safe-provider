@@ -87,20 +87,13 @@ export default async function SupervisedVisitationPage() {
             </p>
           </div>
 
-          {/* Inline images */}
-          <div className="grid grid-cols-2 gap-4">
-            <Image
-              src="/images/service-visitation.webp"
-              alt="Parent and child reading together at a library table"
-              width={400}
-              height={300}
-              className="w-full rounded-xl shadow-sm"
-            />
+          {/* Accent image */}
+          <div className="max-w-xs">
             <Image
               src="/images/community-coloring.webp"
               alt="Parent and child drawing together at a community center"
-              width={400}
-              height={300}
+              width={320}
+              height={240}
               className="w-full rounded-xl shadow-sm"
             />
           </div>
@@ -132,14 +125,14 @@ export default async function SupervisedVisitationPage() {
           </p>
         </div>
 
-        {/* Trust icons */}
-        <div className="mt-12">
+        {/* Trust icons — compact */}
+        <div className="mt-8 max-w-sm">
           <Image
             src="/images/trust-icons.webp"
-            alt="Trust icons: background checks, certified training, strict confidentiality, neutral supervision, flexible scheduling, court-ready documentation"
-            width={800}
-            height={200}
-            className="w-full rounded-xl"
+            alt="Background checks, certified training, confidentiality, neutral supervision"
+            width={400}
+            height={100}
+            className="w-full rounded-lg opacity-80"
           />
         </div>
 

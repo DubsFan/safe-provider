@@ -99,25 +99,25 @@ export default async function SupervisedExchangePage() {
           </div>
         </div>
 
-        {/* Inline image */}
-        <div className="mt-12">
+        {/* Accent image */}
+        <div className="mt-8 max-w-xs">
           <Image
-            src="/images/park-visit-2.webp"
-            alt="Father and son drawing together at an outdoor park table"
-            width={800}
-            height={600}
+            src="/images/park-visit-1.webp"
+            alt="Father and daughter drawing together on a park bench"
+            width={320}
+            height={240}
             className="w-full rounded-xl shadow-sm"
           />
         </div>
 
-        {/* Trust icons */}
-        <div className="mt-8">
+        {/* Trust icons — compact */}
+        <div className="mt-8 max-w-sm">
           <Image
             src="/images/trust-icons.webp"
-            alt="Trust icons: background checks, certified training, strict confidentiality, neutral supervision, flexible scheduling, court-ready documentation"
-            width={800}
-            height={200}
-            className="w-full rounded-xl"
+            alt="Background checks, certified training, confidentiality, neutral supervision"
+            width={400}
+            height={100}
+            className="w-full rounded-lg opacity-80"
           />
         </div>
 

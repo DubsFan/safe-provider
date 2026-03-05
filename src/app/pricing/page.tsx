@@ -88,20 +88,13 @@ export default function PricingPage() {
             </ul>
           </div>
 
-          {/* Inline images */}
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {/* Accent image */}
+          <div className="mt-12 max-w-xs mx-auto">
             <Image
-              src="/images/service-visitation.webp"
-              alt="Parent and child reading together at a library table"
-              width={600}
-              height={450}
-              className="w-full rounded-xl shadow-sm"
-            />
-            <Image
-              src="/images/park-visit-1.webp"
-              alt="Father and daughter drawing together on a park bench"
-              width={600}
-              height={450}
+              src="/images/park-visit-2.webp"
+              alt="Father and son drawing together at an outdoor park table"
+              width={320}
+              height={240}
               className="w-full rounded-xl shadow-sm"
             />
           </div>
@@ -182,14 +175,14 @@ export default function PricingPage() {
             Provider rates from the Santa Clara County court provider list (revised February 3, 2026).
           </p>
 
-          {/* Trust badges */}
-          <div className="mt-12 max-w-3xl mx-auto">
+          {/* Trust badges — compact */}
+          <div className="mt-12 max-w-md mx-auto">
             <Image
               src="/images/trust-icons.webp"
-              alt="Trust icons: background checks, certified training, strict confidentiality, neutral supervision, flexible scheduling, court-ready documentation"
-              width={800}
-              height={200}
-              className="w-full rounded-xl"
+              alt="Background checks, certified training, confidentiality, neutral supervision, flexible scheduling, court-ready documentation"
+              width={400}
+              height={100}
+              className="w-full rounded-lg opacity-80"
             />
           </div>
 

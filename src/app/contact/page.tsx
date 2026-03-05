@@ -99,13 +99,13 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Inline image */}
-        <div className="mt-8 max-w-md mx-auto">
+        {/* Accent image */}
+        <div className="mt-8 max-w-xs mx-auto">
           <Image
-            src="/images/community-coloring.webp"
-            alt="Parent and child drawing together at a community center"
-            width={500}
-            height={375}
+            src="/images/virtual-visit.webp"
+            alt="Child participating in a supervised video visit"
+            width={280}
+            height={210}
             className="w-full rounded-xl shadow-sm"
           />
         </div>

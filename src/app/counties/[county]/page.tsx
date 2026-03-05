@@ -170,20 +170,13 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                 </div>
               </div>
 
-              {/* Inline images */}
-              <div className="mt-8 grid grid-cols-2 gap-4">
+              {/* Accent image */}
+              <div className="mt-8 max-w-xs">
                 <Image
                   src="/images/service-visitation.webp"
                   alt="Parent and child reading together at a library table"
-                  width={400}
-                  height={300}
-                  className="w-full rounded-xl shadow-sm"
-                />
-                <Image
-                  src="/images/hero-exchange.webp"
-                  alt="Neutral monitor facilitating a supervised custody exchange"
-                  width={400}
-                  height={300}
+                  width={320}
+                  height={240}
                   className="w-full rounded-xl shadow-sm"
                 />
               </div>
@@ -209,13 +202,13 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                     <li key={i} className="text-sm text-brand-700">{bullet}</li>
                   ))}
                 </ul>
-                <div className="mt-4">
+                <div className="mt-4 max-w-sm">
                   <Image
                     src="/images/trust-icons.webp"
-                    alt="Trust icons: background checks, certified training, strict confidentiality, neutral supervision, flexible scheduling, court-ready documentation"
-                    width={800}
-                    height={200}
-                    className="w-full rounded-lg"
+                    alt="Background checks, certified training, confidentiality, neutral supervision"
+                    width={400}
+                    height={100}
+                    className="w-full rounded-lg opacity-80"
                   />
                 </div>
               </div>
