@@ -79,7 +79,7 @@ export function Footer() {
               </li>
               <li>
                 <a href={`mailto:${EMAIL}`} className="text-sm text-gray-300 hover:text-white transition-colors">
-                  {EMAIL}
+                  Send Email
                 </a>
               </li>
               <li className="pt-2">

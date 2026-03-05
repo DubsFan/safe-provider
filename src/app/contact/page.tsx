@@ -6,7 +6,7 @@ import { Phone, Mail, Clock, MapPin } from "lucide-react";
 
 export const metadata = buildMetadata({
   title: "Contact SafeProvider — Supervised Visitation Intake Support",
-  description: "Questions about supervised visitation intake? Call (408) 418-7474 or email. Response within 8 hours or by end of business day.",
+  description: "Questions about supervised visitation intake? Call (510) 314-8298 or email. Response within 8 hours or by end of business day.",
   path: "/contact",
 });
 
@@ -69,7 +69,7 @@ export default function ContactPage() {
               <h2 className="text-lg font-semibold text-brand-900">Email</h2>
             </div>
             <a href={`mailto:${EMAIL}`} className="text-brand-700 hover:text-accent-600">
-              {EMAIL}
+              Send Email
             </a>
           </div>
 

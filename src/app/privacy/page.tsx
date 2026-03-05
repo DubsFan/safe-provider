@@ -81,7 +81,7 @@ export default function PrivacyPage() {
               <li><strong>Right to Non-Discrimination:</strong> We will not deny services or charge different prices based on exercising your rights.</li>
             </ul>
             <p className="mt-4">
-              To exercise any right, email <a href="mailto:gg@oog.life" className="text-accent-600 hover:text-accent-500">gg@oog.life</a> with subject line &quot;Privacy Request.&quot;
+              To exercise any right, <a href="mailto:gg@oog.life?subject=Privacy%20Request" className="text-accent-600 hover:text-accent-500">send us an email</a> with subject line &quot;Privacy Request.&quot;
             </p>
           </section>
 
@@ -113,7 +113,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-semibold text-brand-900 mb-3">9. Contact</h2>
             <p>
-              Email: <a href="mailto:gg@oog.life" className="text-accent-600 hover:text-accent-500">gg@oog.life</a>
+              <a href="mailto:gg@oog.life?subject=Privacy%20Request" className="text-accent-600 hover:text-accent-500">Send us an email</a>
             </p>
             <p>Subject line: &quot;Privacy Request&quot;</p>
           </section>

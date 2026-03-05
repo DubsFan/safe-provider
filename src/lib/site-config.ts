@@ -2,7 +2,7 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://safeprovide
 export const SITE_NAME = "SafeProvider";
 export const SITE_DESCRIPTION =
   "Court-compliant supervised visitation and exchange intake. Start online, pay securely, SafePair handles the rest.";
-export const PHONE = "(408) 418-7474";
+export const PHONE = "(510) 314-8298";
 export const EMAIL = "gg@oog.life";
 
 export const COUNTIES = [

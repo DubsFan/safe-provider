@@ -125,7 +125,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-semibold text-brand-900 mb-3">12. Contact</h2>
             <p>
-              Email: <a href="mailto:gg@oog.life" className="text-accent-600 hover:text-accent-500">gg@oog.life</a>
+              <a href="mailto:gg@oog.life" className="text-accent-600 hover:text-accent-500">Send us an email</a>
             </p>
           </section>
         </div>

@@ -111,7 +111,7 @@ export default function NoticeAtCollectionPage() {
           <section>
             <h2 className="text-2xl font-semibold text-brand-900 mb-3">8. How to Exercise Your Rights</h2>
             <ul className="list-disc list-inside space-y-2">
-              <li>Email <a href="mailto:gg@oog.life" className="text-accent-600 hover:text-accent-500">gg@oog.life</a> with subject line &quot;CCPA Request&quot;</li>
+              <li><a href="mailto:gg@oog.life?subject=CCPA%20Request" className="text-accent-600 hover:text-accent-500">Send us an email</a> with subject line &quot;CCPA Request&quot;</li>
               <li>We will verify your identity before processing any request</li>
               <li>We will respond within 45 days as required by law</li>
             </ul>
