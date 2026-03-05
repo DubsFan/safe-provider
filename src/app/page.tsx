@@ -276,7 +276,7 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row gap-10 items-center">
             <div className="lg:w-1/2 flex items-center justify-center">
               <Image
-                src="/images/safepair-logo.png"
+                src="/images/safepair-logo-transparent.webp"
                 alt="SafePair — professional supervised visitation provider"
                 width={400}
                 height={400}

@@ -65,109 +65,117 @@ const VIDEOS = [
 export default function AboutSafePairPage() {
   return (
     <>
-      {/* Hero — safepair family boardwalk image + logo */}
+      {/* Hero — full-width safepair-hero image with logo overlay */}
       <section className="relative bg-brand-900 overflow-hidden">
         <Image
           src="/images/safepair-hero.avif"
           alt="Family walking together — SafePair supervised visitation"
           width={1920}
           height={600}
-          className="absolute inset-0 w-full h-full object-cover object-[center_40%] opacity-30"
+          className="absolute inset-0 w-full h-full object-cover object-[center_40%] opacity-25"
           priority
         />
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 py-16 sm:py-20 md:py-24 lg:py-32">
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-900/60 via-brand-900/20 to-brand-900/30" />
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 py-20 sm:py-24 md:py-28 lg:py-36">
           <Image
-            src="/images/safepair-logo.png"
+            src="/images/safepair-logo-transparent.webp"
             alt="SafePair"
             width={160}
             height={160}
-            className="w-24 sm:w-28 md:w-32 lg:w-36 h-auto mb-6 invert brightness-0 invert"
+            className="w-28 sm:w-32 md:w-36 lg:w-40 h-auto mb-8 invert"
           />
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Our Provider Partner
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-gray-200 max-w-2xl mx-auto">
+          <p className="mt-4 text-base sm:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed">
             All supervised visitation and exchange services booked through
             SafeProvider are delivered by SafePair.
           </p>
         </div>
       </section>
 
-      {/* Mission */}
-      <section className="py-20">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-heading mb-8">
-            SafePair&apos;s Mission
-          </h2>
-          <p className="text-text-body text-lg leading-relaxed mb-6">
-            At SafePair, our mission is to provide professional, reliable, and
-            child-focused supervised visitation services that ensure families can
-            maintain meaningful connections in a safe and neutral environment.
-          </p>
-          <p className="text-text-body text-lg leading-relaxed">
-            We believe every child deserves a safe space to stay connected with
-            their family, even during difficult times. Founded by{" "}
-            <strong className="text-text-heading">Winston Franklin</strong>, a
-            Certified Professional Supervised Visitation Provider based in
-            Oakland, our work follows California&apos;s highest standards to
-            ensure visits are always neutral, safe, and child-focused.
-          </p>
+      {/* Mission — warm teal accent background, wider content */}
+      <section className="bg-surface-accent py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-center">
+            <div className="lg:col-span-3">
+              <h2 className="text-3xl sm:text-4xl font-bold text-text-heading mb-6">
+                SafePair&apos;s Mission
+              </h2>
+              <p className="text-text-body text-lg leading-relaxed mb-5">
+                At SafePair, our mission is to provide professional, reliable, and
+                child-focused supervised visitation services that ensure families can
+                maintain meaningful connections in a safe and neutral environment.
+              </p>
+              <p className="text-text-body text-lg leading-relaxed">
+                We believe every child deserves a safe space to stay connected with
+                their family, even during difficult times. Founded by{" "}
+                <strong className="text-text-heading">Winston Franklin</strong>, a
+                Certified Professional Supervised Visitation Provider based in
+                Oakland, our work follows California&apos;s highest standards to
+                ensure visits are always neutral, safe, and child-focused.
+              </p>
+            </div>
+            <div className="lg:col-span-2">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full aspect-square rounded-2xl object-cover object-[center_35%] shadow-lg"
+              >
+                <source src="/images/mother-child-reading-loop.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Warm divider video */}
-      <div className="mx-auto max-w-5xl px-4">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-48 sm:h-56 rounded-2xl object-cover object-[center_35%] shadow-sm"
-        >
-          <source src="/images/Mother_And_Son_Reading_Together.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      {/* Services — clean cards, warm images, no videos */}
+      {/* Services — wider cards with video headers */}
       <section className="py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-text-heading text-center mb-10">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-text-heading text-center mb-4">
             What SafePair Provides
           </h2>
+          <p className="text-text-muted text-center max-w-2xl mx-auto mb-12">
+            Professional, court-compliant services delivered with care and compassion.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: "Home & Community Visits",
                 desc: "Supervised visitation at home or within the community — wherever is safest and most comfortable for the child.",
-                img: "/images/park-visit-2.webp",
-                alt: "Father and child at a park visit",
+                video: "/images/visitation-loop.mp4",
+                alt: "Father and child during supervised visit",
               },
               {
                 title: "Reports to Parents & Courts",
                 desc: "Detailed documentation provided to parents and/or courts after each visit or exchange.",
-                img: "/images/service-documentation.webp",
+                video: "/images/library-loop.mp4",
                 alt: "Professional documentation for court reports",
               },
               {
                 title: "Witness Testimony",
                 desc: "Witness testimonies provided as needed or requested by parents, attorneys, or courts.",
-                img: "/images/attorney-review-2.webp",
-                alt: "Attorney reviewing supervised visitation documentation",
+                video: "/images/father-daughter-loop.mp4",
+                alt: "Professional supervision during family visit",
               },
             ].map((item) => (
               <div
                 key={item.title}
                 className="rounded-2xl border border-border-default bg-surface-card shadow-sm overflow-hidden"
               >
-                <Image
-                  src={item.img}
-                  alt={item.alt}
-                  width={400}
-                  height={200}
-                  className="w-full h-40 object-cover object-[center_35%]"
-                />
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-48 object-cover object-[center_35%]"
+                >
+                  <source src={item.video} type="video/mp4" />
+                </video>
                 <div className="p-6">
-                  <h3 className="text-base font-semibold text-text-heading mb-2">
+                  <h3 className="text-lg font-semibold text-text-heading mb-2">
                     {item.title}
                   </h3>
                   <p className="text-text-body text-sm leading-relaxed">{item.desc}</p>
@@ -178,71 +186,86 @@ export default function AboutSafePairPage() {
         </div>
       </section>
 
-      {/* Sexual Assault Specialization */}
-      <section className="py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-border-default bg-surface-card p-8 md:p-10 shadow-sm">
-            <h2 className="text-2xl font-bold text-text-heading mb-4">
-              Emphasis on Sexual Assault Cases
-            </h2>
-            <p className="text-text-body leading-relaxed mb-4">
-              While many supervised visitation providers do not accept cases
-              involving sexual abuse or sexual assault, SafePair understands that
-              these families still deserve access to safe, professional, and
-              trauma-informed support.
-            </p>
-            <p className="text-text-body leading-relaxed">
-              We are dedicated to providing specialized supervision in these
-              highly sensitive situations, ensuring that children remain
-              protected at all times while allowing contact only under strict
-              professional oversight. With training, compliance, and compassion
-              guiding our approach, we fill a critical gap in services and stand
-              ready to help families facing the most challenging circumstances.
-            </p>
+      {/* Sexual Assault Specialization — subtle warm background */}
+      <section className="bg-surface-subtle py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
+            <div className="lg:col-span-3 order-2 lg:order-1">
+              <h2 className="text-2xl sm:text-3xl font-bold text-text-heading mb-5">
+                Emphasis on Sexual Assault Cases
+              </h2>
+              <p className="text-text-body leading-relaxed mb-4">
+                While many supervised visitation providers do not accept cases
+                involving sexual abuse or sexual assault, SafePair understands that
+                these families still deserve access to safe, professional, and
+                trauma-informed support.
+              </p>
+              <p className="text-text-body leading-relaxed">
+                We are dedicated to providing specialized supervision in these
+                highly sensitive situations, ensuring that children remain
+                protected at all times while allowing contact only under strict
+                professional oversight. With training, compliance, and compassion
+                guiding our approach, we fill a critical gap in services and stand
+                ready to help families facing the most challenging circumstances.
+              </p>
+            </div>
+            <div className="lg:col-span-2 order-1 lg:order-2">
+              <Image
+                src="/images/service-visitation.webp"
+                alt="Safe, professional supervised visitation environment"
+                width={500}
+                height={500}
+                className="w-full aspect-square rounded-2xl object-cover object-[center_35%] shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Low Income Program */}
+      {/* Low Income Program — accent background */}
       <section className="bg-surface-accent py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-text-heading mb-4">
-            Low Income Program
-          </h2>
-          <p className="text-text-body leading-relaxed mb-6">
-            Every family deserves access to safe, professional visitation
-            services. We understand that costs can feel overwhelming, so SafePair
-            offers a Low Income Program with discounted fees for families who
-            qualify.
-          </p>
-          <p className="text-text-body leading-relaxed mb-8">
-            Our goal is to make supervised visitation accessible and
-            supportive — ensuring every child has the chance to stay connected
-            with their family.
-          </p>
-          <div className="rounded-xl border border-border-default bg-surface-card p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-text-heading mb-3">
-              Qualifications
-            </h3>
-            <ul className="space-y-2 text-text-body">
-              <li className="flex items-start gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent-600 shrink-0" />
-                Annual Gross Income (AGI) under $100,000 with documentation
-                (statements, paystubs, etc.)
-              </li>
-            </ul>
-            <p className="mt-4 text-sm text-text-muted">
-              Fraud regarding low income status will be reported to the court and
-              legal action will be taken.
-            </p>
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-text-heading mb-4">
+                Low Income Program
+              </h2>
+              <p className="text-text-body leading-relaxed mb-5">
+                Every family deserves access to safe, professional visitation
+                services. We understand that costs can feel overwhelming, so SafePair
+                offers a Low Income Program with discounted fees for families who
+                qualify.
+              </p>
+              <p className="text-text-body leading-relaxed">
+                Our goal is to make supervised visitation accessible and
+                supportive — ensuring every child has the chance to stay connected
+                with their family.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border-default bg-surface-card p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-text-heading mb-3">
+                Qualifications
+              </h3>
+              <ul className="space-y-2 text-text-body">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent-600 shrink-0" />
+                  Annual Gross Income (AGI) under $100,000 with documentation
+                  (statements, paystubs, etc.)
+                </li>
+              </ul>
+              <p className="mt-4 text-sm text-text-muted">
+                Fraud regarding low income status will be reported to the court and
+                legal action will be taken.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Helpful Videos */}
       <section className="py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-text-heading mb-3">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-text-heading mb-3">
             Helpful Videos
           </h2>
           <p className="text-text-muted mb-8">
@@ -269,10 +292,10 @@ export default function AboutSafePairPage() {
         </div>
       </section>
 
-      {/* Family Guides */}
+      {/* Family Guides — subtle background */}
       <section className="bg-surface-subtle py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-text-heading mb-3">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-text-heading mb-3">
             Guides for Your Family
           </h2>
           <p className="text-text-muted mb-8">
@@ -299,8 +322,8 @@ export default function AboutSafePairPage() {
 
       {/* Court & Legal Resources */}
       <section className="py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-text-heading mb-6">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-text-heading mb-6">
             Court &amp; Legal Resources
           </h2>
           <div className="space-y-3">
@@ -324,10 +347,10 @@ export default function AboutSafePairPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA — full-width dark */}
       <section className="bg-brand-900 py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
             Ready to Get Started?
           </h2>
           <p className="text-gray-200 mb-8 max-w-xl mx-auto">
