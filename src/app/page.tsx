@@ -38,10 +38,10 @@ export default function HomePage() {
           loop
           muted
           playsInline
-          poster="/images/landing-hero.webp"
+          poster="/images/hero-poster.webp"
           className="w-full h-[28rem] sm:h-[34rem] object-cover object-[center_35%]"
         >
-          <source src="/images/father-daughter-loop.mp4" type="video/mp4" />
+          <source src="/images/hero-loop.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-brand-900/40 to-brand-900/20 flex items-end pb-12 sm:pb-16 justify-center">
           <div className="text-center px-4 max-w-4xl mx-auto">

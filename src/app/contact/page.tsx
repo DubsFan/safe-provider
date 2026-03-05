@@ -37,7 +37,7 @@ export default function ContactPage() {
           loop
           muted
           playsInline
-          poster="/images/landing-hero-alt1.webp"
+          poster="/images/grandma-coffee.webp"
           className="w-full h-48 sm:h-64 object-cover object-[center_35%] opacity-40"
         >
           <source src="/images/father-daughter-loop.mp4" type="video/mp4" />

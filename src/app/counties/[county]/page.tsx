@@ -114,7 +114,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
           poster={COUNTY_IMAGES[county] ?? "/images/landing-hero.webp"}
           className="w-full h-64 sm:h-80 object-cover object-[center_35%] opacity-40"
         >
-          <source src="/images/father-daughter-loop.mp4" type="video/mp4" />
+          <source src="/images/visitation-loop.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
