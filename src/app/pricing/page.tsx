@@ -147,7 +147,7 @@ export default function PricingPage() {
               playsInline
               className="w-full h-56 sm:h-64 rounded-xl object-cover object-[center_25%] shadow-sm"
             >
-              <source src="/images/dancing%20in%20park%20father%20daughter.mp4" type="video/mp4" />
+              <source src="/images/dancing-park-loop.mp4" type="video/mp4" />
             </video>
           </div>
 
@@ -157,13 +157,15 @@ export default function PricingPage() {
             <p className="text-text-muted text-center text-sm mb-8">See what families like yours typically pay at their first session.</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
-                <Image
-                  src="/images/community-coloring.webp"
-                  alt="Parent and child coloring together at a community center"
-                  width={400}
-                  height={160}
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-32 object-cover object-[center_35%]"
-                />
+                >
+                  <source src="/images/Mother_And_Son_Reading_Together.mp4" type="video/mp4" />
+                </video>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-text-heading mb-1">Supervised Visitation Starter</h3>
                   <p className="text-sm text-text-muted mb-4">First visit — two parents, one child</p>
@@ -189,13 +191,15 @@ export default function PricingPage() {
               </div>
 
               <div className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
-                <Image
-                  src="/images/hero-exchange.webp"
-                  alt="Neutral monitor facilitating a supervised custody exchange between parents"
-                  width={400}
-                  height={160}
-                  className="w-full h-32 object-cover object-[center_25%]"
-                />
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-32 object-cover object-[center_35%]"
+                >
+                  <source src="/images/Child_Walking_Between_Adults_Loop.mp4" type="video/mp4" />
+                </video>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-text-heading mb-1">Supervised Exchange Starter</h3>
                   <p className="text-sm text-text-muted mb-4">First exchange — two parents</p>
@@ -221,13 +225,15 @@ export default function PricingPage() {
               </div>
 
               <div className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
-                <Image
-                  src="/images/park-visit-1.webp"
-                  alt="Father and daughter drawing together on a park bench"
-                  width={400}
-                  height={160}
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-32 object-cover object-[center_35%]"
-                />
+                >
+                  <source src="/images/Hands_Filling_Form_On_Tablet.mp4" type="video/mp4" />
+                </video>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-text-heading mb-1">30-Day Visit Package</h3>
                   <p className="text-sm text-text-muted mb-4">Four visits over 30 days (most common)</p>
