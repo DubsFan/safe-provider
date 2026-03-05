@@ -48,28 +48,28 @@ const SECTIONS = [
     items: COST_FAQ,
     link: "/pricing",
     linkLabel: "See full pricing",
-    image: { src: "/images/service-visitation.webp", alt: "Father and daughter reading at a library during a supervised visit" },
+    image: { src: "/images/block3.webp", alt: "Document review and security shield icon" },
   },
   {
     title: "Process",
     items: PROCESS_FAQ,
     link: "/how-it-works",
     linkLabel: "See 5-step process",
-    image: { src: "/images/process-steps.webp", alt: "5-step intake to visit process" },
+    image: { src: "/images/block2.webp", alt: "Secure folder with lock icon" },
   },
   {
     title: "Trust and Safety",
     items: TRUST_FAQ,
     link: "/counties",
     linkLabel: "View counties",
-    image: { src: "/images/trust-compliance.webp", alt: "Four compliance pillars: background checks, training, confidentiality, neutral supervision" },
+    image: { src: "/images/block1.webp", alt: "Family protection shield icon" },
   },
   {
     title: "For Attorneys",
     items: ATTORNEY_FAQ,
     link: "/for-attorneys",
     linkLabel: "Attorney resources",
-    image: { src: "/images/attorney-review-2.webp", alt: "Professional reviewing court documents" },
+    image: { src: "/images/block4.webp", alt: "Legal education and professional development icon" },
   },
 ];
 
@@ -118,7 +118,7 @@ export default function FaqPage() {
                       alt={section.image.alt}
                       width={224}
                       height={150}
-                      className="w-full h-36 object-cover object-[center_35%] rounded-xl shadow-sm"
+                      className="w-full h-36 object-contain rounded-xl"
                     />
                   </div>
                   <div className="flex-1">
