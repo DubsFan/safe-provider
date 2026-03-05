@@ -52,16 +52,18 @@ export default function ForAttorneysPage() {
         dangerouslySetInnerHTML={{ __html: faqSchema(ATTORNEY_FAQ) }}
       />
 
-      {/* Hero with image */}
+      {/* Hero with video */}
       <section className="relative bg-brand-900 overflow-hidden">
-        <Image
-          src="/images/provider-review.webp"
-          alt="SafePair provider reviewing case documentation in a professional conference room"
-          width={1400}
-          height={500}
-          className="w-full h-64 sm:h-80 object-cover object-top opacity-60"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/attorney-review-2.webp"
+          className="w-full h-64 sm:h-80 object-cover object-[center_30%] opacity-40"
+        >
+          <source src="/images/clipboard-loop.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
             <h1 className="text-3xl sm:text-4xl font-bold text-white max-w-3xl mx-auto">
@@ -103,13 +105,16 @@ export default function ForAttorneysPage() {
           <div className="mt-8 rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
             <div className="flex flex-col sm:flex-row">
               <div className="shrink-0 sm:w-48">
-                <Image
-                  src="/images/service-documentation.webp"
-                  alt="Professional writing visit notes on a court documentation clipboard"
-                  width={192}
-                  height={280}
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster="/images/service-documentation.webp"
                   className="w-full h-40 sm:h-full object-cover"
-                />
+                >
+                  <source src="/images/clipboard-loop.mp4" type="video/mp4" />
+                </video>
               </div>
               <div className="p-6">
                 <h2 className="text-xl font-semibold text-brand-900 mb-4">SafePair Handles</h2>
