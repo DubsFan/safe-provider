@@ -99,31 +99,36 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Accent image */}
-        <div className="mt-8 max-w-xs mx-auto">
-          <Image
-            src="/images/virtual-visit.webp"
-            alt="Child participating in a supervised video visit"
-            width={280}
-            height={210}
-            className="w-full rounded-xl shadow-sm"
-          />
+        {/* Prefer to start online — image with copy */}
+        <div className="mt-10 rounded-xl bg-brand-50 overflow-hidden">
+          <div className="flex flex-col sm:flex-row">
+            <div className="shrink-0 sm:w-44">
+              <Image
+                src="/images/virtual-visit.webp"
+                alt="Child participating in a supervised video visit on a laptop"
+                width={176}
+                height={200}
+                className="w-full h-36 sm:h-full object-cover"
+              />
+            </div>
+            <div className="p-6">
+              <h2 className="text-lg font-semibold text-brand-900 mb-2">Prefer to Start Online?</h2>
+              <p className="text-sm text-brand-700 mb-4">
+                The intake form takes about 5 minutes. You&apos;ll see your total cost before you pay, and SafePair will review your case within 1-2 business days.
+              </p>
+              <Link
+                href="/start"
+                className="inline-block rounded-lg bg-accent-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-accent-500 transition-colors"
+              >
+                Start Intake Online
+              </Link>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-8 text-center">
-          <p className="text-sm text-brand-500">
-            Intake responses within 8 hours or by the end of the business day.
-          </p>
-        </div>
-
-        <div className="mt-8 text-center">
-          <Link
-            href="/start"
-            className="rounded-lg bg-accent-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-accent-500 transition-colors"
-          >
-            Start Intake Online
-          </Link>
-        </div>
+        <p className="mt-6 text-sm text-brand-500 text-center">
+          Intake responses within 8 hours or by the end of the business day.
+        </p>
       </div>
     </div>
     </>

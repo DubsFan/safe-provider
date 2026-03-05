@@ -59,24 +59,52 @@ export default function CountiesPage() {
           ))}
         </div>
 
-        <div className="mt-16 max-w-2xl mx-auto">
-          <h2 className="text-2xl font-semibold text-brand-900 mb-4">Why Your County Matters</h2>
-          <p className="text-brand-700">
-            Each county has its own family court and requirements for supervised visitation providers.
-            SafePair is familiar with local court procedures and can help ensure your visits are
-            compliant with your county&apos;s requirements.
-          </p>
+        {/* Why your county matters — image integrated with copy */}
+        <div className="mt-16 max-w-3xl mx-auto flex flex-col sm:flex-row gap-6 items-start">
+          <div className="shrink-0 w-full sm:w-48">
+            <Image
+              src="/images/service-documentation.webp"
+              alt="Professional writing on a court documentation clipboard"
+              width={192}
+              height={144}
+              className="w-full rounded-xl shadow-sm"
+            />
+          </div>
+          <div>
+            <h2 className="text-2xl font-semibold text-brand-900 mb-3">Why Your County Matters</h2>
+            <p className="text-brand-700">
+              Each county has its own family court and requirements for supervised visitation providers.
+              SafePair is familiar with local court procedures and can help ensure your visits are
+              compliant with your county&apos;s requirements.
+            </p>
+          </div>
         </div>
 
-        {/* Accent image */}
-        <div className="mt-12 max-w-xs mx-auto">
-          <Image
-            src="/images/community-coloring.webp"
-            alt="Parent and child drawing together at a community center"
-            width={320}
-            height={240}
-            className="w-full rounded-xl shadow-sm"
-          />
+        {/* What visits look like — two families, two settings */}
+        <div className="mt-12 max-w-3xl mx-auto">
+          <h2 className="text-xl font-semibold text-brand-900 text-center mb-6">What Visits Look Like</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="rounded-xl overflow-hidden shadow-sm border border-brand-500/10">
+              <Image
+                src="/images/community-coloring.webp"
+                alt="Parent and child coloring together at a community center table"
+                width={400}
+                height={200}
+                className="w-full h-36 object-cover"
+              />
+              <p className="p-4 text-sm text-brand-700">Coloring and drawing at a community center — a calm, structured activity led by the parent with a monitor present.</p>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-sm border border-brand-500/10">
+              <Image
+                src="/images/park-visit-2.webp"
+                alt="Father and son drawing together at an outdoor park table"
+                width={400}
+                height={200}
+                className="w-full h-36 object-cover"
+              />
+              <p className="p-4 text-sm text-brand-700">Drawing together at a park — outdoor visits give families space to connect naturally while the monitor observes.</p>
+            </div>
+          </div>
         </div>
 
         {/* CTA */}

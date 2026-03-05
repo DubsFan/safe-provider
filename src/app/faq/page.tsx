@@ -107,36 +107,44 @@ export default function FaqPage() {
             </div>
           </div>
 
-          {/* Inline images */}
-          <div className="mt-12 grid grid-cols-2 gap-4">
-            <Image
-              src="/images/park-visit-1.webp"
-              alt="Father and daughter drawing together on a park bench"
-              width={400}
-              height={300}
-              className="w-full rounded-xl shadow-sm"
-            />
-            <Image
-              src="/images/private-hallway.webp"
-              alt="Private office hallway with secure door — discretion and safety"
-              width={400}
-              height={300}
-              className="w-full rounded-xl shadow-sm"
-            />
+          {/* Still have questions — image with reassurance copy */}
+          <div className="mt-16 rounded-xl bg-brand-50 overflow-hidden">
+            <div className="flex flex-col sm:flex-row">
+              <div className="shrink-0 sm:w-48">
+                <Image
+                  src="/images/private-hallway.webp"
+                  alt="Private office hallway with secure door — discretion and safety"
+                  width={192}
+                  height={240}
+                  className="w-full h-40 sm:h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h2 className="text-xl font-semibold text-brand-900 mb-2">Still Have Questions?</h2>
+                <p className="text-brand-700 mb-3">
+                  Every family&apos;s situation is different. If your question isn&apos;t answered above, reach out directly — we respond within 8 business hours.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link href="/contact" className="text-sm font-semibold text-accent-600 hover:text-accent-500">Contact us &rarr;</Link>
+                  <Link href="/how-it-works" className="text-sm font-semibold text-accent-600 hover:text-accent-500">See how it works &rarr;</Link>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Trust badges — compact */}
-          <div className="mt-8 max-w-sm mx-auto">
-            <Image
-              src="/images/trust-icons.webp"
-              alt="Background checks, certified training, confidentiality, neutral supervision"
-              width={400}
-              height={100}
-              className="w-full rounded-lg opacity-80"
-            />
+          {/* Compliance pills */}
+          <div className="mt-8 text-center">
+            <p className="text-sm text-brand-600 mb-3">Every session backed by California Standard 5.20 compliance</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {["Background Checks", "Certified Training", "Strict Confidentiality", "Neutral Supervision", "Court-Ready Docs"].map((label) => (
+                <span key={label} className="rounded-full bg-brand-100 px-3 py-1 text-xs font-medium text-brand-700">
+                  {label}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-10 text-center">
             <Link
               href="/start"
               className="rounded-lg bg-accent-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-accent-500 transition-colors"

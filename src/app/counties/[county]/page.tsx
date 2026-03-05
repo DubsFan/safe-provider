@@ -170,31 +170,33 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                 </div>
               </div>
 
-              {/* Accent image */}
-              <div className="mt-8 max-w-xs">
-                <Image
-                  src="/images/service-visitation.webp"
-                  alt="Parent and child reading together at a library table"
-                  width={320}
-                  height={240}
-                  className="w-full rounded-xl shadow-sm"
-                />
+              {/* What to have ready — image paired with checklist */}
+              <div className="mt-8 rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+                <div className="flex flex-col sm:flex-row">
+                  <div className="shrink-0 sm:w-40">
+                    <Image
+                      src="/images/intake-flatlay.webp"
+                      alt="Notebook, pen, and ID badge on a desk — ready for intake"
+                      width={160}
+                      height={240}
+                      className="w-full h-40 sm:h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h2 className="text-xl font-semibold text-brand-900 mb-4">What to Have Ready</h2>
+                    <ol className="space-y-2">
+                      {CHECKLIST.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-brand-700">
+                          <span className="shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-900 flex items-center justify-center text-sm font-semibold">{i + 1}</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                </div>
               </div>
 
-              {/* What to have ready */}
-              <div className="mt-8 rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
-                <h2 className="text-xl font-semibold text-brand-900 mb-4">What to Have Ready</h2>
-                <ol className="space-y-2">
-                  {CHECKLIST.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-brand-700">
-                      <span className="shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-900 flex items-center justify-center text-sm font-semibold">{i + 1}</span>
-                      {item}
-                    </li>
-                  ))}
-                </ol>
-              </div>
-
-              {/* Compliance with trust badges */}
+              {/* Compliance — text pills instead of dumped image */}
               <div className="mt-8 rounded-xl bg-brand-100 p-6">
                 <h2 className="text-xl font-semibold text-brand-900 mb-3">Provider Compliance</h2>
                 <ul className="space-y-2">
@@ -202,14 +204,12 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                     <li key={i} className="text-sm text-brand-700">{bullet}</li>
                   ))}
                 </ul>
-                <div className="mt-4 max-w-sm">
-                  <Image
-                    src="/images/trust-icons.webp"
-                    alt="Background checks, certified training, confidentiality, neutral supervision"
-                    width={400}
-                    height={100}
-                    className="w-full rounded-lg opacity-80"
-                  />
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {["Background Checks", "Certified Training", "Strict Confidentiality", "Neutral Supervision", "Flexible Scheduling", "Court-Ready Docs"].map((label) => (
+                    <span key={label} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-brand-700 shadow-sm">
+                      {label}
+                    </span>
+                  ))}
                 </div>
               </div>
 

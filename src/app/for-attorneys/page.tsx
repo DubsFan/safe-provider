@@ -99,35 +99,30 @@ export default function ForAttorneysPage() {
             </div>
           </div>
 
-          {/* Inline images */}
-          <div className="mt-8 grid grid-cols-2 gap-4">
-            <Image
-              src="/images/service-documentation.webp"
-              alt="Professional writing on a court documentation clipboard"
-              width={400}
-              height={300}
-              className="w-full rounded-xl shadow-sm"
-            />
-            <Image
-              src="/images/private-hallway.webp"
-              alt="Private office hallway with secure door — discretion and safety"
-              width={400}
-              height={300}
-              className="w-full rounded-xl shadow-sm"
-            />
-          </div>
-
-          {/* SafePair handles */}
-          <div className="mt-8 rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
-            <h2 className="text-xl font-semibold text-brand-900 mb-4">SafePair Handles</h2>
-            <ul className="space-y-2">
-              {SAFEPAIR_HANDLES.map((item, i) => (
-                <li key={i} className="text-brand-700 flex items-start gap-2">
-                  <span className="text-accent-600 mt-1">&#10003;</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+          {/* SafePair handles — image integrated */}
+          <div className="mt-8 rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+            <div className="flex flex-col sm:flex-row">
+              <div className="shrink-0 sm:w-48">
+                <Image
+                  src="/images/service-documentation.webp"
+                  alt="Professional writing visit notes on a court documentation clipboard"
+                  width={192}
+                  height={280}
+                  className="w-full h-40 sm:h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h2 className="text-xl font-semibold text-brand-900 mb-4">SafePair Handles</h2>
+                <ul className="space-y-2">
+                  {SAFEPAIR_HANDLES.map((item, i) => (
+                    <li key={i} className="text-brand-700 flex items-start gap-2">
+                      <span className="text-accent-600 mt-1">&#10003;</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
           {/* Referral steps */}

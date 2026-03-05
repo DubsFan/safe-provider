@@ -53,77 +53,113 @@ export default async function SupervisedExchangePage() {
     <div className="py-16">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 
-        <div className="mt-8 space-y-6">
-          <div>
-            <h2 className="text-2xl font-semibold text-brand-900">Who Needs It</h2>
-            <p className="mt-2 text-brand-700">
-              Families with a court order requiring supervised exchange, or families who want a neutral third party present during custody transitions.
+        {/* Narrative intro */}
+        <p className="mt-4 text-brand-700 text-lg">
+          Custody transitions are stressful. A supervised exchange means a trained, neutral monitor manages the handoff so both parents and the child feel safe.
+        </p>
+
+        {/* Who / Duration / Where — compact grid */}
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="rounded-xl bg-brand-50 p-5">
+            <h2 className="text-sm font-semibold text-brand-900 uppercase tracking-wide">Who Needs It</h2>
+            <p className="mt-2 text-sm text-brand-700">
+              Families with a court order requiring supervised exchange, or parents who want a neutral third party during transitions.
             </p>
           </div>
-
-          <div>
-            <h2 className="text-2xl font-semibold text-brand-900">Typical Duration</h2>
-            <p className="mt-2 text-brand-700">15-30 minutes per exchange.</p>
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-semibold text-brand-900">Where</h2>
-            <p className="mt-2 text-brand-700">
-              At a public location agreed upon by both parties and the provider.
+          <div className="rounded-xl bg-brand-50 p-5">
+            <h2 className="text-sm font-semibold text-brand-900 uppercase tracking-wide">Duration</h2>
+            <p className="mt-2 text-sm text-brand-700">
+              15-30 minutes per exchange. Quick, structured, and calm.
             </p>
           </div>
-
-          <div>
-            <h2 className="text-2xl font-semibold text-brand-900">What the Monitor Does</h2>
-            <p className="mt-2 text-brand-700">
-              Manages the handoff so both parents arrive and leave at separate times or in a structured sequence. Documents the exchange.
+          <div className="rounded-xl bg-brand-50 p-5">
+            <h2 className="text-sm font-semibold text-brand-900 uppercase tracking-wide">Location</h2>
+            <p className="mt-2 text-sm text-brand-700">
+              A public location agreed upon by both parties and the provider.
             </p>
-          </div>
-
-          <div className="rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
-            <h2 className="text-xl font-semibold text-brand-900 mb-4">Pricing</h2>
-            <ul className="space-y-2 text-brand-700">
-              <li className="flex justify-between">
-                <span>Intake (per person)</span>
-                <span className="font-semibold text-brand-900">{centsToUSD(intake)}</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Per exchange</span>
-                <span className="font-semibold text-brand-900">{centsToUSD(exchange)}</span>
-              </li>
-              <li className="flex justify-between border-t border-brand-500/20 pt-2">
-                <span>Platform fee (per case)</span>
-                <span className="font-semibold text-brand-900">{centsToUSD(platform)}</span>
-              </li>
-            </ul>
           </div>
         </div>
 
-        {/* Accent image */}
-        <div className="mt-8 max-w-xs">
-          <Image
-            src="/images/park-visit-1.webp"
-            alt="Father and daughter drawing together on a park bench"
-            width={320}
-            height={240}
-            className="w-full rounded-xl shadow-sm"
-          />
+        {/* What the monitor does — image paired with copy */}
+        <div className="mt-12 flex flex-col sm:flex-row gap-6 items-start">
+          <div className="shrink-0 w-full sm:w-48">
+            <Image
+              src="/images/private-hallway.webp"
+              alt="Private office hallway with secure door — discretion and safety"
+              width={192}
+              height={144}
+              className="w-full rounded-xl shadow-sm"
+            />
+          </div>
+          <div>
+            <h2 className="text-xl font-semibold text-brand-900">How the Exchange Works</h2>
+            <p className="mt-2 text-brand-700">
+              The monitor ensures both parents arrive and leave at separate times or in a structured sequence. There is no direct contact between parents unless the court order allows it. Every exchange is documented.
+            </p>
+          </div>
         </div>
 
-        {/* Trust icons — compact */}
-        <div className="mt-8 max-w-sm">
-          <Image
-            src="/images/trust-icons.webp"
-            alt="Background checks, certified training, confidentiality, neutral supervision"
-            width={400}
-            height={100}
-            className="w-full rounded-lg opacity-80"
-          />
+        {/* After the exchange — image paired with copy, reversed */}
+        <div className="mt-10 flex flex-col sm:flex-row-reverse gap-6 items-start">
+          <div className="shrink-0 w-full sm:w-48">
+            <Image
+              src="/images/park-visit-1.webp"
+              alt="Father and daughter drawing together on a park bench after an exchange"
+              width={192}
+              height={144}
+              className="w-full rounded-xl shadow-sm"
+            />
+          </div>
+          <div>
+            <h2 className="text-xl font-semibold text-brand-900">After the Handoff</h2>
+            <p className="mt-2 text-brand-700">
+              Once the exchange is complete, the visiting parent has their scheduled time with the child. The transition is over in minutes, but the peace of mind lasts all day.
+            </p>
+          </div>
         </div>
 
-        {/* Available counties */}
+        {/* Pricing */}
+        <div className="mt-12 rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
+          <h2 className="text-xl font-semibold text-brand-900 mb-4">Pricing</h2>
+          <ul className="space-y-2 text-brand-700">
+            <li className="flex justify-between">
+              <span>Intake (per person)</span>
+              <span className="font-semibold text-brand-900">{centsToUSD(intake)}</span>
+            </li>
+            <li className="flex justify-between">
+              <span>Per exchange</span>
+              <span className="font-semibold text-brand-900">{centsToUSD(exchange)}</span>
+            </li>
+            <li className="flex justify-between border-t border-brand-500/20 pt-2">
+              <span>Platform fee (per case)</span>
+              <span className="font-semibold text-brand-900">{centsToUSD(platform)}</span>
+            </li>
+          </ul>
+          <p className="mt-3 text-sm text-brand-500">
+            Provider rates from the Santa Clara County court provider list.{" "}
+            <Link href="/pricing" className="text-accent-600 hover:text-accent-500 font-semibold">See full pricing &rarr;</Link>
+          </p>
+        </div>
+
+        {/* Compliance — text pills */}
+        <div className="mt-12 rounded-xl bg-brand-100 p-6">
+          <h2 className="text-xl font-semibold text-brand-900 mb-3">California Standard 5.20 Compliant</h2>
+          <p className="text-brand-700">
+            Your monitor has completed criminal background checks, mandated training, and follows court-defined rules for neutrality and documentation.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {["Background Checks", "Certified Training", "Strict Confidentiality", "Neutral Supervision", "Court-Ready Docs"].map((label) => (
+              <span key={label} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-brand-700 shadow-sm">
+                {label}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Counties */}
         <div className="mt-12">
-          <h2 className="text-2xl font-semibold text-brand-900 mb-4">Available in 4 Bay Area Counties</h2>
+          <h2 className="text-xl font-semibold text-brand-900 mb-2">Available in 4 Bay Area Counties</h2>
+          <p className="text-sm text-brand-600 mb-4">Select your county to see local details and start intake.</p>
           <div className="flex flex-wrap gap-3">
             {COUNTIES.filter((c) => c.status === "live").map((county) => (
               <Link
@@ -138,12 +174,12 @@ export default async function SupervisedExchangePage() {
         </div>
 
         {/* Cross-links */}
-        <div className="mt-8 flex flex-wrap gap-4 text-sm">
+        <div className="mt-10 flex flex-wrap gap-4 text-sm">
           <Link href="/services/supervised-visitation" className="text-accent-600 hover:text-accent-500 font-semibold">Supervised Visitation &rarr;</Link>
-          <Link href="/pricing" className="text-accent-600 hover:text-accent-500 font-semibold">See Full Pricing &rarr;</Link>
           <Link href="/how-it-works" className="text-accent-600 hover:text-accent-500 font-semibold">How It Works &rarr;</Link>
         </div>
 
+        {/* CTA */}
         <div className="mt-12 text-center">
           <Link
             href="/start"
@@ -151,6 +187,9 @@ export default async function SupervisedExchangePage() {
           >
             Start Intake
           </Link>
+          <p className="mt-3 text-sm text-brand-500">
+            Response within 8 hours or by end of business day.
+          </p>
         </div>
       </div>
     </div>
