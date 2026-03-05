@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata = buildMetadata({
@@ -65,15 +66,25 @@ export default function AboutSafePairPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-brand-900 py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-white sm:text-5xl">
-            Our Provider Partner
-          </h1>
-          <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
-            All supervised visitation and exchange services booked through
-            SafeProvider are delivered by SafePair.
-          </p>
+      <section className="relative bg-brand-900 overflow-hidden">
+        <Image
+          src="/images/safepair hero image.jpg.avif"
+          alt="SafePair supervised visitation services"
+          width={1920}
+          height={600}
+          className="w-full h-64 sm:h-80 object-cover object-center opacity-40"
+          priority
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center px-4">
+            <h1 className="text-4xl font-bold text-white sm:text-5xl">
+              Our Provider Partner
+            </h1>
+            <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
+              All supervised visitation and exchange services booked through
+              SafeProvider are delivered by SafePair.
+            </p>
+          </div>
         </div>
       </section>
 

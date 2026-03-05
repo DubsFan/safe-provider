@@ -98,7 +98,7 @@ export default function CountiesPage() {
           </div>
 
           {/* What to expect — paired image + copy */}
-          <div className="mt-16 rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
+          <div className="mt-10 rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
             <div className="flex flex-col sm:flex-row">
               <div className="shrink-0 sm:w-56">
                 <Image

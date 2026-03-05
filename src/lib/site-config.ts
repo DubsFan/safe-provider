@@ -2,8 +2,8 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://safeprovide
 export const SITE_NAME = "SafeProvider";
 export const SITE_DESCRIPTION =
   "Court-compliant supervised visitation and exchange intake. Start online, pay securely, SafePair handles the rest.";
-export const PHONE = "(510) 314-8298";
-export const EMAIL = "gg@oog.life";
+export const PHONE = "510-434-6586";
+export const EMAIL = "safepair.net@gmail.com";
 
 export const COUNTIES = [
   { slug: "santa-clara", name: "Santa Clara County", status: "live" as const, noindex: false, sortOrder: 1 },

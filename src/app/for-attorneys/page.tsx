@@ -80,7 +80,7 @@ export default function ForAttorneysPage() {
 
           {/* SafeProvider handles vs does not handle */}
           <div className="mt-12 rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
-            <div className="grid grid-cols-1 sm:grid-cols-2">
+            <div className="grid grid-cols-2">
               <div className="bg-surface-muted p-4 font-semibold text-text-heading border-b border-border-default">
                 SafeProvider Handles
               </div>
@@ -132,7 +132,7 @@ export default function ForAttorneysPage() {
           {/* Referral steps */}
           <div className="mt-12">
             <h2 className="text-2xl font-semibold text-text-heading text-center mb-8">How to Refer</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 { step: "1", title: "Direct Your Client", desc: "Send your client to safeprovider.org/start or share referral details via our contact page." },
                 { step: "2", title: "Client Completes Intake", desc: "Client completes intake and pays through the platform." },

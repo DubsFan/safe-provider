@@ -264,9 +264,9 @@ export default function PricingPage() {
             <p className="text-sm text-text-body mb-4">
               Your monitor has completed criminal background checks, mandated training, and follows court-defined rules for neutrality and documentation.
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="grid grid-cols-3 gap-2">
               {["Background Checks", "Certified Training", "Strict Confidentiality", "Neutral Supervision", "Flexible Scheduling", "Court-Ready Docs"].map((label) => (
-                <span key={label} className="rounded-full bg-surface-card px-3 py-1 text-xs font-medium text-text-body shadow-sm">
+                <span key={label} className="rounded-full bg-surface-card px-3 py-1 text-xs font-medium text-text-body shadow-sm text-center">
                   {label}
                 </span>
               ))}

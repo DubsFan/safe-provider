@@ -49,7 +49,7 @@ export function Header() {
               alt="SafeProvider"
               width={180}
               height={48}
-              className="h-8 w-auto sm:h-10 dark:invert"
+              className="h-8 w-auto sm:h-10 min-w-[120px] sm:min-w-[150px] dark:invert"
               priority
             />
           </Link>

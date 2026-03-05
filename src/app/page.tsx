@@ -274,24 +274,17 @@ export default function HomePage() {
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-10 items-center">
-            <div className="lg:w-1/2">
-              <div className="relative rounded-2xl overflow-hidden shadow-md">
-                <Image
-                  src="/images/team-headshots.webp"
-                  alt="Four SafePair supervised visitation providers"
-                  width={600}
-                  height={500}
-                  className="w-full h-auto object-contain"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-900/70 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <p className="text-white font-semibold">Meet the Team</p>
-                  <p className="text-gray-200 text-sm mt-1">Background-checked, certified, and committed to your child&apos;s safety.</p>
-                </div>
-              </div>
+            <div className="lg:w-1/2 flex items-center justify-center">
+              <Image
+                src="/images/safepair logo.png"
+                alt="SafePair — professional supervised visitation provider"
+                width={400}
+                height={400}
+                className="w-64 sm:w-80 h-auto dark:invert"
+              />
             </div>
             <div className="lg:w-1/2">
-              <h2 className="text-2xl font-semibold text-text-heading mb-4">About SafeProvider</h2>
+              <h2 className="text-2xl font-semibold text-text-heading mb-4">About SafePair</h2>
               <p className="text-text-body mb-4">
                 SafeProvider manages intake, scheduling, and payment for supervised visitation
                 and custody exchange services. We are not a law firm and we are not the
