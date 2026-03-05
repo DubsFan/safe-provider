@@ -340,7 +340,7 @@ export default function StartPage() {
           )}
 
           {error && (
-            <div className="mt-4 rounded-lg bg-red-50 p-4 text-sm text-error">
+            <div className="mt-4 rounded-lg bg-red-50 dark:bg-red-800/20 p-4 text-sm text-error">
               {error}
             </div>
           )}

@@ -179,7 +179,7 @@ export default function ContactPage() {
               <div>
                 <Link
                   href="/start"
-                  className="inline-flex items-center gap-2 rounded-lg bg-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-surface-accent0 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-lg bg-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-accent-500 transition-colors"
                 >
                   Start Intake Online
                   <ArrowRight className="h-4 w-4" />

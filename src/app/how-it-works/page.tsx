@@ -106,7 +106,7 @@ export default function HowItWorksPage() {
                     height={180}
                     className="w-full rounded-lg"
                   />
-                  <div className="mt-3 flex justify-between text-[10px] text-brand-400 font-medium">
+                  <div className="mt-3 flex justify-between text-[10px] text-text-muted font-medium">
                     <span>Intake</span>
                     <span>Schedule</span>
                     <span>Meet</span>
