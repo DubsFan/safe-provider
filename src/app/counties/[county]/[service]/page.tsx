@@ -300,6 +300,27 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
                 </div>
               </div>
 
+              {/* Inline video — warm moment */}
+              <div className="rounded-xl overflow-hidden shadow-sm">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster={isVisitation ? "/images/park-visit-1.webp" : "/images/community-coloring.webp"}
+                  className="w-full h-48 sm:h-56 object-cover object-[center_35%]"
+                >
+                  <source src={isVisitation ? "/images/library-loop.mp4" : "/images/father-daughter-loop.mp4"} type="video/mp4" />
+                </video>
+                <div className="bg-surface-subtle p-4">
+                  <p className="text-xs text-text-muted">
+                    {isVisitation
+                      ? "Every visit is supervised by a trained, neutral professional focused on your child's safety."
+                      : "Structured exchanges reduce stress and protect your child during transitions."}
+                  </p>
+                </div>
+              </div>
+
               {/* Standard 5.20 compliance */}
               <div className="rounded-xl bg-surface-muted p-6">
                 <h2 className="text-lg font-semibold text-text-heading mb-3">California Standard 5.20 Compliance</h2>

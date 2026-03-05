@@ -76,7 +76,7 @@ export default function HowItWorksPage() {
                         {item.step}
                       </div>
                       {idx < STEPS.length - 1 && (
-                        <div className="w-px flex-1 bg-brand-200 mt-2" />
+                        <div className="w-px flex-1 bg-border-default mt-2" />
                       )}
                     </div>
                     <div className="pb-2">
