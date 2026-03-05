@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  /* Static brand tokens (unchanged across themes) */
+  /* Static brand tokens (unchanged across themes — inlined for perf) */
   --color-brand-900: #0F2C3D;
   --color-brand-700: #2F3A40;
   --color-brand-500: #64748B;
@@ -23,8 +23,10 @@
   --color-error: #DC2626;
   --color-warning: #F59E0B;
   --font-sans: "Inter", system-ui, sans-serif;
+}
 
-  /* Semantic surface tokens (light defaults) */
+@theme {
+  /* Semantic tokens — use CSS variables so .dark can override */
   --color-surface-page: #FFFFFF;
   --color-surface-card: #FFFFFF;
   --color-surface-muted: #F4F1EC;
@@ -33,12 +35,10 @@
   --color-surface-input: #FFFFFF;
   --color-surface-footer: #0F2C3D;
 
-  /* Semantic text tokens */
   --color-text-heading: #0F2C3D;
   --color-text-body: #2F3A40;
   --color-text-muted: #64748B;
 
-  /* Semantic border tokens */
   --color-border-default: rgba(100, 116, 139, 0.2);
   --color-border-input: rgba(100, 116, 139, 0.3);
 }
