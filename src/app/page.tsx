@@ -281,7 +281,7 @@ export default function HomePage() {
                   alt="Four SafePair supervised visitation providers"
                   width={600}
                   height={500}
-                  className="w-full h-80 object-cover object-[center_35%]"
+                  className="w-full h-auto object-contain"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-900/70 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
