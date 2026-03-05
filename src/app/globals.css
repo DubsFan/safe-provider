@@ -82,3 +82,11 @@ body {
   color: var(--color-text-body);
   font-family: var(--font-sans);
 }
+
+/* SafePair logo: black source → brand navy in light, white in dark */
+.safepair-logo {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(30%) saturate(800%) hue-rotate(160deg) brightness(92%) contrast(95%);
+}
+.dark .safepair-logo {
+  filter: brightness(0) invert(1);
+}

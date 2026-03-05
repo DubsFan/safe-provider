@@ -280,7 +280,7 @@ export default function HomePage() {
                 alt="SafePair — professional supervised visitation provider"
                 width={400}
                 height={400}
-                className="w-64 sm:w-80 h-auto dark:invert"
+                className="w-64 sm:w-80 h-auto safepair-logo"
               />
             </div>
             <div className="lg:w-1/2">

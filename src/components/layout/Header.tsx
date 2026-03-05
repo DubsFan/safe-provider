@@ -39,7 +39,7 @@ export function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-40 bg-surface-page border-b border-border-default">
+    <header className="sticky top-0 z-40 bg-surface-page/95 backdrop-blur-md border-b border-border-default shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-14 sm:h-16 items-center justify-between">
           {/* Logo — smaller on mobile */}
