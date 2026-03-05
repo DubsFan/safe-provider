@@ -13,8 +13,8 @@ const liveCounties = COUNTIES.filter((c) => c.status === "live");
 
 const COUNTY_IMAGES: Record<string, { src: string; alt: string }> = {
   "santa-clara": { src: "/images/father-son-library.webp", alt: "Father and son reading together at a library in Santa Clara County" },
-  alameda: { src: "/images/community-coloring.webp", alt: "Parent and child coloring at a community center in Alameda County" },
-  "contra-costa": { src: "/images/park-visit-1.webp", alt: "Father and daughter drawing at a park in Contra Costa County" },
+  alameda: { src: "/images/grandma-coffee.webp", alt: "Grandmother with coffee in a calm visitation setting in Alameda County" },
+  "contra-costa": { src: "/images/virtual-visit-2.webp", alt: "Virtual supervised visit in Contra Costa County" },
   "san-francisco": { src: "/images/virtual-visit-boy.webp", alt: "Boy on a supervised virtual visit in San Francisco County" },
 };
 
