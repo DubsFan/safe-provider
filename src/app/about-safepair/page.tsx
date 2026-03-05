@@ -65,18 +65,16 @@ const VIDEOS = [
 export default function AboutSafePairPage() {
   return (
     <>
-      {/* Hero — video with faces and kid */}
+      {/* Hero — safepair family boardwalk image */}
       <section className="relative bg-brand-900 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/images/safepair-hero.avif"
+        <Image
+          src="/images/safepair-hero.avif"
+          alt="Family walking together — SafePair supervised visitation"
+          width={1920}
+          height={600}
           className="w-full h-72 sm:h-80 md:h-96 lg:h-[28rem] object-cover object-[center_35%] opacity-40"
-        >
-          <source src="/images/dancing-park-loop.mp4" type="video/mp4" />
-        </video>
+          priority
+        />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
             <h1 className="text-4xl font-bold text-white sm:text-5xl">
