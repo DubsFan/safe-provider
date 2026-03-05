@@ -115,15 +115,18 @@ export default function HowItWorksPage() {
                   </div>
                 </div>
 
-                {/* Provider review image */}
+                {/* Visit preview video */}
                 <div className="rounded-xl overflow-hidden shadow-sm">
-                  <Image
-                    src="/images/provider-review.webp"
-                    alt="SafePair provider reviewing case documentation"
-                    width={400}
-                    height={300}
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster="/images/hero-visitation.webp"
                     className="w-full h-48 object-cover object-[center_35%]"
-                  />
+                  >
+                    <source src="/images/visitation-loop.mp4" type="video/mp4" />
+                  </video>
                   <div className="bg-brand-50 p-4">
                     <p className="text-xs text-brand-700">SafePair reviews every case independently within 1-2 business days before accepting.</p>
                   </div>
