@@ -103,6 +103,17 @@ export type PayoutRow = {
   updated_at: string;
 };
 
+export type LeadDocumentRow = {
+  id: string;
+  lead_id: string;
+  label: string;
+  file_name: string;
+  file_url: string;
+  file_size_bytes: number | null;
+  mime_type: string | null;
+  created_at: string;
+};
+
 export type EventLogRow = {
   id: string;
   entity_type: string;

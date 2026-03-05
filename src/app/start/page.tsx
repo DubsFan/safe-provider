@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { intakeSchema, type IntakeData, COUNTY_OPTIONS, SERVICE_OPTIONS } from "@/lib/validations/intake";
 import { captureUtm, getStoredUtm } from "@/lib/analytics/utm";
 import { track } from "@/lib/analytics/events";
 
-const STEPS = ["County & Service", "Family Details", "Contact Info", "Review & Pay"];
+const STEPS = ["County & Service", "Family Details", "Contact Info", "Documents", "Review & Pay"];
 
 const CHECKLIST = [
   "A valid government-issued photo ID for each adult",
@@ -18,11 +18,36 @@ const CHECKLIST = [
   "Names and ages of all children involved",
 ];
 
+const DOCUMENT_LABELS = [
+  "Driver's License / Photo ID",
+  "Court Order",
+  "Custody Agreement",
+  "Restraining Order",
+  "No-Contact Order",
+  "Stipulation",
+  "Parenting Plan",
+  "Attorney Letter",
+  "Income Documentation",
+  "Other",
+] as const;
+
+type UploadedDoc = {
+  id: string;
+  label: string;
+  file_name: string;
+  file_url: string;
+};
+
 export default function StartPage() {
   const [step, setStep] = useState(0);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [leadId, setLeadId] = useState<string | null>(null);
+  const [documents, setDocuments] = useState<UploadedDoc[]>([]);
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+  const [selectedLabel, setSelectedLabel] = useState<string>(DOCUMENT_LABELS[0]);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const {
     register,
@@ -45,41 +70,96 @@ export default function StartPage() {
 
   const values = watch();
 
+  async function ensureLeadCreated(): Promise<string> {
+    if (leadId) return leadId;
+
+    const utm = getStoredUtm();
+    const payload = { ...values, ...utm };
+
+    const leadRes = await fetch("/api/leads", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!leadRes.ok) throw new Error("Failed to create lead");
+    const result = await leadRes.json();
+    setLeadId(result.leadId);
+    return result.leadId;
+  }
+
   async function nextStep() {
     const fieldsPerStep: (keyof IntakeData)[][] = [
       ["county_slug", "service_slug"],
       ["petitioner_first", "petitioner_last", "adults_count", "has_court_order"],
       ["email", "phone"],
+      [], // Documents step — no form validation needed
       [],
     ];
     const valid = await trigger(fieldsPerStep[step]);
-    if (valid) setStep((s) => s + 1);
+    if (!valid) return;
+
+    // Before entering Documents step, create the lead so we have an ID for uploads
+    if (step === 2) {
+      try {
+        await ensureLeadCreated();
+      } catch {
+        setError("Failed to save your information. Please try again.");
+        return;
+      }
+    }
+
+    setStep((s) => s + 1);
   }
 
-  async function onSubmit(data: IntakeData) {
+  async function handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    setUploadError(null);
+
+    try {
+      const currentLeadId = await ensureLeadCreated();
+
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("leadId", currentLeadId);
+      formData.append("label", selectedLabel);
+
+      const res = await fetch("/api/documents", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Upload failed");
+      }
+
+      const { document } = await res.json();
+      setDocuments((prev) => [...prev, document]);
+      track("document_uploaded", { label: selectedLabel });
+    } catch (err) {
+      setUploadError(err instanceof Error ? err.message : "Upload failed");
+    } finally {
+      setUploading(false);
+      // Reset file input
+      if (fileInputRef.current) fileInputRef.current.value = "";
+    }
+  }
+
+  function removeDocument(docId: string) {
+    setDocuments((prev) => prev.filter((d) => d.id !== docId));
+  }
+
+  async function onSubmit() {
     setSubmitting(true);
     setError(null);
 
-    // Attach UTM
-    const utm = getStoredUtm();
-    const payload = { ...data, ...utm };
-
     try {
-      track("submit_intake", { county: data.county_slug, service: data.service_slug });
+      const currentLeadId = await ensureLeadCreated();
 
-      // Create lead (skip if already created on retry)
-      let currentLeadId = leadId;
-      if (!currentLeadId) {
-        const leadRes = await fetch("/api/leads", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-        if (!leadRes.ok) throw new Error("Failed to create lead");
-        const result = await leadRes.json();
-        currentLeadId = result.leadId;
-        setLeadId(currentLeadId);
-      }
+      track("submit_intake", { county: values.county_slug, service: values.service_slug, documents: documents.length });
 
       // Create checkout
       const checkoutRes = await fetch("/api/checkout", {
@@ -148,7 +228,7 @@ export default function StartPage() {
           ))}
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-8">
+        <form onSubmit={(e) => { e.preventDefault(); onSubmit(); }} className="mt-8">
           {/* Step 1: County & Service */}
           {step === 0 && (
             <div className="space-y-6">
@@ -300,8 +380,97 @@ export default function StartPage() {
             </div>
           )}
 
-          {/* Step 4: Review & Pay */}
+          {/* Step 4: Documents */}
           {step === 3 && (
+            <div className="space-y-6">
+              <div className="rounded-xl border border-border-default bg-surface-card p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-text-heading mb-2">Upload Documents</h3>
+                <p className="text-sm text-text-muted mb-6">
+                  Upload any relevant documents — driver&apos;s license, court orders, restraining orders, custody agreements, etc.
+                  Select a label for each document so SafePair knows what it is. You can take a photo on your phone or upload a file.
+                </p>
+
+                {/* Label selector */}
+                <div className="mb-4">
+                  <label htmlFor="doc-label" className="block text-sm font-semibold text-text-heading mb-2">
+                    Document Type
+                  </label>
+                  <select
+                    id="doc-label"
+                    value={selectedLabel}
+                    onChange={(e) => setSelectedLabel(e.target.value)}
+                    className="w-full rounded-lg border border-border-input bg-surface-input px-4 py-3 text-text-heading focus:outline-none focus:ring-2 focus:ring-accent-600"
+                  >
+                    {DOCUMENT_LABELS.map((label) => (
+                      <option key={label} value={label}>{label}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* File input — supports camera on mobile */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <label className={`flex-1 flex items-center justify-center gap-2 rounded-lg border-2 border-dashed border-border-input px-4 py-4 text-sm font-semibold cursor-pointer transition-colors ${uploading ? "opacity-50 pointer-events-none" : "hover:border-accent-600 hover:bg-surface-accent/30"}`}>
+                    <svg className="w-5 h-5 text-text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                    </svg>
+                    <span className="text-text-heading">
+                      {uploading ? "Uploading..." : "Choose File or Take Photo"}
+                    </span>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept="image/*,.pdf,.doc,.docx"
+                      capture="environment"
+                      onChange={handleFileUpload}
+                      disabled={uploading}
+                      className="sr-only"
+                    />
+                  </label>
+                </div>
+
+                <p className="mt-2 text-xs text-text-muted">
+                  PDF, JPG, PNG, HEIC, or Word. Max 10MB per file.
+                </p>
+
+                {uploadError && (
+                  <p className="mt-3 text-sm text-error">{uploadError}</p>
+                )}
+              </div>
+
+              {/* Uploaded documents list */}
+              {documents.length > 0 && (
+                <div className="rounded-xl border border-border-default bg-surface-card p-6 shadow-sm">
+                  <h3 className="text-base font-semibold text-text-heading mb-4">
+                    Uploaded Documents ({documents.length})
+                  </h3>
+                  <ul className="space-y-3">
+                    {documents.map((doc) => (
+                      <li key={doc.id} className="flex items-center justify-between gap-3 rounded-lg bg-surface-muted px-4 py-3">
+                        <div className="min-w-0">
+                          <p className="text-sm font-semibold text-text-heading truncate">{doc.label}</p>
+                          <p className="text-xs text-text-muted truncate">{doc.file_name}</p>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => removeDocument(doc.id)}
+                          className="shrink-0 text-xs font-semibold text-error hover:underline"
+                        >
+                          Remove
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <p className="text-sm text-text-muted">
+                Documents are optional but help SafePair review your case faster. You can skip this step and provide documents later.
+              </p>
+            </div>
+          )}
+
+          {/* Step 5: Review & Pay */}
+          {step === 4 && (
             <div className="space-y-4">
               <div className="rounded-xl border border-border-default bg-surface-card p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-text-heading mb-4">Review Your Information</h3>
@@ -330,7 +499,24 @@ export default function StartPage() {
                     <dt>Adults</dt>
                     <dd className="font-semibold text-text-heading">{values.adults_count}</dd>
                   </div>
+                  <div className="flex justify-between">
+                    <dt>Documents</dt>
+                    <dd className="font-semibold text-text-heading">{documents.length} uploaded</dd>
+                  </div>
                 </dl>
+
+                {documents.length > 0 && (
+                  <div className="mt-4 pt-4 border-t border-border-default">
+                    <p className="text-xs font-semibold text-text-heading mb-2">Documents:</p>
+                    <ul className="space-y-1">
+                      {documents.map((doc) => (
+                        <li key={doc.id} className="text-xs text-text-muted">
+                          {doc.label} — {doc.file_name}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
 
               <div className="rounded-lg bg-surface-accent p-4 text-sm text-text-heading">
@@ -365,7 +551,7 @@ export default function StartPage() {
                 onClick={nextStep}
                 className="rounded-lg bg-accent-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-accent-500 transition-colors"
               >
-                Continue
+                {step === 3 ? (documents.length > 0 ? "Continue" : "Skip & Continue") : "Continue"}
               </button>
             ) : (
               <button
@@ -382,4 +568,3 @@ export default function StartPage() {
     </div>
   );
 }
-
