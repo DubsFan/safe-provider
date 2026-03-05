@@ -55,11 +55,11 @@ export default function ForAttorneysPage() {
       {/* Hero with image */}
       <section className="relative bg-brand-900 overflow-hidden">
         <Image
-          src="/images/attorney-review.webp"
-          alt="Attorney reviewing court documents and scheduling calendar at desk"
+          src="/images/provider-review.webp"
+          alt="SafePair provider reviewing case documentation in a professional conference room"
           width={1400}
           height={500}
-          className="w-full h-64 sm:h-80 object-cover opacity-60"
+          className="w-full h-64 sm:h-80 object-cover object-top opacity-60"
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center">

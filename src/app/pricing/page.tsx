@@ -30,11 +30,11 @@ export default function PricingPage() {
       {/* Hero banner */}
       <section className="relative bg-brand-900 overflow-hidden">
         <Image
-          src="/images/community-coloring.webp"
-          alt="Parent and child drawing together at a community center table"
-          width={1400}
-          height={500}
-          className="w-full h-64 sm:h-80 object-cover opacity-40"
+          src="/images/father-son-library.webp"
+          alt="Father reading with his son at a library table"
+          width={2400}
+          height={1792}
+          className="w-full h-64 sm:h-80 object-cover object-[center_25%] opacity-40"
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center">

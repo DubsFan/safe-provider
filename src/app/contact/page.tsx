@@ -104,11 +104,11 @@ export default function ContactPage() {
           <div className="flex flex-col sm:flex-row">
             <div className="shrink-0 sm:w-44">
               <Image
-                src="/images/virtual-visit.webp"
-                alt="Child participating in a supervised video visit on a laptop"
-                width={176}
-                height={200}
-                className="w-full h-36 sm:h-full object-cover"
+                src="/images/virtual-visit-boy.webp"
+                alt="Young boy participating in a supervised virtual visit on a laptop with headphones"
+                width={400}
+                height={224}
+                className="w-full h-36 sm:h-full object-cover object-top"
               />
             </div>
             <div className="p-6">

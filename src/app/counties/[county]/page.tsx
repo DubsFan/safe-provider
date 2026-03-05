@@ -100,11 +100,11 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
       {/* Hero banner */}
       <section className="relative bg-brand-900 overflow-hidden">
         <Image
-          src="/images/landing-hero-alt2.webp"
-          alt={`Supervised visitation and custody exchange services in ${countyData.name}`}
-          width={1400}
-          height={500}
-          className="w-full h-64 sm:h-80 object-cover opacity-40"
+          src="/images/father-son-library.webp"
+          alt={`Father and son reading together during a supervised visit in ${countyData.name}`}
+          width={2400}
+          height={1792}
+          className="w-full h-64 sm:h-80 object-cover object-[center_25%] opacity-40"
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center">

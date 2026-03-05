@@ -12,13 +12,13 @@ export const defaultMetadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     locale: "en_US",
-    images: [{ url: `${SITE_URL}/images/landing-hero.webp`, width: 1400, height: 700 }],
+    images: [{ url: `${SITE_URL}/images/father-son-library.webp`, width: 2400, height: 1792 }],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
-    images: [`${SITE_URL}/images/landing-hero.webp`],
+    images: [`${SITE_URL}/images/father-son-library.webp`],
   },
 };
 

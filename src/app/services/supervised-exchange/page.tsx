@@ -32,14 +32,16 @@ export default async function SupervisedExchangePage() {
 
       {/* Hero banner */}
       <section className="relative bg-brand-900 overflow-hidden">
-        <Image
-          src="/images/hero-exchange.webp"
-          alt="Neutral monitor facilitating a supervised custody exchange between parents"
-          width={1400}
-          height={500}
-          className="w-full h-64 sm:h-80 object-cover opacity-50"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/exchange-school.webp"
+          className="w-full h-64 sm:h-80 object-cover object-[center_40%] opacity-50"
+        >
+          <source src="/images/exchange-loop.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
             <h1 className="text-3xl sm:text-4xl font-bold text-white max-w-3xl mx-auto">Supervised Exchange</h1>

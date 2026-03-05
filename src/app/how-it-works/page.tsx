@@ -36,14 +36,16 @@ export default function HowItWorksPage() {
 
       {/* Hero banner */}
       <section className="relative bg-brand-900 overflow-hidden">
-        <Image
-          src="/images/hero-visitation.webp"
-          alt="Parent and child playing a board game during a supervised visitation session"
-          width={1400}
-          height={500}
-          className="w-full h-64 sm:h-80 object-cover opacity-40"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/father-son-library.webp"
+          className="w-full h-64 sm:h-80 object-cover object-[center_25%] opacity-40"
+        >
+          <source src="/images/library-loop.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
             <h1 className="text-3xl sm:text-4xl font-bold text-white max-w-3xl mx-auto">How It Works</h1>
