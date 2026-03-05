@@ -141,12 +141,12 @@ export default function AboutSafePairPage() {
               {
                 title: "Reports to Parents & Courts",
                 desc: "Detailed documentation provided to parents and/or courts after each visit or exchange.",
-                video: "/images/clipboard-loop.mp4",
+                video: "/images/reading-loop.mp4",
               },
               {
                 title: "Witness Testimony",
                 desc: "Witness testimonies provided as needed or requested by parents, attorneys, or courts.",
-                video: "/images/father-daughter-loop.mp4",
+                video: "/images/handoff-loop.mp4",
               },
             ].map((item) => (
               <div
