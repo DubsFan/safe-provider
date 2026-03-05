@@ -110,10 +110,10 @@ export default function ForAttorneysPage() {
                   loop
                   muted
                   playsInline
-                  poster="/images/service-documentation.webp"
+                  poster="/images/reading-poster.webp"
                   className="w-full h-40 sm:h-full object-cover object-[center_35%]"
                 >
-                  <source src="/images/clipboard-loop.mp4" type="video/mp4" />
+                  <source src="/images/reading-loop.mp4" type="video/mp4" />
                 </video>
               </div>
               <div className="p-6">
