@@ -114,7 +114,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
           poster={COUNTY_IMAGES[county] ?? "/images/landing-hero.webp"}
           className="w-full h-64 sm:h-80 object-cover object-[center_35%] opacity-40"
         >
-          <source src="/images/hero-loop.mp4" type="video/mp4" />
+          <source src="/images/father-daughter-loop.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
@@ -191,7 +191,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                           alt={isVis ? "Father and son during supervised visit" : "Neutral monitor facilitating custody exchange"}
                           width={400}
                           height={200}
-                          className={`w-full h-32 object-cover ${isVis ? "object-[center_35%]" : "object-[center_40%]"}`}
+                          className="w-full h-32 object-cover object-[center_35%]"
                         />
                         <div className="p-4">
                           <h3 className="text-lg font-semibold text-brand-900">{service.name}</h3>
@@ -217,7 +217,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                       alt="Notebook, pen, and ID badge on a desk — ready for intake"
                       width={160}
                       height={240}
-                      className="w-full h-40 sm:h-full object-cover"
+                      className="w-full h-40 sm:h-full object-cover object-[center_35%]"
                     />
                   </div>
                   <div className="p-6">
@@ -243,7 +243,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                       alt="Secure entrance with family safety icon"
                       width={192}
                       height={280}
-                      className="w-full h-44 sm:h-full object-cover"
+                      className="w-full h-44 sm:h-full object-cover object-[center_35%]"
                     />
                   </div>
                   <div className="p-6 flex-1">

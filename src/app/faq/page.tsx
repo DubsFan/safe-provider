@@ -118,7 +118,7 @@ export default function FaqPage() {
                       alt={section.image.alt}
                       width={224}
                       height={150}
-                      className="w-full h-36 object-cover rounded-xl shadow-sm"
+                      className="w-full h-36 object-cover object-[center_35%] rounded-xl shadow-sm"
                     />
                   </div>
                   <div className="flex-1">

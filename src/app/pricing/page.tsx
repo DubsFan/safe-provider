@@ -35,7 +35,7 @@ export default function PricingPage() {
           muted
           playsInline
           poster="/images/intake-flatlay.webp"
-          className="w-full h-64 sm:h-80 object-cover opacity-40"
+          className="w-full h-64 sm:h-80 object-cover object-[center_35%] opacity-40"
         >
           <source src="/images/clipboard-loop.mp4" type="video/mp4" />
         </video>
@@ -149,7 +149,7 @@ export default function PricingPage() {
                   alt="Parent and child coloring together at a community center"
                   width={400}
                   height={160}
-                  className="w-full h-32 object-cover"
+                  className="w-full h-32 object-cover object-[center_35%]"
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-brand-900 mb-1">Supervised Visitation Starter</h3>
@@ -181,7 +181,7 @@ export default function PricingPage() {
                   alt="Neutral monitor facilitating a supervised custody exchange between parents"
                   width={400}
                   height={160}
-                  className="w-full h-32 object-cover"
+                  className="w-full h-32 object-cover object-[center_35%]"
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-brand-900 mb-1">Supervised Exchange Starter</h3>
@@ -213,7 +213,7 @@ export default function PricingPage() {
                   alt="Father and daughter drawing together on a park bench"
                   width={400}
                   height={160}
-                  className="w-full h-32 object-cover"
+                  className="w-full h-32 object-cover object-[center_35%]"
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-brand-900 mb-1">30-Day Visit Package</h3>

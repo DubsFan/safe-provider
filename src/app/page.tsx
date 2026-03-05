@@ -38,10 +38,10 @@ export default function HomePage() {
           loop
           muted
           playsInline
-          poster="/images/father-son-library.webp"
+          poster="/images/landing-hero.webp"
           className="w-full h-[28rem] sm:h-[34rem] object-cover object-[center_35%]"
         >
-          <source src="/images/hero-loop.mp4" type="video/mp4" />
+          <source src="/images/father-daughter-loop.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-brand-900/40 to-brand-900/20 flex items-end pb-12 sm:pb-16 justify-center">
           <div className="text-center px-4 max-w-4xl mx-auto">
@@ -160,7 +160,7 @@ export default function HomePage() {
                 muted
                 playsInline
                 poster="/images/exchange-school.webp"
-                className="w-full h-56 sm:h-64 object-cover object-[center_40%]"
+                className="w-full h-56 sm:h-64 object-cover object-[center_35%]"
               >
                 <source src="/images/exchange-loop.mp4" type="video/mp4" />
               </video>
@@ -209,7 +209,7 @@ export default function HomePage() {
                 alt="Secure entrance to supervised visitation facility with family safety icon on door and staff member in background"
                 width={400}
                 height={224}
-                className="shrink-0 w-full sm:w-48 h-32 sm:h-full rounded-lg object-cover"
+                className="shrink-0 w-full sm:w-48 h-32 sm:h-full rounded-lg object-cover object-[center_35%]"
               />
               <div>
                 <h3 className="text-lg font-semibold text-brand-900 mb-2">California Standard 5.20 Compliant</h3>

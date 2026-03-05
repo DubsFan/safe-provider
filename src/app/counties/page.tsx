@@ -93,7 +93,7 @@ export default function CountiesPage() {
                   alt="Notebook, pen, and ID badge on a desk — ready for intake"
                   width={224}
                   height={300}
-                  className="w-full h-44 sm:h-full object-cover"
+                  className="w-full h-44 sm:h-full object-cover object-[center_35%]"
                 />
               </div>
               <div className="p-6">

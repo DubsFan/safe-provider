@@ -142,7 +142,7 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
                       alt={isVisitation ? "Father and son reading during a supervised visit" : "Neutral monitor facilitating a custody exchange at school"}
                       width={192}
                       height={280}
-                      className={`w-full h-44 sm:h-full object-cover ${isVisitation ? "object-[center_35%]" : "object-[center_40%]"}`}
+                      className="w-full h-44 sm:h-full object-cover object-[center_35%]"
                     />
                   </div>
                   <div className="p-6">
@@ -199,7 +199,7 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
                       alt="Secure entrance with family safety icon"
                       width={160}
                       height={320}
-                      className="w-full h-40 sm:h-full object-cover"
+                      className="w-full h-40 sm:h-full object-cover object-[center_35%]"
                     />
                   </div>
                   <div className="p-6">
@@ -276,7 +276,7 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
                       alt="Notebook, pen, and ID badge on a desk — ready for intake"
                       width={160}
                       height={240}
-                      className="w-full h-40 sm:h-full object-cover"
+                      className="w-full h-40 sm:h-full object-cover object-[center_35%]"
                     />
                   </div>
                   <div className="p-6">

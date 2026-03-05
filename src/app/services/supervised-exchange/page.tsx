@@ -38,7 +38,7 @@ export default async function SupervisedExchangePage() {
           muted
           playsInline
           poster="/images/exchange-school.webp"
-          className="w-full h-64 sm:h-80 object-cover object-[center_40%] opacity-50"
+          className="w-full h-64 sm:h-80 object-cover object-[center_35%] opacity-50"
         >
           <source src="/images/exchange-loop.mp4" type="video/mp4" />
         </video>

@@ -37,7 +37,7 @@ export default function ContactPage() {
           loop
           muted
           playsInline
-          poster="/images/landing-hero.webp"
+          poster="/images/landing-hero-alt1.webp"
           className="w-full h-48 sm:h-64 object-cover object-[center_35%] opacity-40"
         >
           <source src="/images/father-daughter-loop.mp4" type="video/mp4" />
@@ -113,7 +113,7 @@ export default function ContactPage() {
                   alt="Four SafePair supervised visitation providers"
                   width={400}
                   height={600}
-                  className="w-full object-cover"
+                  className="w-full object-cover object-[center_35%]"
                 />
                 <div className="bg-brand-50 p-4">
                   <p className="text-sm font-semibold text-brand-900">Our Team</p>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                 alt="Secure entrance with family safety icon"
                 width={400}
                 height={200}
-                className="w-full h-36 object-cover rounded-lg mb-4"
+                className="w-full h-36 object-cover object-[center_35%] rounded-lg mb-4"
               />
               <h3 className="text-base font-semibold text-brand-900 mb-2">Confidential &amp; Secure</h3>
               <p className="text-sm text-brand-700">

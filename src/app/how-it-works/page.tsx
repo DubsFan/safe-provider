@@ -44,7 +44,7 @@ export default function HowItWorksPage() {
           poster="/images/community-coloring.webp"
           className="w-full h-64 sm:h-80 object-cover object-[center_35%] opacity-40"
         >
-          <source src="/images/library-loop.mp4" type="video/mp4" />
+          <source src="/images/visitation-loop.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
@@ -151,7 +151,7 @@ export default function HowItWorksPage() {
               alt="Secure entrance to supervised visitation facility"
               width={400}
               height={224}
-              className="shrink-0 w-full sm:w-48 h-32 sm:h-full rounded-lg object-cover"
+              className="shrink-0 w-full sm:w-48 h-32 sm:h-full rounded-lg object-cover object-[center_35%]"
             />
             <div>
               <h2 className="text-xl font-semibold text-brand-900 mb-3">What Does California Standard 5.20 Mean for You?</h2>
@@ -170,7 +170,7 @@ export default function HowItWorksPage() {
                   alt="Notebook, pen, and ID badge on a desk — ready for intake"
                   width={200}
                   height={300}
-                  className="w-full h-40 sm:h-full object-cover"
+                  className="w-full h-40 sm:h-full object-cover object-[center_35%]"
                 />
               </div>
               <div className="p-6">
