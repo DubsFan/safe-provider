@@ -209,13 +209,13 @@ export default function AboutSafePairPage() {
                 ready to help families facing the most challenging circumstances.
               </p>
             </div>
-            <div className="lg:col-span-2 order-1 lg:order-2">
+            <div className="lg:col-span-2 order-1 lg:order-2 flex justify-center">
               <Image
-                src="/images/service-visitation.webp"
-                alt="Safe, professional supervised visitation environment"
-                width={500}
-                height={500}
-                className="w-full aspect-square rounded-2xl object-cover object-[center_35%] shadow-lg"
+                src="/images/infographic-custody.webp"
+                alt="Monitored Custody Exchanges — protocol-driven, documented, confidential"
+                width={320}
+                height={320}
+                className="w-56 sm:w-64 md:w-72 h-auto rounded-2xl shadow-lg"
               />
             </div>
           </div>
