@@ -80,9 +80,9 @@ export default function AboutSafePairPage() {
           <Image
             src="/images/safepair-logo-transparent.webp"
             alt="SafePair"
-            width={160}
-            height={160}
-            className="w-28 sm:w-32 md:w-36 lg:w-40 h-auto mb-8 invert"
+            width={320}
+            height={320}
+            className="w-56 sm:w-64 md:w-72 lg:w-80 h-auto mb-8 invert"
           />
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Our Provider Partner
