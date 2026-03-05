@@ -58,26 +58,26 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <a
               href={`tel:${PHONE.replace(/[^+\d]/g, "")}`}
-              className="flex items-center gap-4 rounded-xl bg-white p-5 shadow-lg border border-brand-500/10 hover:shadow-xl hover:border-accent-300 transition-all group"
+              className="flex items-center gap-4 rounded-xl bg-surface-card p-5 shadow-lg border border-border-default hover:shadow-xl hover:border-accent-300 transition-all group"
             >
-              <div className="shrink-0 w-12 h-12 rounded-full bg-accent-50 flex items-center justify-center group-hover:bg-accent-100 transition-colors">
+              <div className="shrink-0 w-12 h-12 rounded-full bg-surface-accent flex items-center justify-center group-hover:bg-surface-accent transition-colors">
                 <Phone className="h-5 w-5 text-accent-600" />
               </div>
               <div>
-                <p className="text-sm text-brand-500 font-medium">Call us</p>
-                <p className="text-lg font-semibold text-brand-900">{PHONE}</p>
+                <p className="text-sm text-text-muted font-medium">Call us</p>
+                <p className="text-lg font-semibold text-text-heading">{PHONE}</p>
               </div>
             </a>
             <a
               href={`mailto:${EMAIL}`}
-              className="flex items-center gap-4 rounded-xl bg-white p-5 shadow-lg border border-brand-500/10 hover:shadow-xl hover:border-accent-300 transition-all group"
+              className="flex items-center gap-4 rounded-xl bg-surface-card p-5 shadow-lg border border-border-default hover:shadow-xl hover:border-accent-300 transition-all group"
             >
-              <div className="shrink-0 w-12 h-12 rounded-full bg-accent-50 flex items-center justify-center group-hover:bg-accent-100 transition-colors">
+              <div className="shrink-0 w-12 h-12 rounded-full bg-surface-accent flex items-center justify-center group-hover:bg-surface-accent transition-colors">
                 <Mail className="h-5 w-5 text-accent-600" />
               </div>
               <div>
-                <p className="text-sm text-brand-500 font-medium">Email us</p>
-                <p className="text-lg font-semibold text-brand-900">Send a Message</p>
+                <p className="text-sm text-text-muted font-medium">Email us</p>
+                <p className="text-lg font-semibold text-text-heading">Send a Message</p>
               </div>
             </a>
           </div>
@@ -110,32 +110,32 @@ export default function ContactPage() {
             {/* Right: Hours + Service Area + response promise */}
             <div className="lg:w-1/2 space-y-6">
               <div>
-                <h2 className="text-2xl font-semibold text-brand-900 mb-6">Here When You Need Us</h2>
+                <h2 className="text-2xl font-semibold text-text-heading mb-6">Here When You Need Us</h2>
               </div>
 
               <div className="flex gap-4 items-start">
-                <div className="shrink-0 w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center">
+                <div className="shrink-0 w-10 h-10 rounded-lg bg-surface-subtle flex items-center justify-center">
                   <Clock className="h-5 w-5 text-accent-600" />
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-brand-900">Hours</h3>
-                  <p className="text-sm text-brand-700 mt-1">Intake processing: Monday – Friday</p>
-                  <p className="text-sm text-brand-700">Visit scheduling: 7 days a week</p>
+                  <h3 className="text-base font-semibold text-text-heading">Hours</h3>
+                  <p className="text-sm text-text-body mt-1">Intake processing: Monday – Friday</p>
+                  <p className="text-sm text-text-body">Visit scheduling: 7 days a week</p>
                 </div>
               </div>
 
               <div className="flex gap-4 items-start">
-                <div className="shrink-0 w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center">
+                <div className="shrink-0 w-10 h-10 rounded-lg bg-surface-subtle flex items-center justify-center">
                   <MapPin className="h-5 w-5 text-accent-600" />
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-brand-900">Service Area</h3>
+                  <h3 className="text-base font-semibold text-text-heading">Service Area</h3>
                   <div className="flex flex-wrap gap-2 mt-2">
                     {liveCounties.map((c) => (
                       <Link
                         key={c.slug}
                         href={`/counties/${c.slug}`}
-                        className="inline-block rounded-full bg-brand-50 px-3 py-1 text-sm text-brand-700 hover:bg-accent-50 hover:text-accent-700 transition-colors"
+                        className="inline-block rounded-full bg-surface-subtle px-3 py-1 text-sm text-text-body hover:bg-surface-accent hover:text-accent-600 transition-colors"
                       >
                         {c.name}
                       </Link>
@@ -144,9 +144,9 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="rounded-xl bg-accent-50 border border-accent-200 p-5">
-                <p className="text-sm font-semibold text-accent-800">Response Guarantee</p>
-                <p className="text-sm text-accent-700 mt-1">
+              <div className="rounded-xl bg-surface-accent border border-border-default p-5">
+                <p className="text-sm font-semibold text-accent-600">Response Guarantee</p>
+                <p className="text-sm text-accent-600 mt-1">
                   Every inquiry gets a response within 8 business hours or by end of the business day — whichever comes first.
                 </p>
               </div>
@@ -179,7 +179,7 @@ export default function ContactPage() {
               <div>
                 <Link
                   href="/start"
-                  className="inline-flex items-center gap-2 rounded-lg bg-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-accent-500 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-lg bg-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-surface-accent0 transition-colors"
                 >
                   Start Intake Online
                   <ArrowRight className="h-4 w-4" />
@@ -194,7 +194,7 @@ export default function ContactPage() {
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="rounded-xl overflow-hidden shadow-sm border border-brand-500/10">
+            <div className="rounded-xl overflow-hidden shadow-sm border border-border-default">
               <Image
                 src="/images/provider-review.webp"
                 alt="Provider reviewing case documentation"
@@ -203,13 +203,13 @@ export default function ContactPage() {
                 className="w-full h-44 object-cover object-[center_35%]"
               />
               <div className="p-6">
-                <h3 className="text-base font-semibold text-brand-900 mb-2">Fast Response</h3>
-                <p className="text-sm text-brand-700">
+                <h3 className="text-base font-semibold text-text-heading mb-2">Fast Response</h3>
+                <p className="text-sm text-text-body">
                   Intake responses within 8 business hours. SafePair reviews cases within 1-2 business days and contacts you to schedule.
                 </p>
               </div>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-sm border border-brand-500/10">
+            <div className="rounded-xl overflow-hidden shadow-sm border border-border-default">
               <Image
                 src="/images/secure-entrance.webp"
                 alt="Secure entrance with family safety icon"
@@ -218,8 +218,8 @@ export default function ContactPage() {
                 className="w-full h-44 object-cover object-[center_35%]"
               />
               <div className="p-6">
-                <h3 className="text-base font-semibold text-brand-900 mb-2">Confidential &amp; Secure</h3>
-                <p className="text-sm text-brand-700">
+                <h3 className="text-base font-semibold text-text-heading mb-2">Confidential &amp; Secure</h3>
+                <p className="text-sm text-text-body">
                   Your information is protected. All communication is confidential. Payment processed securely through Stripe.
                 </p>
               </div>

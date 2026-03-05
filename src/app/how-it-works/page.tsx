@@ -63,8 +63,8 @@ export default function HowItWorksPage() {
           <div className="flex flex-col lg:flex-row gap-12">
             {/* Left: Steps */}
             <div className="flex-1">
-              <h2 className="text-2xl font-semibold text-brand-900 mb-2">The 5 Steps</h2>
-              <p className="text-brand-600 mb-8">
+              <h2 className="text-2xl font-semibold text-text-heading mb-2">The 5 Steps</h2>
+              <p className="text-text-muted mb-8">
                 Each step moves you forward without surprises. Read through them, then start when you&apos;re ready.
               </p>
 
@@ -80,8 +80,8 @@ export default function HowItWorksPage() {
                       )}
                     </div>
                     <div className="pb-2">
-                      <h3 className="text-lg font-semibold text-brand-900">{item.title}</h3>
-                      <p className="mt-1 text-sm text-brand-700">{item.desc}</p>
+                      <h3 className="text-lg font-semibold text-text-heading">{item.title}</h3>
+                      <p className="mt-1 text-sm text-text-body">{item.desc}</p>
                       {"link" in item && item.link && (
                         <Link href={item.link} className="mt-2 inline-block text-sm font-semibold text-accent-600 hover:text-accent-500">
                           {item.linkLabel} &rarr;
@@ -97,8 +97,8 @@ export default function HowItWorksPage() {
             <div className="lg:w-80 shrink-0">
               <div className="lg:sticky lg:top-24 space-y-6">
                 {/* Process graphic */}
-                <div className="rounded-xl border border-brand-500/20 bg-white p-4 shadow-sm">
-                  <p className="text-xs font-semibold text-brand-500 uppercase tracking-wider mb-3">Your Journey</p>
+                <div className="rounded-xl border border-border-default bg-surface-card p-4 shadow-sm">
+                  <p className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">Your Journey</p>
                   <Image
                     src="/images/process-steps.webp"
                     alt="5-step visual: intake form, calendar scheduling, intake meeting, supervised visit activity, documentation report"
@@ -127,8 +127,8 @@ export default function HowItWorksPage() {
                   >
                     <source src="/images/visitation-loop.mp4" type="video/mp4" />
                   </video>
-                  <div className="bg-brand-50 p-4">
-                    <p className="text-xs text-brand-700">SafePair reviews every case independently within 1-2 business days before accepting.</p>
+                  <div className="bg-surface-subtle p-4">
+                    <p className="text-xs text-text-body">SafePair reviews every case independently within 1-2 business days before accepting.</p>
                   </div>
                 </div>
 
@@ -137,7 +137,7 @@ export default function HowItWorksPage() {
           </div>
 
           {/* Compliance section */}
-          <div className="mt-16 rounded-xl bg-brand-100 p-6 flex flex-col sm:flex-row gap-6 items-start">
+          <div className="mt-16 rounded-xl bg-surface-muted p-6 flex flex-col sm:flex-row gap-6 items-start">
             <Image
               src="/images/secure-entrance.webp"
               alt="Secure entrance to supervised visitation facility"
@@ -146,15 +146,15 @@ export default function HowItWorksPage() {
               className="shrink-0 w-full sm:w-48 h-32 sm:h-full rounded-lg object-cover object-[center_35%]"
             />
             <div>
-              <h2 className="text-xl font-semibold text-brand-900 mb-3">What Does California Standard 5.20 Mean for You?</h2>
-              <p className="text-brand-700">
+              <h2 className="text-xl font-semibold text-text-heading mb-3">What Does California Standard 5.20 Mean for You?</h2>
+              <p className="text-text-body">
                 It means the person supervising your visit has passed a criminal background check, completed mandated training on child safety and domestic violence, and follows court-defined rules for neutrality, confidentiality, and documentation. It is the standard family courts use to verify provider qualifications.
               </p>
             </div>
           </div>
 
           {/* Checklist with image */}
-          <div className="mt-12 rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+          <div className="mt-12 rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
             <div className="flex flex-col sm:flex-row">
               <div className="shrink-0 sm:w-48">
                 <Image
@@ -166,11 +166,11 @@ export default function HowItWorksPage() {
                 />
               </div>
               <div className="p-6">
-                <h2 className="text-xl font-semibold text-brand-900 mb-4">What to Have Ready</h2>
+                <h2 className="text-xl font-semibold text-text-heading mb-4">What to Have Ready</h2>
                 <ol className="space-y-2">
                   {CHECKLIST.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-brand-700">
-                      <span className="shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-900 flex items-center justify-center text-sm font-semibold">{i + 1}</span>
+                    <li key={i} className="flex items-start gap-3 text-text-body">
+                      <span className="shrink-0 w-6 h-6 rounded-full bg-surface-muted text-text-heading flex items-center justify-center text-sm font-semibold">{i + 1}</span>
                       {item}
                     </li>
                   ))}
@@ -181,7 +181,7 @@ export default function HowItWorksPage() {
 
           {/* Final CTA */}
           <div className="mt-16 text-center">
-            <p className="text-brand-700 mb-6 max-w-md mx-auto">
+            <p className="text-text-body mb-6 max-w-md mx-auto">
               The intake form takes about 5 minutes. You&apos;ll see your total cost before you pay, and SafePair will review your case within 1-2 business days.
             </p>
             <Link
@@ -190,7 +190,7 @@ export default function HowItWorksPage() {
             >
               Start Intake
             </Link>
-            <p className="mt-3 text-sm text-brand-500">
+            <p className="mt-3 text-sm text-text-muted">
               Get an intake response within 8 hours or by the end of the business day.
             </p>
           </div>

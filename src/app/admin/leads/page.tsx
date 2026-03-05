@@ -54,7 +54,7 @@ export default function AdminLeadsPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-brand-900 mb-4">Leads</h1>
+      <h1 className="text-2xl font-bold text-text-heading mb-4">Leads</h1>
 
       <div className="mb-4 flex gap-2 flex-wrap">
         {STATUS_OPTIONS.map((s) => (
@@ -62,7 +62,7 @@ export default function AdminLeadsPage() {
             key={s}
             onClick={() => setFilter(s)}
             className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${
-              filter === s ? "bg-accent-600 text-white" : "bg-white text-brand-700 border border-brand-500/20"
+              filter === s ? "bg-accent-600 text-white" : "bg-surface-card text-text-body border border-border-default"
             }`}
           >
             {s}
@@ -71,28 +71,28 @@ export default function AdminLeadsPage() {
       </div>
 
       {loading ? (
-        <p className="text-brand-500">Loading...</p>
+        <p className="text-text-muted">Loading...</p>
       ) : (
-        <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-auto">
+        <div className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-brand-500/10 bg-brand-100">
-                <th className="text-left p-3 font-semibold text-brand-900">Name</th>
-                <th className="text-left p-3 font-semibold text-brand-900">County</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Service</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Email</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Status</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Payment</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Date</th>
+              <tr className="border-b border-border-default bg-surface-muted">
+                <th className="text-left p-3 font-semibold text-text-heading">Name</th>
+                <th className="text-left p-3 font-semibold text-text-heading">County</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Service</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Email</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Status</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Payment</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Date</th>
               </tr>
             </thead>
             <tbody>
               {leads.map((lead) => (
-                <tr key={lead.id} className="border-b border-brand-500/5 hover:bg-brand-100/50">
-                  <td className="p-3 text-brand-900">{lead.petitioner_first} {lead.petitioner_last}</td>
-                  <td className="p-3 text-brand-700">{lead.county_slug}</td>
-                  <td className="p-3 text-brand-700">{lead.service_slug}</td>
-                  <td className="p-3 text-brand-700">{lead.email}</td>
+                <tr key={lead.id} className="border-b border-border-default hover:bg-surface-muted/50">
+                  <td className="p-3 text-text-heading">{lead.petitioner_first} {lead.petitioner_last}</td>
+                  <td className="p-3 text-text-body">{lead.county_slug}</td>
+                  <td className="p-3 text-text-body">{lead.service_slug}</td>
+                  <td className="p-3 text-text-body">{lead.email}</td>
                   <td className="p-3">
                     <select
                       value={lead.status}
@@ -104,15 +104,15 @@ export default function AdminLeadsPage() {
                       ))}
                     </select>
                   </td>
-                  <td className="p-3 text-brand-700">
+                  <td className="p-3 text-text-body">
                     {lead.total_cents ? `$${(lead.total_cents / 100).toFixed(2)}` : "-"}
                   </td>
-                  <td className="p-3 text-brand-500">{new Date(lead.created_at).toLocaleDateString()}</td>
+                  <td className="p-3 text-text-muted">{new Date(lead.created_at).toLocaleDateString()}</td>
                 </tr>
               ))}
               {leads.length === 0 && (
                 <tr>
-                  <td colSpan={7} className="p-8 text-center text-brand-500">No leads found</td>
+                  <td colSpan={7} className="p-8 text-center text-text-muted">No leads found</td>
                 </tr>
               )}
             </tbody>

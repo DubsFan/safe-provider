@@ -11,31 +11,31 @@ export const metadata = buildMetadata({
 });
 
 const COST_FAQ = [
-  { question: "How much does supervised visitation cost?", answer: "Intake is $50 per person. Supervised visitation is $70 per hour with a 2-hour minimum. A platform scheduling fee of $99 applies to each case booked through SafeProvider. For a typical first visit with two parents and one child, the total is $339. See our pricing page for full details." },
-  { question: "How much does supervised exchange cost?", answer: "Intake is $50 per person. Each supervised exchange is $70. A platform scheduling fee of $99 applies. For a typical first exchange with two parents, the total is $269." },
+  { question: "How much does supervised visitation cost?", answer: "Intake is $50 per person. Supervised visitation is $70 per hour with a 2-hour minimum. A platform scheduling fee of $99 applies to each case booked through SafeProvider. For a typical first visit with two parents and one child, the total is $339. See our <a href=\"/pricing\">pricing page</a> for full details." },
+  { question: "How much does supervised exchange cost?", answer: "Intake is $50 per person. Each supervised exchange is $70. A platform scheduling fee of $99 applies. For a typical first exchange with two parents, the total is $269. See <a href=\"/pricing\">full pricing</a>." },
   { question: "Are there additional fees for more children?", answer: "SafePair charges a flat $50 per additional child. This is not per hour. Ask during intake for exact pricing for your family." },
-  { question: "Is there a sliding scale or low-income option?", answer: "Yes. SafePair offers sliding-scale rates for qualifying families. Ask about eligibility during intake." },
+  { question: "Is there a sliding scale or low-income option?", answer: "Yes. SafePair offers sliding-scale rates for qualifying families. <a href=\"/about-safepair\">Learn about the low income program</a>. Ask about eligibility during intake." },
   { question: "Where does the $99 platform fee go?", answer: "The $99 SafeProvider platform fee covers intake processing, scheduling coordination, secure payment handling, and case tracking. It is separate from SafePair's provider fees." },
 ];
 
 const PROCESS_FAQ = [
-  { question: "How long does it take to get started?", answer: "After intake and payment, SafePair reviews your case within 1-2 business days. If accepted, scheduling begins within 3-5 business days. Total: 3-7 business days from intake to first session." },
-  { question: "What happens after I pay?", answer: "Payment reserves your intake slot and triggers case review. SafePair reviews independently. If accepted, they contact you to schedule. If declined, full refund." },
+  { question: "How long does it take to get started?", answer: "After intake and payment, SafePair reviews your case within 1-2 business days. If accepted, scheduling begins within 3-5 business days. Total: 3-7 business days from intake to first session. See <a href=\"/how-it-works\">how it works</a> for the full timeline." },
+  { question: "What happens after I pay?", answer: "Payment reserves your intake slot and triggers case review. SafePair reviews independently. If accepted, they contact you to schedule. If declined, full refund. See <a href=\"/how-it-works\">how it works</a>." },
   { question: "Do I need a court order?", answer: "Not required to start intake. Most families have one. If unsure, consult your attorney." },
   { question: "What documents do I need?", answer: "Government-issued photo ID for each adult, court order or stipulation (if applicable), other parent's contact information, preferred schedule, any restraining or no-contact orders, names and ages of all children." },
   { question: "What if SafePair declines my case?", answer: "Full refund of all fees. SafePair reviews every case independently based on professional assessment and capacity." },
 ];
 
 const TRUST_FAQ = [
-  { question: "Who is the provider?", answer: "SafePair, a professional supervised visitation provider based in Oakland, CA. Operates in compliance with California Family Code Section 3200.5 and Standard 5.20, requiring Live Scan background checks and mandated training." },
+  { question: "Who is the provider?", answer: "SafePair, a professional supervised visitation provider based in Oakland, CA. Operates in compliance with California Family Code Section 3200.5 and Standard 5.20, requiring Live Scan background checks and mandated training. <a href=\"/about-safepair\">Learn more about SafePair</a>." },
   { question: "Is this a law firm?", answer: "No. SafeProvider manages intake, scheduling, and payment only. We do not provide legal advice. Services delivered by SafePair." },
   { question: "What does \"neutral third party\" mean?", answer: "Standard 5.20 defines supervised visitation as contact in the presence of a neutral third person. The monitor does not take sides, does not give custody opinions, and follows your court order rules." },
-  { question: "Does SafePair handle high-risk or sexual assault cases?", answer: "Yes. SafePair provides specialized supervision for highly sensitive cases, including sexual abuse and assault matters, under strict professional oversight. Many providers do not accept these cases. SafePair does." },
+  { question: "Does SafePair handle high-risk or sexual assault cases?", answer: "Yes. SafePair provides specialized supervision for highly sensitive cases, including sexual abuse and assault matters, under strict professional oversight. Many providers do not accept these cases. SafePair does. <a href=\"/about-safepair\">Learn about SafePair's approach</a>." },
   { question: "Can I get a refund?", answer: "If SafePair declines your case, full refund. Once services begin, refunds follow SafePair's cancellation policy." },
 ];
 
 const ATTORNEY_FAQ = [
-  { question: "How do I refer a client?", answer: "Direct client to safeprovider.org/start or send details via contact page. We handle intake, scheduling, payment. SafePair handles delivery, documentation, testimony." },
+  { question: "How do I refer a client?", answer: "Direct client to <a href=\"/start\">safeprovider.org/start</a> or send details via <a href=\"/contact\">contact page</a>. We handle intake, scheduling, payment. SafePair handles delivery, documentation, testimony." },
   { question: "What turnaround can I tell my client?", answer: "3-7 business days from payment to first scheduled session." },
   { question: "Does SafePair provide reports and testimony?", answer: "Yes. Professional documentation and reports to parents and courts. Witness testimony when requested." },
 ];
@@ -123,12 +123,12 @@ export default function FaqPage() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-baseline justify-between mb-1">
-                      <h2 className="text-xl font-semibold text-brand-900">{section.title}</h2>
+                      <h2 className="text-xl font-semibold text-text-heading">{section.title}</h2>
                       <Link href={section.link} className="text-sm font-semibold text-accent-600 hover:text-accent-500 hidden sm:inline">
                         {section.linkLabel} &rarr;
                       </Link>
                     </div>
-                    <p className="text-sm text-brand-600">
+                    <p className="text-sm text-text-muted">
                       {section.items.length} questions answered
                     </p>
                     <Link href={section.link} className="text-sm font-semibold text-accent-600 hover:text-accent-500 sm:hidden mt-1 inline-block">
@@ -143,8 +143,21 @@ export default function FaqPage() {
             ))}
           </div>
 
+          {/* Inline video — warm reading moment */}
+          <div className="mt-16 max-w-2xl mx-auto">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-56 sm:h-64 rounded-xl object-cover object-[center_25%] shadow-sm"
+            >
+              <source src="/images/Mother_And_Son_Reading_Together.mp4" type="video/mp4" />
+            </video>
+          </div>
+
           {/* Still have questions — with provider image */}
-          <div className="mt-16 rounded-xl bg-brand-50 overflow-hidden">
+          <div className="mt-16 rounded-xl bg-surface-subtle overflow-hidden">
             <div className="flex flex-col sm:flex-row">
               <div className="shrink-0 sm:w-56">
                 <Image
@@ -156,15 +169,15 @@ export default function FaqPage() {
                 />
               </div>
               <div className="p-6 flex flex-col justify-center">
-                <h2 className="text-xl font-semibold text-brand-900 mb-2">Still Have Questions?</h2>
-                <p className="text-brand-700 mb-4">
+                <h2 className="text-xl font-semibold text-text-heading mb-2">Still Have Questions?</h2>
+                <p className="text-text-body mb-4">
                   Every family&apos;s situation is different. If your question isn&apos;t answered above, reach out directly — we respond within 8 business hours.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link href="/contact" className="rounded-lg bg-accent-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-accent-500 transition-colors">
                     Contact Us
                   </Link>
-                  <Link href="/start" className="rounded-lg border border-brand-500/20 px-5 py-2.5 text-sm font-semibold text-brand-900 hover:bg-brand-100 transition-colors">
+                  <Link href="/start" className="rounded-lg border border-border-default px-5 py-2.5 text-sm font-semibold text-text-heading hover:bg-surface-muted transition-colors">
                     Start Intake
                   </Link>
                 </div>

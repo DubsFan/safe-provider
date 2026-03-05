@@ -56,27 +56,27 @@ export default async function SupervisedVisitationPage() {
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 
         {/* What it is — narrative intro */}
-        <p className="mt-4 text-brand-700 text-lg">
+        <p className="mt-4 text-text-body text-lg">
           Supervised visitation gives parents time with their child in the presence of a trained, neutral monitor. The goal is simple: keep the child safe while maintaining the parent-child relationship.
         </p>
 
         {/* Who / Duration / Where — compact grid */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="rounded-xl bg-brand-50 p-5">
-            <h2 className="text-sm font-semibold text-brand-900 uppercase tracking-wide">Who Needs It</h2>
-            <p className="mt-2 text-sm text-brand-700">
+          <div className="rounded-xl bg-surface-subtle p-5">
+            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wide">Who Needs It</h2>
+            <p className="mt-2 text-sm text-text-body">
               Families with a court order requiring supervision, or parents who agree to it for safety.
             </p>
           </div>
-          <div className="rounded-xl bg-brand-50 p-5">
-            <h2 className="text-sm font-semibold text-brand-900 uppercase tracking-wide">Duration</h2>
-            <p className="mt-2 text-sm text-brand-700">
+          <div className="rounded-xl bg-surface-subtle p-5">
+            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wide">Duration</h2>
+            <p className="mt-2 text-sm text-text-body">
               2 hours minimum per visit. Most visits are 2-4 hours.
             </p>
           </div>
-          <div className="rounded-xl bg-brand-50 p-5">
-            <h2 className="text-sm font-semibold text-brand-900 uppercase tracking-wide">Location</h2>
-            <p className="mt-2 text-sm text-brand-700">
+          <div className="rounded-xl bg-surface-subtle p-5">
+            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wide">Location</h2>
+            <p className="mt-2 text-sm text-text-body">
               Parks, libraries, community centers, or the provider&apos;s office — agreed by both parties.
             </p>
           </div>
@@ -97,8 +97,8 @@ export default async function SupervisedVisitationPage() {
             </video>
           </div>
           <div>
-            <h2 className="text-xl font-semibold text-brand-900">What the Monitor Does</h2>
-            <p className="mt-2 text-brand-700">
+            <h2 className="text-xl font-semibold text-text-heading">What the Monitor Does</h2>
+            <p className="mt-2 text-text-body">
               Observes the visit, enforces the rules in your court order, keeps written documentation, and can provide reports to parents and courts. The monitor does not take sides. Their job is to keep the child safe while giving you meaningful time together.
             </p>
           </div>
@@ -116,45 +116,45 @@ export default async function SupervisedVisitationPage() {
             />
           </div>
           <div>
-            <h2 className="text-xl font-semibold text-brand-900">Reports &amp; Documentation</h2>
-            <p className="mt-2 text-brand-700">
+            <h2 className="text-xl font-semibold text-text-heading">Reports &amp; Documentation</h2>
+            <p className="mt-2 text-text-body">
               After each visit, SafePair provides professional documentation. Reports go to parents and/or courts as needed. If testimony is requested, SafePair can appear as a witness.
             </p>
           </div>
         </div>
 
         {/* Pricing */}
-        <div className="mt-12 rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
-          <h2 className="text-xl font-semibold text-brand-900 mb-4">Pricing</h2>
-          <ul className="space-y-2 text-brand-700">
+        <div className="mt-12 rounded-xl border border-border-default bg-surface-card p-6 shadow-sm">
+          <h2 className="text-xl font-semibold text-text-heading mb-4">Pricing</h2>
+          <ul className="space-y-2 text-text-body">
             <li className="flex justify-between">
               <span>Intake (per person)</span>
-              <span className="font-semibold text-brand-900">{centsToUSD(intake)}</span>
+              <span className="font-semibold text-text-heading">{centsToUSD(intake)}</span>
             </li>
             <li className="flex justify-between">
               <span>Hourly rate (2-hr minimum)</span>
-              <span className="font-semibold text-brand-900">{centsToUSD(hourly)}</span>
+              <span className="font-semibold text-text-heading">{centsToUSD(hourly)}</span>
             </li>
-            <li className="flex justify-between border-t border-brand-500/20 pt-2">
+            <li className="flex justify-between border-t border-border-default pt-2">
               <span>Platform fee (per case)</span>
-              <span className="font-semibold text-brand-900">{centsToUSD(platform)}</span>
+              <span className="font-semibold text-text-heading">{centsToUSD(platform)}</span>
             </li>
           </ul>
-          <p className="mt-3 text-sm text-brand-500">
+          <p className="mt-3 text-sm text-text-muted">
             Provider rates from the Santa Clara County court provider list.{" "}
             <Link href="/pricing" className="text-accent-600 hover:text-accent-500 font-semibold">See full pricing &rarr;</Link>
           </p>
         </div>
 
         {/* Compliance — trust pills inline */}
-        <div className="mt-12 rounded-xl bg-brand-100 p-6">
-          <h2 className="text-xl font-semibold text-brand-900 mb-3">California Standard 5.20 Compliant</h2>
-          <p className="text-brand-700">
+        <div className="mt-12 rounded-xl bg-surface-muted p-6">
+          <h2 className="text-xl font-semibold text-text-heading mb-3">California Standard 5.20 Compliant</h2>
+          <p className="text-text-body">
             Your monitor has passed a criminal background check, completed mandated training on child safety and domestic violence, and follows court-defined rules for neutrality, confidentiality, and documentation.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {["Background Checks", "Certified Training", "Strict Confidentiality", "Neutral Supervision", "Court-Ready Docs"].map((label) => (
-              <span key={label} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-brand-700 shadow-sm">
+              <span key={label} className="rounded-full bg-surface-card px-3 py-1 text-xs font-medium text-text-body shadow-sm">
                 {label}
               </span>
             ))}
@@ -163,14 +163,14 @@ export default async function SupervisedVisitationPage() {
 
         {/* Counties */}
         <div className="mt-12">
-          <h2 className="text-xl font-semibold text-brand-900 mb-2">Available in 4 Bay Area Counties</h2>
-          <p className="text-sm text-brand-600 mb-4">Select your county to see local details and start intake.</p>
+          <h2 className="text-xl font-semibold text-text-heading mb-2">Available in 4 Bay Area Counties</h2>
+          <p className="text-sm text-text-muted mb-4">Select your county to see local details and start intake.</p>
           <div className="flex flex-wrap gap-3">
             {COUNTIES.filter((c) => c.status === "live").map((county) => (
               <Link
                 key={county.slug}
                 href={`/counties/${county.slug}/supervised-visitation`}
-                className="rounded-lg border border-brand-500/20 bg-white px-4 py-2 text-sm text-brand-700 hover:bg-brand-100 transition-colors"
+                className="rounded-lg border border-border-default bg-surface-card px-4 py-2 text-sm text-text-body hover:bg-surface-muted transition-colors"
               >
                 {county.name}
               </Link>
@@ -182,6 +182,8 @@ export default async function SupervisedVisitationPage() {
         <div className="mt-10 flex flex-wrap gap-4 text-sm">
           <Link href="/services/supervised-exchange" className="text-accent-600 hover:text-accent-500 font-semibold">Supervised Exchange &rarr;</Link>
           <Link href="/how-it-works" className="text-accent-600 hover:text-accent-500 font-semibold">How It Works &rarr;</Link>
+          <Link href="/about-safepair" className="text-accent-600 hover:text-accent-500 font-semibold">About SafePair &rarr;</Link>
+          <Link href="/for-attorneys" className="text-accent-600 hover:text-accent-500 font-semibold">For Attorneys &rarr;</Link>
         </div>
 
         {/* CTA */}
@@ -192,7 +194,7 @@ export default async function SupervisedVisitationPage() {
           >
             Start Intake
           </Link>
-          <p className="mt-3 text-sm text-brand-500">
+          <p className="mt-3 text-sm text-text-muted">
             Response within 8 hours or by end of business day.
           </p>
         </div>

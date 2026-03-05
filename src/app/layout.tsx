@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { defaultMetadata } from "@/lib/seo/metadata";
 import { organizationSchema } from "@/lib/seo/schemas";
+import { Providers } from "@/components/Providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,16 +21,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: organizationSchema() }}
-        />
-        <DisclosureBar />
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <Providers>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: organizationSchema() }}
+          />
+          <DisclosureBar />
+          <Header />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

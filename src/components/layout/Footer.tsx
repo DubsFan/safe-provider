@@ -13,6 +13,8 @@ const RESOURCE_LINKS = [
   { href: "/pricing", label: "Pricing" },
   { href: "/faq", label: "FAQ" },
   { href: "/for-attorneys", label: "For Attorneys" },
+  { href: "/about-safepair", label: "About SafePair" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const LEGAL_LINKS = [
@@ -23,7 +25,7 @@ const LEGAL_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="bg-brand-900 text-white">
+    <footer className="bg-surface-footer text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Counties */}
@@ -95,6 +97,9 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-700">
           <p className="text-xs text-gray-400 text-center max-w-3xl mx-auto">
             Not a law firm. Not the court-listed provider. SafeProvider manages intake, scheduling, and payment only. All supervised visitation and exchange services are delivered by SafePair. SafeProvider and SafePair are separate entities. SafeProvider does not control SafePair&apos;s case acceptance, scheduling, or service delivery decisions.
+          </p>
+          <p className="text-xs text-gray-400 text-center max-w-3xl mx-auto mt-3">
+            SafePair operates in compliance with California Family Code Section 3200.5 and California Rules of Court Standard 5.20. Standard 5.20 requires professional providers to complete a Live Scan criminal background check and 24 hours of training before providing services.
           </p>
           <p className="text-xs text-gray-500 text-center mt-4">
             &copy; {new Date().getFullYear()} Safe Provider. All rights reserved.

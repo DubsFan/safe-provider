@@ -63,7 +63,7 @@ export default function HomePage() {
               </Link>
               <a
                 href={`tel:${PHONE.replace(/[^+\d]/g, "")}`}
-                className="rounded-lg border border-white/40 bg-white/10 backdrop-blur px-6 py-3 text-base font-semibold text-white hover:bg-white/20 transition-colors inline-flex items-center justify-center gap-2"
+                className="rounded-lg border border-white/40 bg-surface-card/10 backdrop-blur px-6 py-3 text-base font-semibold text-white hover:bg-surface-card/20 transition-colors inline-flex items-center justify-center gap-2"
               >
                 <Phone className="h-4 w-4" />
                 Call Now
@@ -82,8 +82,8 @@ export default function HomePage() {
       {/* Services — 4-panel graphic with links */}
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-brand-900 text-center mb-3">Our Services</h2>
-          <p className="text-brand-600 text-center max-w-2xl mx-auto mb-8">
+          <h2 className="text-2xl font-semibold text-text-heading text-center mb-3">Our Services</h2>
+          <p className="text-text-muted text-center max-w-2xl mx-auto mb-8">
             Four ways SafePair supports your family — from in-person visits to virtual sessions and court documentation.
           </p>
           <Image
@@ -94,20 +94,20 @@ export default function HomePage() {
             className="w-full rounded-xl shadow-md"
           />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-            <Link href="/services/supervised-visitation" className="rounded-lg border border-brand-500/20 bg-white px-4 py-3 text-center hover:shadow-md transition-shadow">
-              <span className="text-sm font-semibold text-brand-900">Supervised Visitation</span>
+            <Link href="/services/supervised-visitation" className="rounded-lg border border-border-default bg-surface-card px-4 py-3 text-center hover:shadow-md transition-shadow">
+              <span className="text-sm font-semibold text-text-heading">Supervised Visitation</span>
               <span className="block mt-1 text-xs text-accent-600">Learn more &rarr;</span>
             </Link>
-            <Link href="/services/supervised-exchange" className="rounded-lg border border-brand-500/20 bg-white px-4 py-3 text-center hover:shadow-md transition-shadow">
-              <span className="text-sm font-semibold text-brand-900">Custody Exchange</span>
+            <Link href="/services/supervised-exchange" className="rounded-lg border border-border-default bg-surface-card px-4 py-3 text-center hover:shadow-md transition-shadow">
+              <span className="text-sm font-semibold text-text-heading">Custody Exchange</span>
               <span className="block mt-1 text-xs text-accent-600">Learn more &rarr;</span>
             </Link>
-            <Link href="/services/supervised-visitation" className="rounded-lg border border-brand-500/20 bg-white px-4 py-3 text-center hover:shadow-md transition-shadow">
-              <span className="text-sm font-semibold text-brand-900">Progress Reports</span>
+            <Link href="/services/supervised-visitation" className="rounded-lg border border-border-default bg-surface-card px-4 py-3 text-center hover:shadow-md transition-shadow">
+              <span className="text-sm font-semibold text-text-heading">Progress Reports</span>
               <span className="block mt-1 text-xs text-accent-600">Learn more &rarr;</span>
             </Link>
-            <Link href="/contact" className="rounded-lg border border-brand-500/20 bg-white px-4 py-3 text-center hover:shadow-md transition-shadow">
-              <span className="text-sm font-semibold text-brand-900">Virtual Visitation</span>
+            <Link href="/contact" className="rounded-lg border border-border-default bg-surface-card px-4 py-3 text-center hover:shadow-md transition-shadow">
+              <span className="text-sm font-semibold text-text-heading">Virtual Visitation</span>
               <span className="block mt-1 text-xs text-accent-600">Ask about availability &rarr;</span>
             </Link>
           </div>
@@ -115,15 +115,15 @@ export default function HomePage() {
       </section>
 
       {/* What a visit looks like — real photos, real families */}
-      <section className="bg-brand-50 py-16">
+      <section className="bg-surface-subtle py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-brand-900 text-center mb-3">What Visits Look Like</h2>
-          <p className="text-brand-600 text-center max-w-2xl mx-auto mb-8">
+          <h2 className="text-2xl font-semibold text-text-heading text-center mb-3">What Visits Look Like</h2>
+          <p className="text-text-muted text-center max-w-2xl mx-auto mb-8">
             Every family is different. Visits happen in parks, libraries, community centers — wherever your child feels safe and comfortable.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Supervised visit — father and daughter at community center */}
-            <div className="rounded-xl overflow-hidden shadow-sm bg-white">
+            <div className="rounded-xl overflow-hidden shadow-sm bg-surface-card">
               <Image
                 src="/images/community-coloring.webp"
                 alt="Mother and child coloring together with crayons at a community center table"
@@ -132,13 +132,13 @@ export default function HomePage() {
                 className="w-full h-56 sm:h-64 object-cover object-[center_35%]"
               />
               <div className="p-5">
-                <h3 className="text-base font-semibold text-brand-900">Coloring Together</h3>
-                <p className="mt-1 text-sm text-brand-600">A parent and child drawing at a community center. The monitor sits nearby, observing quietly — no interruptions, no pressure.</p>
+                <h3 className="text-base font-semibold text-text-heading">Coloring Together</h3>
+                <p className="mt-1 text-sm text-text-muted">A parent and child drawing at a community center. The monitor sits nearby, observing quietly — no interruptions, no pressure.</p>
               </div>
             </div>
 
             {/* Park visit — father and daughter */}
-            <div className="rounded-xl overflow-hidden shadow-sm bg-white">
+            <div className="rounded-xl overflow-hidden shadow-sm bg-surface-card">
               <Image
                 src="/images/park-visit-1.webp"
                 alt="Father and daughter drawing together with markers at a park bench"
@@ -147,13 +147,13 @@ export default function HomePage() {
                 className="w-full h-56 sm:h-64 object-cover object-[center_35%]"
               />
               <div className="p-5">
-                <h3 className="text-base font-semibold text-brand-900">Drawing at the Park</h3>
-                <p className="mt-1 text-sm text-brand-600">Outdoor visits give families room to connect naturally. Drawing, playing, talking — whatever feels right for your child.</p>
+                <h3 className="text-base font-semibold text-text-heading">Drawing at the Park</h3>
+                <p className="mt-1 text-sm text-text-muted">Outdoor visits give families room to connect naturally. Drawing, playing, talking — whatever feels right for your child.</p>
               </div>
             </div>
 
             {/* Supervised exchange at school — video loop */}
-            <div className="rounded-xl overflow-hidden shadow-sm bg-white">
+            <div className="rounded-xl overflow-hidden shadow-sm bg-surface-card">
               <video
                 autoPlay
                 loop
@@ -165,13 +165,13 @@ export default function HomePage() {
                 <source src="/images/exchange-loop.mp4" type="video/mp4" />
               </video>
               <div className="p-5">
-                <h3 className="text-base font-semibold text-brand-900">Structured Exchange</h3>
-                <p className="mt-1 text-sm text-brand-600">The monitor walks your child between parents at a neutral location. No direct contact between adults needed. Calm, safe, documented.</p>
+                <h3 className="text-base font-semibold text-text-heading">Structured Exchange</h3>
+                <p className="mt-1 text-sm text-text-muted">The monitor walks your child between parents at a neutral location. No direct contact between adults needed. Calm, safe, documented.</p>
               </div>
             </div>
 
             {/* Virtual visit */}
-            <div className="rounded-xl overflow-hidden shadow-sm bg-white">
+            <div className="rounded-xl overflow-hidden shadow-sm bg-surface-card">
               <Image
                 src="/images/virtual-visit-boy.webp"
                 alt="Young boy participating in a supervised virtual visit on a laptop with headphones"
@@ -180,8 +180,8 @@ export default function HomePage() {
                 className="w-full h-56 sm:h-64 object-cover object-[center_35%]"
               />
               <div className="p-5">
-                <h3 className="text-base font-semibold text-brand-900">Virtual Visits</h3>
-                <p className="mt-1 text-sm text-brand-600">When distance or safety requires it, supervised video visits keep parent and child connected with a monitor present throughout.</p>
+                <h3 className="text-base font-semibold text-text-heading">Virtual Visits</h3>
+                <p className="mt-1 text-sm text-text-muted">When distance or safety requires it, supervised video visits keep parent and child connected with a monitor present throughout.</p>
               </div>
             </div>
           </div>
@@ -209,8 +209,8 @@ export default function HomePage() {
               </div>
             </div>
             <div className="lg:w-1/2">
-              <h2 className="text-2xl font-semibold text-brand-900 mb-3">Trust &amp; Compliance</h2>
-              <p className="text-brand-700 mb-6">
+              <h2 className="text-2xl font-semibold text-text-heading mb-3">Trust &amp; Compliance</h2>
+              <p className="text-text-body mb-6">
                 Every provider passes a criminal background check, completes 24+ hours of mandated training on child safety and domestic violence, and follows court-defined rules for neutrality, confidentiality, and documentation.
               </p>
               <div className="grid grid-cols-2 gap-3">
@@ -220,9 +220,9 @@ export default function HomePage() {
                   { label: "Strict Confidentiality", desc: "Protected information" },
                   { label: "Neutral Supervision", desc: "Unbiased monitoring" },
                 ].map((item) => (
-                  <div key={item.label} className="rounded-lg bg-brand-50 p-3">
-                    <p className="text-sm font-semibold text-brand-900">{item.label}</p>
-                    <p className="text-xs text-brand-600 mt-0.5">{item.desc}</p>
+                  <div key={item.label} className="rounded-lg bg-surface-subtle p-3">
+                    <p className="text-sm font-semibold text-text-heading">{item.label}</p>
+                    <p className="text-xs text-text-muted mt-0.5">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -232,10 +232,10 @@ export default function HomePage() {
       </section>
 
       {/* 3 Simple Steps — image-topped cards */}
-      <section className="bg-brand-50 py-16">
+      <section className="bg-surface-subtle py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-brand-900 text-center mb-3">3 Simple Steps</h2>
-          <p className="text-brand-600 text-center max-w-2xl mx-auto mb-10">
+          <h2 className="text-2xl font-semibold text-text-heading text-center mb-3">3 Simple Steps</h2>
+          <p className="text-text-muted text-center max-w-2xl mx-auto mb-10">
             From intake to your first scheduled visit in 3-7 business days.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -244,7 +244,7 @@ export default function HomePage() {
               { step: "2", title: "Pay Securely", desc: "See your exact total before you pay. Intake, first session, and platform fees — all upfront, no surprises.", image: "/images/private-hallway.webp", alt: "Private office hallway — secure and discreet" },
               { step: "3", title: "Get Scheduled", desc: "SafePair reviews your case within 1-2 business days. Once accepted, they contact you directly to schedule.", image: "/images/provider-review.webp", alt: "Provider reviewing case documentation" },
             ].map((item) => (
-              <div key={item.step} className="rounded-xl overflow-hidden bg-white shadow-sm border border-brand-500/10">
+              <div key={item.step} className="rounded-xl overflow-hidden bg-surface-card shadow-sm border border-border-default">
                 <div className="relative">
                   <Image
                     src={item.image}
@@ -258,8 +258,8 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="p-5">
-                  <h3 className="text-base font-semibold text-brand-900">{item.title}</h3>
-                  <p className="mt-2 text-sm text-brand-700">{item.desc}</p>
+                  <h3 className="text-base font-semibold text-text-heading">{item.title}</h3>
+                  <p className="mt-2 text-sm text-text-body">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -291,25 +291,28 @@ export default function HomePage() {
               </div>
             </div>
             <div className="lg:w-1/2">
-              <h2 className="text-2xl font-semibold text-brand-900 mb-4">About SafeProvider</h2>
-              <p className="text-brand-700 mb-4">
+              <h2 className="text-2xl font-semibold text-text-heading mb-4">About SafeProvider</h2>
+              <p className="text-text-body mb-4">
                 SafeProvider manages intake, scheduling, and payment for supervised visitation
                 and custody exchange services. We are not a law firm and we are not the
                 court-listed provider.
               </p>
-              <p className="text-brand-700 mb-6">
+              <p className="text-text-body mb-6">
                 All services are delivered by SafePair, a professional
                 supervised visitation provider operating in compliance with California Standard 5.20.
                 SafePair independently reviews and accepts each case.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/for-attorneys" className="inline-block rounded-lg border border-brand-500/20 px-4 py-2 text-sm font-semibold text-brand-900 hover:bg-brand-50 transition-colors">
+                <Link href="/for-attorneys" className="inline-block rounded-lg border border-border-default px-4 py-2 text-sm font-semibold text-text-heading hover:bg-surface-subtle transition-colors">
                   Attorney Resources &rarr;
                 </Link>
-                <Link href="/how-it-works" className="inline-block rounded-lg border border-brand-500/20 px-4 py-2 text-sm font-semibold text-brand-900 hover:bg-brand-50 transition-colors">
+                <Link href="/how-it-works" className="inline-block rounded-lg border border-border-default px-4 py-2 text-sm font-semibold text-text-heading hover:bg-surface-subtle transition-colors">
                   How It Works &rarr;
                 </Link>
-                <Link href="/contact" className="inline-block rounded-lg border border-brand-500/20 px-4 py-2 text-sm font-semibold text-brand-900 hover:bg-brand-50 transition-colors">
+                <Link href="/about-safepair" className="inline-block rounded-lg border border-border-default px-4 py-2 text-sm font-semibold text-text-heading hover:bg-surface-subtle transition-colors">
+                  About SafePair &rarr;
+                </Link>
+                <Link href="/contact" className="inline-block rounded-lg border border-border-default px-4 py-2 text-sm font-semibold text-text-heading hover:bg-surface-subtle transition-colors">
                   Contact Us &rarr;
                 </Link>
               </div>
@@ -319,10 +322,10 @@ export default function HomePage() {
       </section>
 
       {/* Counties — image cards */}
-      <section className="bg-brand-50 py-16">
+      <section className="bg-surface-subtle py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-brand-900 text-center mb-3">Counties We Serve</h2>
-          <p className="text-brand-600 text-center max-w-2xl mx-auto mb-10">
+          <h2 className="text-2xl font-semibold text-text-heading text-center mb-3">Counties We Serve</h2>
+          <p className="text-text-muted text-center max-w-2xl mx-auto mb-10">
             Court-compliant supervised visitation and exchange across the Bay Area.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -338,7 +341,7 @@ export default function HomePage() {
                 <Link
                   key={county.slug}
                   href={`/counties/${county.slug}`}
-                  className="group rounded-xl border border-brand-500/20 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+                  className="group rounded-xl border border-border-default bg-surface-card shadow-sm hover:shadow-md transition-shadow overflow-hidden"
                 >
                   {img && (
                     <Image
@@ -350,7 +353,7 @@ export default function HomePage() {
                     />
                   )}
                   <div className="p-4">
-                    <h3 className="text-base font-semibold text-brand-900">{county.name}</h3>
+                    <h3 className="text-base font-semibold text-text-heading">{county.name}</h3>
                     <span className="mt-1 inline-block text-xs font-semibold text-accent-600 group-hover:text-accent-500">View details &rarr;</span>
                   </div>
                 </Link>
@@ -361,9 +364,9 @@ export default function HomePage() {
       </section>
 
       {/* Pricing */}
-      <section className="py-16 bg-brand-50">
+      <section className="py-16 bg-surface-subtle">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-brand-900 text-center mb-8">
+          <h2 className="text-2xl font-semibold text-text-heading text-center mb-8">
             Transparent Pricing
           </h2>
           <PricingTable />
@@ -376,9 +379,9 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-brand-100 py-16">
+      <section className="bg-surface-muted py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-brand-900 text-center mb-8">
+          <h2 className="text-2xl font-semibold text-text-heading text-center mb-8">
             Frequently Asked Questions
           </h2>
           <div className="max-w-3xl mx-auto">

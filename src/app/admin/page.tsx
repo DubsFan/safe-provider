@@ -29,15 +29,15 @@ export default async function AdminDashboardPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-brand-900 mb-8">Dashboard</h1>
+      <h1 className="text-2xl font-bold text-text-heading mb-8">Dashboard</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         {tiles.map((tile) => (
           <div
             key={tile.label}
-            className="rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm"
+            className="rounded-xl border border-border-default bg-surface-card p-6 shadow-sm"
           >
-            <p className="text-sm text-brand-500">{tile.label}</p>
-            <p className="mt-2 text-3xl font-bold text-brand-900">{tile.value}</p>
+            <p className="text-sm text-text-muted">{tile.label}</p>
+            <p className="mt-2 text-3xl font-bold text-text-heading">{tile.value}</p>
             <span className={`mt-2 inline-block rounded-full px-2 py-0.5 text-xs font-medium ${tile.color}`}>
               {tile.label}
             </span>

@@ -13,9 +13,9 @@ export default function CheckoutCancelPage() {
   return (
     <div className="py-16">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
-        <XCircle className="mx-auto h-16 w-16 text-brand-500" />
-        <h1 className="mt-6 text-4xl font-bold text-brand-900">Payment Cancelled</h1>
-        <p className="mt-4 text-lg text-brand-700">
+        <XCircle className="mx-auto h-16 w-16 text-text-muted" />
+        <h1 className="mt-6 text-4xl font-bold text-text-heading">Payment Cancelled</h1>
+        <p className="mt-4 text-lg text-text-body">
           No charge has been made. You can restart your intake at any time.
         </p>
 

@@ -57,39 +57,39 @@ export default function AdminRatesPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-brand-900 mb-4">Rate Cards</h1>
-      <p className="text-sm text-brand-500 mb-6">Edit rates in dollars. Values are saved in cents.</p>
+      <h1 className="text-2xl font-bold text-text-heading mb-4">Rate Cards</h1>
+      <p className="text-sm text-text-muted mb-6">Edit rates in dollars. Values are saved in cents.</p>
 
       {loading ? (
-        <p className="text-brand-500">Loading...</p>
+        <p className="text-text-muted">Loading...</p>
       ) : (
-        <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-auto">
+        <div className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-brand-500/10 bg-brand-100">
-                <th className="text-left p-3 font-semibold text-brand-900">County</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Service</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Intake/Person</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Hourly</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Exchange</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Platform Fee</th>
+              <tr className="border-b border-border-default bg-surface-muted">
+                <th className="text-left p-3 font-semibold text-text-heading">County</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Service</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Intake/Person</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Hourly</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Exchange</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Platform Fee</th>
               </tr>
             </thead>
             <tbody>
               {rates.map((rate) => (
-                <tr key={`${rate.county_slug}-${rate.service_slug}`} className="border-b border-brand-500/5">
-                  <td className="p-3 text-brand-900">{rate.county_name}</td>
-                  <td className="p-3 text-brand-700">{rate.service_name}</td>
+                <tr key={`${rate.county_slug}-${rate.service_slug}`} className="border-b border-border-default">
+                  <td className="p-3 text-text-heading">{rate.county_name}</td>
+                  <td className="p-3 text-text-body">{rate.service_name}</td>
                   {["intake_per_adult_cents", "hourly_rate_cents", "exchange_fee_cents", "platform_fee_cents"].map((field) => (
                     <td key={field} className="p-3">
                       <div className="flex items-center gap-1">
-                        <span className="text-brand-500">$</span>
+                        <span className="text-text-muted">$</span>
                         <input
                           type="number"
                           step="0.01"
                           defaultValue={(rate[field as keyof PublicRateCardView] as number / 100).toFixed(2)}
                           onBlur={(e) => rate.id && updateRate(rate.id, field, e.target.value)}
-                          className="w-20 rounded border border-brand-500/20 px-2 py-1 text-sm text-brand-900"
+                          className="w-20 rounded border border-border-default px-2 py-1 text-sm text-text-heading"
                           disabled={saving === rate.id}
                         />
                       </div>

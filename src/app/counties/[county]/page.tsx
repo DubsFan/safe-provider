@@ -131,12 +131,12 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
       <div className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Breadcrumbs */}
-          <nav className="text-sm text-brand-500 mb-8">
-            <Link href="/" className="hover:text-brand-700">Home</Link>
+          <nav className="text-sm text-text-muted mb-8">
+            <Link href="/" className="hover:text-text-body">Home</Link>
             <span className="mx-2">/</span>
-            <Link href="/counties" className="hover:text-brand-700">Counties</Link>
+            <Link href="/counties" className="hover:text-text-body">Counties</Link>
             <span className="mx-2">/</span>
-            <span className="text-brand-900">{countyData.name}</span>
+            <span className="text-text-heading">{countyData.name}</span>
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -145,7 +145,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
 
               {/* Courthouse info — paired with county image */}
               {details && (
-                <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+                <div className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
                   <div className="flex flex-col sm:flex-row">
                     <div className="shrink-0 sm:w-48">
                       <Image
@@ -157,18 +157,18 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                       />
                     </div>
                     <div className="p-6">
-                      <h2 className="text-xl font-semibold text-brand-900 mb-3">Courthouse Information</h2>
-                      <p className="text-brand-700"><strong>Court:</strong> {details.courthouse}</p>
-                      <p className="text-brand-700 mt-1"><strong>Address:</strong> {details.address}</p>
+                      <h2 className="text-xl font-semibold text-text-heading mb-3">Courthouse Information</h2>
+                      <p className="text-text-body"><strong>Court:</strong> {details.courthouse}</p>
+                      <p className="text-text-body mt-1"><strong>Address:</strong> {details.address}</p>
                       {details.courtSource && (
-                        <p className="text-brand-700 mt-1">
+                        <p className="text-text-body mt-1">
                           <strong>Source:</strong>{" "}
                           <a href={details.courtSource} target="_blank" rel="noopener noreferrer" className="text-accent-600 hover:text-accent-500">
                             Court provider list
                           </a>
                         </p>
                       )}
-                      <p className="text-brand-700 mt-3 text-sm">{details.localNote}</p>
+                      <p className="text-text-body mt-3 text-sm">{details.localNote}</p>
                     </div>
                   </div>
                 </div>
@@ -176,7 +176,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
 
               {/* Services — cards with images */}
               <div>
-                <h2 className="text-2xl font-semibold text-brand-900 mb-4">Available Services</h2>
+                <h2 className="text-2xl font-semibold text-text-heading mb-4">Available Services</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {SERVICES.map((service) => {
                     const isVis = service.slug === "supervised-visitation";
@@ -184,7 +184,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                       <Link
                         key={service.slug}
                         href={`/counties/${county}/${service.slug}`}
-                        className="rounded-xl border border-brand-500/20 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+                        className="rounded-xl border border-border-default bg-surface-card shadow-sm hover:shadow-md transition-shadow overflow-hidden"
                       >
                         <Image
                           src={isVis ? "/images/father-son-library.webp" : "/images/exchange-school.webp"}
@@ -194,8 +194,8 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                           className="w-full h-32 object-cover object-[center_35%]"
                         />
                         <div className="p-4">
-                          <h3 className="text-lg font-semibold text-brand-900">{service.name}</h3>
-                          <p className="mt-1 text-sm text-brand-600">
+                          <h3 className="text-lg font-semibold text-text-heading">{service.name}</h3>
+                          <p className="mt-1 text-sm text-text-muted">
                             {isVis ? "Neutral monitoring during parent-child time" : "Structured, conflict-free custody handoffs"}
                           </p>
                           <span className="mt-2 inline-block text-sm font-semibold text-accent-600">
@@ -209,7 +209,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
               </div>
 
               {/* What to have ready — image paired with checklist */}
-              <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+              <div className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
                 <div className="flex flex-col sm:flex-row">
                   <div className="shrink-0 sm:w-40">
                     <Image
@@ -221,11 +221,11 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                     />
                   </div>
                   <div className="p-6">
-                    <h2 className="text-xl font-semibold text-brand-900 mb-4">What to Have Ready</h2>
+                    <h2 className="text-xl font-semibold text-text-heading mb-4">What to Have Ready</h2>
                     <ol className="space-y-2">
                       {CHECKLIST.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 text-brand-700">
-                          <span className="shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-900 flex items-center justify-center text-sm font-semibold">{i + 1}</span>
+                        <li key={i} className="flex items-start gap-3 text-text-body">
+                          <span className="shrink-0 w-6 h-6 rounded-full bg-surface-muted text-text-heading flex items-center justify-center text-sm font-semibold">{i + 1}</span>
                           {item}
                         </li>
                       ))}
@@ -235,7 +235,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
               </div>
 
               {/* Compliance — with trust image */}
-              <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+              <div className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
                 <div className="flex flex-col sm:flex-row-reverse">
                   <div className="shrink-0 sm:w-48">
                     <Image
@@ -247,15 +247,15 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                     />
                   </div>
                   <div className="p-6 flex-1">
-                    <h2 className="text-xl font-semibold text-brand-900 mb-3">Provider Compliance</h2>
+                    <h2 className="text-xl font-semibold text-text-heading mb-3">Provider Compliance</h2>
                     <ul className="space-y-2">
                       {COMPLIANCE_BULLETS.map((bullet, i) => (
-                        <li key={i} className="text-sm text-brand-700">{bullet}</li>
+                        <li key={i} className="text-sm text-text-body">{bullet}</li>
                       ))}
                     </ul>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {["Background Checks", "Certified Training", "Strict Confidentiality", "Neutral Supervision", "Flexible Scheduling", "Court-Ready Docs"].map((label) => (
-                        <span key={label} className="rounded-full bg-brand-100 px-3 py-1 text-xs font-medium text-brand-700">
+                        <span key={label} className="rounded-full bg-surface-muted px-3 py-1 text-xs font-medium text-text-body">
                           {label}
                         </span>
                       ))}
@@ -265,28 +265,28 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
               </div>
 
               {/* Standard 5.20 */}
-              <div className="rounded-xl bg-brand-100 p-6">
-                <h2 className="text-xl font-semibold text-brand-900 mb-3">What Does California Standard 5.20 Mean for You?</h2>
-                <p className="text-brand-700">
+              <div className="rounded-xl bg-surface-muted p-6">
+                <h2 className="text-xl font-semibold text-text-heading mb-3">What Does California Standard 5.20 Mean for You?</h2>
+                <p className="text-text-body">
                   It means the person supervising your visit has passed a criminal background check, completed mandated training on child safety and domestic violence, and follows court-defined rules for neutrality, confidentiality, and documentation. It is the standard family courts use to verify provider qualifications.
                 </p>
               </div>
 
               {/* FAQ */}
               <div>
-                <h2 className="text-2xl font-semibold text-brand-900 mb-4">Frequently Asked Questions</h2>
+                <h2 className="text-2xl font-semibold text-text-heading mb-4">Frequently Asked Questions</h2>
                 <FaqAccordion items={faqItems} />
               </div>
 
               {/* Sibling counties */}
               <div>
-                <h2 className="text-xl font-semibold text-brand-900 mb-4">Also Serving</h2>
+                <h2 className="text-xl font-semibold text-text-heading mb-4">Also Serving</h2>
                 <div className="flex flex-wrap gap-3">
                   {liveCounties.filter((c) => c.slug !== county).map((c) => (
                     <Link
                       key={c.slug}
                       href={`/counties/${c.slug}`}
-                      className="rounded-lg border border-brand-500/20 bg-white px-4 py-2 text-sm text-brand-700 hover:bg-brand-100 transition-colors"
+                      className="rounded-lg border border-border-default bg-surface-card px-4 py-2 text-sm text-text-body hover:bg-surface-muted transition-colors"
                     >
                       {c.name}
                     </Link>
@@ -298,30 +298,30 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
             {/* Pricing sidebar */}
             <div>
               <div className="sticky top-24 space-y-6">
-                <div className="rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
-                  <h3 className="text-xl font-semibold text-brand-900 mb-4">Pricing</h3>
-                  <ul className="space-y-3 text-brand-700">
+                <div className="rounded-xl border border-border-default bg-surface-card p-6 shadow-sm">
+                  <h3 className="text-xl font-semibold text-text-heading mb-4">Pricing</h3>
+                  <ul className="space-y-3 text-text-body">
                     <li className="flex justify-between">
                       <span>Intake (per person)</span>
-                      <span className="font-semibold text-brand-900">
+                      <span className="font-semibold text-text-heading">
                         {centsToUSD(rates[0]?.intake_per_adult_cents ?? FALLBACK_RATES.intake_per_adult_cents)}
                       </span>
                     </li>
                     <li className="flex justify-between">
                       <span>Hourly rate</span>
-                      <span className="font-semibold text-brand-900">
+                      <span className="font-semibold text-text-heading">
                         {centsToUSD(rates[0]?.hourly_rate_cents ?? FALLBACK_RATES.hourly_rate_cents)}
                       </span>
                     </li>
                     <li className="flex justify-between">
                       <span>Exchange fee</span>
-                      <span className="font-semibold text-brand-900">
+                      <span className="font-semibold text-text-heading">
                         {centsToUSD(rates[0]?.exchange_fee_cents ?? FALLBACK_RATES.exchange_fee_cents)}
                       </span>
                     </li>
-                    <li className="flex justify-between border-t border-brand-500/20 pt-3">
+                    <li className="flex justify-between border-t border-border-default pt-3">
                       <span>Platform fee</span>
-                      <span className="font-semibold text-brand-900">
+                      <span className="font-semibold text-text-heading">
                         {centsToUSD(rates[0]?.platform_fee_cents ?? FALLBACK_RATES.platform_fee_cents)}
                       </span>
                     </li>
@@ -332,7 +332,7 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                   >
                     Start Intake for {countyData.name}
                   </Link>
-                  <p className="mt-3 text-xs text-brand-500 text-center">
+                  <p className="mt-3 text-xs text-text-muted text-center">
                     Response within 8 hours or by end of business day.
                   </p>
                 </div>
@@ -346,15 +346,15 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                     height={300}
                     className="w-full h-48 object-cover object-[center_35%]"
                   />
-                  <div className="bg-brand-50 p-4">
-                    <p className="text-sm font-semibold text-brand-900">Your Provider Team</p>
-                    <p className="text-xs text-brand-600 mt-1">Background-checked, certified, and committed to your child&apos;s safety.</p>
+                  <div className="bg-surface-subtle p-4">
+                    <p className="text-sm font-semibold text-text-heading">Your Provider Team</p>
+                    <p className="text-xs text-text-muted mt-1">Background-checked, certified, and committed to your child&apos;s safety.</p>
                   </div>
                 </div>
 
                 {/* Quick links */}
-                <div className="rounded-xl border border-brand-500/20 bg-white p-5 shadow-sm">
-                  <h3 className="text-sm font-semibold text-brand-900 mb-3">Quick Links</h3>
+                <div className="rounded-xl border border-border-default bg-surface-card p-5 shadow-sm">
+                  <h3 className="text-sm font-semibold text-text-heading mb-3">Quick Links</h3>
                   <ul className="space-y-2 text-sm">
                     <li><Link href="/pricing" className="text-accent-600 hover:text-accent-500">Full pricing breakdown &rarr;</Link></li>
                     <li><Link href="/how-it-works" className="text-accent-600 hover:text-accent-500">5-step process &rarr;</Link></li>

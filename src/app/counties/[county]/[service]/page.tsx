@@ -119,14 +119,14 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
       <div className="py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           {/* Breadcrumbs */}
-          <nav className="text-sm text-brand-500 mb-8">
-            <Link href="/" className="hover:text-brand-700">Home</Link>
+          <nav className="text-sm text-text-muted mb-8">
+            <Link href="/" className="hover:text-text-body">Home</Link>
             <span className="mx-2">/</span>
-            <Link href="/counties" className="hover:text-brand-700">Counties</Link>
+            <Link href="/counties" className="hover:text-text-body">Counties</Link>
             <span className="mx-2">/</span>
-            <Link href={`/counties/${county}`} className="hover:text-brand-700">{countyData.name}</Link>
+            <Link href={`/counties/${county}`} className="hover:text-text-body">{countyData.name}</Link>
             <span className="mx-2">/</span>
-            <span className="text-brand-900">{serviceData.name}</span>
+            <span className="text-text-heading">{serviceData.name}</span>
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -134,7 +134,7 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
             <div className="lg:col-span-2 space-y-10">
 
               {/* Service overview — image + description */}
-              <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+              <div className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
                 <div className="flex flex-col sm:flex-row">
                   <div className="shrink-0 sm:w-48">
                     <Image
@@ -146,8 +146,8 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
                     />
                   </div>
                   <div className="p-6">
-                    <h2 className="text-xl font-semibold text-brand-900 mb-3">What Is {serviceData.name}?</h2>
-                    <p className="text-brand-700">
+                    <h2 className="text-xl font-semibold text-text-heading mb-3">What Is {serviceData.name}?</h2>
+                    <p className="text-text-body">
                       {isVisitation
                         ? "A trained, neutral professional monitor is present throughout a parent's time with their child. The monitor ensures the child's safety, follows court order requirements, and provides professional documentation of each session."
                         : "A trained, neutral professional facilitates the handoff of children between parents. The monitor ensures safe, structured transitions that reduce conflict and protect your child during custody exchanges."}
@@ -160,29 +160,29 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
               </div>
 
               {/* Starter price */}
-              <div className="rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
-                <h2 className="text-xl font-semibold text-brand-900 mb-4">
+              <div className="rounded-xl border border-border-default bg-surface-card p-6 shadow-sm">
+                <h2 className="text-xl font-semibold text-text-heading mb-4">
                   Starter Package (2 adults)
                 </h2>
-                <ul className="space-y-2 text-brand-700">
+                <ul className="space-y-2 text-text-body">
                   <li className="flex justify-between">
                     <span>2-person intake ({centsToUSD(starter.intake / 2)} x 2)</span>
-                    <span className="font-semibold text-brand-900">{centsToUSD(starter.intake)}</span>
+                    <span className="font-semibold text-text-heading">{centsToUSD(starter.intake)}</span>
                   </li>
                   <li className="flex justify-between">
                     <span>{isVisitation ? "First visit, 2 hours" : "First exchange"}</span>
-                    <span className="font-semibold text-brand-900">{centsToUSD(starter.service)}</span>
+                    <span className="font-semibold text-text-heading">{centsToUSD(starter.service)}</span>
                   </li>
                   <li className="flex justify-between">
                     <span>Platform fee</span>
-                    <span className="font-semibold text-brand-900">{centsToUSD(starter.platform)}</span>
+                    <span className="font-semibold text-text-heading">{centsToUSD(starter.platform)}</span>
                   </li>
-                  <li className="flex justify-between border-t border-brand-500/20 pt-2">
+                  <li className="flex justify-between border-t border-border-default pt-2">
                     <span className="font-semibold">Total</span>
-                    <span className="font-bold text-brand-900">{centsToUSD(starter.total)}</span>
+                    <span className="font-bold text-text-heading">{centsToUSD(starter.total)}</span>
                   </li>
                 </ul>
-                <div className="mt-4 rounded-lg bg-accent-100 p-3 text-sm text-brand-900">
+                <div className="mt-4 rounded-lg bg-surface-accent p-3 text-sm text-text-heading">
                   Payment does not guarantee provider acceptance. SafePair reviews every case independently.
                 </div>
                 <Link href="/pricing" className="mt-3 inline-block text-sm font-semibold text-accent-600 hover:text-accent-500">
@@ -191,7 +191,7 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
               </div>
 
               {/* Fit checklist — paired with image */}
-              <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+              <div className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
                 <div className="flex flex-col sm:flex-row">
                   <div className="shrink-0 sm:w-40">
                     <Image
@@ -203,10 +203,10 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
                     />
                   </div>
                   <div className="p-6">
-                    <h2 className="text-lg font-semibold text-brand-900 mb-3">
+                    <h2 className="text-lg font-semibold text-text-heading mb-3">
                       {isVisitation ? "Is Supervised Visitation Right for You?" : "Is Supervised Exchange Right for You?"}
                     </h2>
-                    <ul className="space-y-2 text-brand-700">
+                    <ul className="space-y-2 text-text-body">
                       {(isVisitation
                         ? [
                             "Your court order requires supervised visitation",
@@ -224,7 +224,7 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
                           ]
                       ).map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <span className="shrink-0 mt-1 w-4 h-4 rounded-full bg-accent-100 flex items-center justify-center text-xs text-accent-700">{"\u2713"}</span>
+                          <span className="shrink-0 mt-1 w-4 h-4 rounded-full bg-surface-accent flex items-center justify-center text-xs text-accent-600">{"\u2713"}</span>
                           {item}
                         </li>
                       ))}
@@ -234,7 +234,7 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
               </div>
 
               {/* Post-payment — with process image */}
-              <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+              <div className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
                 <div className="flex flex-col sm:flex-row-reverse">
                   <div className="shrink-0 sm:w-40">
                     <Image
@@ -246,8 +246,8 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
                     />
                   </div>
                   <div className="p-6 flex-1">
-                    <h2 className="text-lg font-semibold text-brand-900 mb-3">What Happens After Payment</h2>
-                    <ol className="space-y-3 text-brand-700">
+                    <h2 className="text-lg font-semibold text-text-heading mb-3">What Happens After Payment</h2>
+                    <ol className="space-y-3 text-text-body">
                       {[
                         "SafePair reviews your case within 1-2 business days",
                         "If accepted, SafePair contacts you to confirm scheduling details",
@@ -255,7 +255,7 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
                         "After the session, documentation is provided per your court order requirements",
                       ].map((s, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <span className="shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-900 flex items-center justify-center text-sm font-semibold">{i + 1}</span>
+                          <span className="shrink-0 w-6 h-6 rounded-full bg-surface-muted text-text-heading flex items-center justify-center text-sm font-semibold">{i + 1}</span>
                           {s}
                         </li>
                       ))}
@@ -268,7 +268,7 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
               </div>
 
               {/* Documents — paired with intake flatlay */}
-              <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+              <div className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
                 <div className="flex flex-col sm:flex-row">
                   <div className="shrink-0 sm:w-40">
                     <Image
@@ -280,8 +280,8 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
                     />
                   </div>
                   <div className="p-6">
-                    <h2 className="text-lg font-semibold text-brand-900 mb-3">Documents to Prepare</h2>
-                    <ul className="space-y-2 text-brand-700">
+                    <h2 className="text-lg font-semibold text-text-heading mb-3">Documents to Prepare</h2>
+                    <ul className="space-y-2 text-text-body">
                       {[
                         "Valid government-issued photo ID",
                         "Court order or stipulation (if applicable)",
@@ -301,14 +301,14 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
               </div>
 
               {/* Standard 5.20 compliance */}
-              <div className="rounded-xl bg-brand-100 p-6">
-                <h2 className="text-lg font-semibold text-brand-900 mb-3">California Standard 5.20 Compliance</h2>
-                <p className="text-brand-700 text-sm">
+              <div className="rounded-xl bg-surface-muted p-6">
+                <h2 className="text-lg font-semibold text-text-heading mb-3">California Standard 5.20 Compliance</h2>
+                <p className="text-text-body text-sm">
                   SafePair operates in compliance with California Family Code Section 3200.5 and California Rules of Court Standard 5.20. This means your monitor has passed a criminal background check, completed mandated training on child safety and domestic violence, and follows court-defined rules for neutrality, confidentiality, and documentation.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {["Background Checks", "Certified Training", "Strict Confidentiality", "Neutral Supervision"].map((label) => (
-                    <span key={label} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-brand-700 shadow-sm">
+                    <span key={label} className="rounded-full bg-surface-card px-3 py-1 text-xs font-medium text-text-body shadow-sm">
                       {label}
                     </span>
                   ))}
@@ -317,7 +317,7 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
 
               {/* FAQ */}
               <div>
-                <h2 className="text-2xl font-semibold text-brand-900 mb-4">Frequently Asked Questions</h2>
+                <h2 className="text-2xl font-semibold text-text-heading mb-4">Frequently Asked Questions</h2>
                 <FaqAccordion items={faqItems} />
               </div>
 
@@ -325,31 +325,31 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href={`/counties/${county}/${siblingService.slug}`}
-                  className="flex-1 rounded-xl border border-brand-500/20 bg-white p-5 shadow-sm hover:shadow-md transition-shadow"
+                  className="flex-1 rounded-xl border border-border-default bg-surface-card p-5 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <p className="text-sm text-brand-500 mb-1">Also available in {countyData.name}</p>
-                  <h3 className="text-lg font-semibold text-brand-900">{siblingService.name}</h3>
+                  <p className="text-sm text-text-muted mb-1">Also available in {countyData.name}</p>
+                  <h3 className="text-lg font-semibold text-text-heading">{siblingService.name}</h3>
                   <span className="mt-2 inline-block text-sm font-semibold text-accent-600">View details &rarr;</span>
                 </Link>
                 <Link
                   href={`/counties/${county}`}
-                  className="flex-1 rounded-xl border border-brand-500/20 bg-white p-5 shadow-sm hover:shadow-md transition-shadow"
+                  className="flex-1 rounded-xl border border-border-default bg-surface-card p-5 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <p className="text-sm text-brand-500 mb-1">Back to</p>
-                  <h3 className="text-lg font-semibold text-brand-900">{countyData.name} Overview</h3>
+                  <p className="text-sm text-text-muted mb-1">Back to</p>
+                  <h3 className="text-lg font-semibold text-text-heading">{countyData.name} Overview</h3>
                   <span className="mt-2 inline-block text-sm font-semibold text-accent-600">All services &rarr;</span>
                 </Link>
               </div>
 
               {/* Sibling counties */}
               <div>
-                <h2 className="text-lg font-semibold text-brand-900 mb-3">Also Serving</h2>
+                <h2 className="text-lg font-semibold text-text-heading mb-3">Also Serving</h2>
                 <div className="flex flex-wrap gap-3">
                   {liveCounties.filter((c) => c.slug !== county).map((c) => (
                     <Link
                       key={c.slug}
                       href={`/counties/${c.slug}/${service}`}
-                      className="rounded-lg border border-brand-500/20 bg-white px-4 py-2 text-sm text-brand-700 hover:bg-brand-100 transition-colors"
+                      className="rounded-lg border border-border-default bg-surface-card px-4 py-2 text-sm text-text-body hover:bg-surface-muted transition-colors"
                     >
                       {c.name}
                     </Link>
@@ -361,22 +361,22 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
             {/* Pricing sidebar */}
             <div>
               <div className="sticky top-24 space-y-6">
-                <div className="rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
-                  <h3 className="text-xl font-semibold text-brand-900 mb-4">Quick Pricing</h3>
-                  <ul className="space-y-3 text-brand-700">
+                <div className="rounded-xl border border-border-default bg-surface-card p-6 shadow-sm">
+                  <h3 className="text-xl font-semibold text-text-heading mb-4">Quick Pricing</h3>
+                  <ul className="space-y-3 text-text-body">
                     <li className="flex justify-between">
                       <span>Intake (per person)</span>
-                      <span className="font-semibold text-brand-900">{centsToUSD(starter.intake / 2)}</span>
+                      <span className="font-semibold text-text-heading">{centsToUSD(starter.intake / 2)}</span>
                     </li>
                     <li className="flex justify-between">
                       <span>{isVisitation ? "Per hour (2hr min)" : "Per exchange"}</span>
-                      <span className="font-semibold text-brand-900">{centsToUSD(starter.service)}</span>
+                      <span className="font-semibold text-text-heading">{centsToUSD(starter.service)}</span>
                     </li>
                     <li className="flex justify-between">
                       <span>Platform fee</span>
-                      <span className="font-semibold text-brand-900">{centsToUSD(starter.platform)}</span>
+                      <span className="font-semibold text-text-heading">{centsToUSD(starter.platform)}</span>
                     </li>
-                    <li className="flex justify-between border-t border-brand-500/20 pt-3">
+                    <li className="flex justify-between border-t border-border-default pt-3">
                       <span className="font-semibold">Starter total</span>
                       <span className="font-bold text-accent-600">{centsToUSD(starter.total)}</span>
                     </li>
@@ -387,7 +387,7 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
                   >
                     Start Intake
                   </Link>
-                  <p className="mt-3 text-xs text-brand-500 text-center">
+                  <p className="mt-3 text-xs text-text-muted text-center">
                     Response within 8 hours or by end of business day.
                   </p>
                 </div>
@@ -401,9 +401,9 @@ export default async function CountyServicePage({ params }: { params: Promise<{ 
                     height={300}
                     className="w-full h-48 object-cover object-[center_35%]"
                   />
-                  <div className="bg-brand-50 p-4">
-                    <p className="text-sm font-semibold text-brand-900">Your Provider Team</p>
-                    <p className="text-xs text-brand-600 mt-1">Background-checked, certified, and committed to your child&apos;s safety.</p>
+                  <div className="bg-surface-subtle p-4">
+                    <p className="text-sm font-semibold text-text-heading">Your Provider Team</p>
+                    <p className="text-xs text-text-muted mt-1">Background-checked, certified, and committed to your child&apos;s safety.</p>
                   </div>
                 </div>
               </div>

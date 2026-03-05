@@ -12,8 +12,8 @@ export default function NotFound() {
   return (
     <div className="py-24 text-center">
       <div className="mx-auto max-w-2xl px-4">
-        <h1 className="text-4xl font-bold text-brand-900">Page Not Found</h1>
-        <p className="mt-4 text-brand-700">
+        <h1 className="text-4xl font-bold text-text-heading">Page Not Found</h1>
+        <p className="mt-4 text-text-body">
           The page you are looking for does not exist or has been moved.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
@@ -25,13 +25,13 @@ export default function NotFound() {
           </Link>
           <Link
             href="/start"
-            className="rounded-lg border border-brand-500/20 px-6 py-3 text-base font-semibold text-brand-900 hover:bg-brand-100 transition-colors"
+            className="rounded-lg border border-border-default px-6 py-3 text-base font-semibold text-text-heading hover:bg-surface-muted transition-colors"
           >
             Start Intake
           </Link>
           <Link
             href="/counties"
-            className="rounded-lg border border-brand-500/20 px-6 py-3 text-base font-semibold text-brand-900 hover:bg-brand-100 transition-colors"
+            className="rounded-lg border border-border-default px-6 py-3 text-base font-semibold text-text-heading hover:bg-surface-muted transition-colors"
           >
             Counties
           </Link>

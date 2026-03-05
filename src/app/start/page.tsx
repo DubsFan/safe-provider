@@ -110,18 +110,18 @@ export default function StartPage() {
         style={{ backgroundImage: "url(/images/intake-flatlay.webp)" }}
       />
       <div className="relative mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-brand-900 text-center">Start Your Intake</h1>
-        <p className="mt-4 text-lg text-brand-700 text-center">
+        <h1 className="text-4xl font-bold text-text-heading text-center">Start Your Intake</h1>
+        <p className="mt-4 text-lg text-text-body text-center">
           Select your county and service to begin.
         </p>
 
         {/* What to have ready */}
-        <div className="mt-6 rounded-xl border border-brand-500/20 bg-white p-5 shadow-sm">
-          <h2 className="text-base font-semibold text-brand-900 mb-3">What to Have Ready</h2>
+        <div className="mt-6 rounded-xl border border-border-default bg-surface-card p-5 shadow-sm">
+          <h2 className="text-base font-semibold text-text-heading mb-3">What to Have Ready</h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {CHECKLIST.map((item, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-brand-700">
-                <span className="shrink-0 w-5 h-5 rounded-full bg-brand-100 text-brand-900 flex items-center justify-center text-xs font-semibold">{i + 1}</span>
+              <li key={i} className="flex items-start gap-2 text-sm text-text-body">
+                <span className="shrink-0 w-5 h-5 rounded-full bg-surface-muted text-text-heading flex items-center justify-center text-xs font-semibold">{i + 1}</span>
                 {item}
               </li>
             ))}
@@ -134,16 +134,16 @@ export default function StartPage() {
             <div
               key={label}
               className={`flex items-center gap-1 text-sm ${
-                i <= step ? "text-accent-600 font-semibold" : "text-brand-500"
+                i <= step ? "text-accent-600 font-semibold" : "text-text-muted"
               }`}
             >
               <span className={`w-7 h-7 rounded-full flex items-center justify-center text-xs ${
-                i <= step ? "bg-accent-600 text-white" : "bg-brand-100 text-brand-500"
+                i <= step ? "bg-accent-600 text-white" : "bg-surface-muted text-text-muted"
               }`}>
                 {i + 1}
               </span>
               <span className="hidden sm:inline">{label}</span>
-              {i < STEPS.length - 1 && <span className="mx-1 text-brand-500">—</span>}
+              {i < STEPS.length - 1 && <span className="mx-1 text-text-muted">—</span>}
             </div>
           ))}
         </div>
@@ -153,13 +153,13 @@ export default function StartPage() {
           {step === 0 && (
             <div className="space-y-6">
               <div>
-                <label htmlFor="county_slug" className="block text-sm font-semibold text-brand-900 mb-2">County</label>
+                <label htmlFor="county_slug" className="block text-sm font-semibold text-text-heading mb-2">County</label>
                 <select
                   id="county_slug"
                   {...register("county_slug")}
                   aria-invalid={!!errors.county_slug}
                   aria-describedby={errors.county_slug ? "county_slug-error" : undefined}
-                  className="w-full rounded-lg border border-brand-500/30 px-4 py-3 text-brand-900 focus:outline-none focus:ring-2 focus:ring-accent-600"
+                  className="w-full rounded-lg border border-border-input bg-surface-input px-4 py-3 text-text-heading focus:outline-none focus:ring-2 focus:ring-accent-600"
                 >
                   <option value="">Select a county...</option>
                   {COUNTY_OPTIONS.map((opt) => (
@@ -169,13 +169,13 @@ export default function StartPage() {
                 {errors.county_slug && <p id="county_slug-error" className="mt-1 text-sm text-error">{errors.county_slug.message}</p>}
               </div>
               <div>
-                <label htmlFor="service_slug" className="block text-sm font-semibold text-brand-900 mb-2">Service</label>
+                <label htmlFor="service_slug" className="block text-sm font-semibold text-text-heading mb-2">Service</label>
                 <select
                   id="service_slug"
                   {...register("service_slug")}
                   aria-invalid={!!errors.service_slug}
                   aria-describedby={errors.service_slug ? "service_slug-error" : undefined}
-                  className="w-full rounded-lg border border-brand-500/30 px-4 py-3 text-brand-900 focus:outline-none focus:ring-2 focus:ring-accent-600"
+                  className="w-full rounded-lg border border-border-input bg-surface-input px-4 py-3 text-text-heading focus:outline-none focus:ring-2 focus:ring-accent-600"
                 >
                   <option value="">Select a service...</option>
                   {SERVICE_OPTIONS.map((opt) => (
@@ -192,49 +192,49 @@ export default function StartPage() {
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="petitioner_first" className="block text-sm font-semibold text-brand-900 mb-2">Your First Name</label>
+                  <label htmlFor="petitioner_first" className="block text-sm font-semibold text-text-heading mb-2">Your First Name</label>
                   <input
                     id="petitioner_first"
                     {...register("petitioner_first")}
                     aria-invalid={!!errors.petitioner_first}
                     aria-describedby={errors.petitioner_first ? "petitioner_first-error" : undefined}
-                    className="w-full rounded-lg border border-brand-500/30 px-4 py-3 text-brand-900 focus:outline-none focus:ring-2 focus:ring-accent-600"
+                    className="w-full rounded-lg border border-border-input bg-surface-input px-4 py-3 text-text-heading focus:outline-none focus:ring-2 focus:ring-accent-600"
                   />
                   {errors.petitioner_first && <p id="petitioner_first-error" className="mt-1 text-sm text-error">{errors.petitioner_first.message}</p>}
                 </div>
                 <div>
-                  <label htmlFor="petitioner_last" className="block text-sm font-semibold text-brand-900 mb-2">Your Last Name</label>
+                  <label htmlFor="petitioner_last" className="block text-sm font-semibold text-text-heading mb-2">Your Last Name</label>
                   <input
                     id="petitioner_last"
                     {...register("petitioner_last")}
                     aria-invalid={!!errors.petitioner_last}
                     aria-describedby={errors.petitioner_last ? "petitioner_last-error" : undefined}
-                    className="w-full rounded-lg border border-brand-500/30 px-4 py-3 text-brand-900 focus:outline-none focus:ring-2 focus:ring-accent-600"
+                    className="w-full rounded-lg border border-border-input bg-surface-input px-4 py-3 text-text-heading focus:outline-none focus:ring-2 focus:ring-accent-600"
                   />
                   {errors.petitioner_last && <p id="petitioner_last-error" className="mt-1 text-sm text-error">{errors.petitioner_last.message}</p>}
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-semibold text-brand-900 mb-2">Other Parent&apos;s First Name</label>
+                  <label className="block text-sm font-semibold text-text-heading mb-2">Other Parent&apos;s First Name</label>
                   <input
                     {...register("respondent_first")}
-                    className="w-full rounded-lg border border-brand-500/30 px-4 py-3 text-brand-900 focus:outline-none focus:ring-2 focus:ring-accent-600"
+                    className="w-full rounded-lg border border-border-input bg-surface-input px-4 py-3 text-text-heading focus:outline-none focus:ring-2 focus:ring-accent-600"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-brand-900 mb-2">Other Parent&apos;s Last Name</label>
+                  <label className="block text-sm font-semibold text-text-heading mb-2">Other Parent&apos;s Last Name</label>
                   <input
                     {...register("respondent_last")}
-                    className="w-full rounded-lg border border-brand-500/30 px-4 py-3 text-brand-900 focus:outline-none focus:ring-2 focus:ring-accent-600"
+                    className="w-full rounded-lg border border-border-input bg-surface-input px-4 py-3 text-text-heading focus:outline-none focus:ring-2 focus:ring-accent-600"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-brand-900 mb-2">Number of Adults for Intake</label>
+                <label className="block text-sm font-semibold text-text-heading mb-2">Number of Adults for Intake</label>
                 <select
                   {...register("adults_count", { valueAsNumber: true })}
-                  className="w-full rounded-lg border border-brand-500/30 px-4 py-3 text-brand-900 focus:outline-none focus:ring-2 focus:ring-accent-600"
+                  className="w-full rounded-lg border border-border-input bg-surface-input px-4 py-3 text-text-heading focus:outline-none focus:ring-2 focus:ring-accent-600"
                 >
                   <option value={1}>1</option>
                   <option value={2}>2</option>
@@ -246,16 +246,16 @@ export default function StartPage() {
                 <input
                   type="checkbox"
                   {...register("has_court_order")}
-                  className="h-4 w-4 rounded border-brand-500/30 text-accent-600 focus:ring-accent-600"
+                  className="h-4 w-4 rounded border-border-input text-accent-600 focus:ring-accent-600"
                 />
-                <label className="text-sm text-brand-900">I have a court order or stipulation</label>
+                <label className="text-sm text-text-heading">I have a court order or stipulation</label>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-brand-900 mb-2">Court Order Notes (optional)</label>
+                <label className="block text-sm font-semibold text-text-heading mb-2">Court Order Notes (optional)</label>
                 <textarea
                   {...register("court_order_notes")}
                   rows={3}
-                  className="w-full rounded-lg border border-brand-500/30 px-4 py-3 text-brand-900 focus:outline-none focus:ring-2 focus:ring-accent-600"
+                  className="w-full rounded-lg border border-border-input bg-surface-input px-4 py-3 text-text-heading focus:outline-none focus:ring-2 focus:ring-accent-600"
                 />
               </div>
             </div>
@@ -265,36 +265,36 @@ export default function StartPage() {
           {step === 2 && (
             <div className="space-y-6">
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-brand-900 mb-2">Email</label>
+                <label htmlFor="email" className="block text-sm font-semibold text-text-heading mb-2">Email</label>
                 <input
                   id="email"
                   type="email"
                   {...register("email")}
                   aria-invalid={!!errors.email}
                   aria-describedby={errors.email ? "email-error" : undefined}
-                  className="w-full rounded-lg border border-brand-500/30 px-4 py-3 text-brand-900 focus:outline-none focus:ring-2 focus:ring-accent-600"
+                  className="w-full rounded-lg border border-border-input bg-surface-input px-4 py-3 text-text-heading focus:outline-none focus:ring-2 focus:ring-accent-600"
                 />
                 {errors.email && <p id="email-error" className="mt-1 text-sm text-error">{errors.email.message}</p>}
               </div>
               <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-brand-900 mb-2">Phone</label>
+                <label htmlFor="phone" className="block text-sm font-semibold text-text-heading mb-2">Phone</label>
                 <input
                   id="phone"
                   type="tel"
                   {...register("phone")}
                   aria-invalid={!!errors.phone}
                   aria-describedby={errors.phone ? "phone-error" : undefined}
-                  className="w-full rounded-lg border border-brand-500/30 px-4 py-3 text-brand-900 focus:outline-none focus:ring-2 focus:ring-accent-600"
+                  className="w-full rounded-lg border border-border-input bg-surface-input px-4 py-3 text-text-heading focus:outline-none focus:ring-2 focus:ring-accent-600"
                 />
                 {errors.phone && <p id="phone-error" className="mt-1 text-sm text-error">{errors.phone.message}</p>}
               </div>
               <div>
-                <label className="block text-sm font-semibold text-brand-900 mb-2">Preferred Schedule (optional)</label>
+                <label className="block text-sm font-semibold text-text-heading mb-2">Preferred Schedule (optional)</label>
                 <textarea
                   {...register("preferred_schedule")}
                   rows={3}
                   placeholder="e.g., Saturdays 10am-12pm"
-                  className="w-full rounded-lg border border-brand-500/30 px-4 py-3 text-brand-900 focus:outline-none focus:ring-2 focus:ring-accent-600"
+                  className="w-full rounded-lg border border-border-input bg-surface-input px-4 py-3 text-text-heading focus:outline-none focus:ring-2 focus:ring-accent-600"
                 />
               </div>
             </div>
@@ -303,37 +303,37 @@ export default function StartPage() {
           {/* Step 4: Review & Pay */}
           {step === 3 && (
             <div className="space-y-4">
-              <div className="rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-brand-900 mb-4">Review Your Information</h3>
-                <dl className="space-y-2 text-sm text-brand-700">
+              <div className="rounded-xl border border-border-default bg-surface-card p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-text-heading mb-4">Review Your Information</h3>
+                <dl className="space-y-2 text-sm text-text-body">
                   <div className="flex justify-between">
                     <dt>County</dt>
-                    <dd className="font-semibold text-brand-900">{selectedCounty?.label ?? values.county_slug}</dd>
+                    <dd className="font-semibold text-text-heading">{selectedCounty?.label ?? values.county_slug}</dd>
                   </div>
                   <div className="flex justify-between">
                     <dt>Service</dt>
-                    <dd className="font-semibold text-brand-900">{selectedService?.label ?? values.service_slug}</dd>
+                    <dd className="font-semibold text-text-heading">{selectedService?.label ?? values.service_slug}</dd>
                   </div>
                   <div className="flex justify-between">
                     <dt>Name</dt>
-                    <dd className="font-semibold text-brand-900">{values.petitioner_first} {values.petitioner_last}</dd>
+                    <dd className="font-semibold text-text-heading">{values.petitioner_first} {values.petitioner_last}</dd>
                   </div>
                   <div className="flex justify-between">
                     <dt>Email</dt>
-                    <dd className="font-semibold text-brand-900">{values.email}</dd>
+                    <dd className="font-semibold text-text-heading">{values.email}</dd>
                   </div>
                   <div className="flex justify-between">
                     <dt>Phone</dt>
-                    <dd className="font-semibold text-brand-900">{values.phone}</dd>
+                    <dd className="font-semibold text-text-heading">{values.phone}</dd>
                   </div>
                   <div className="flex justify-between">
                     <dt>Adults</dt>
-                    <dd className="font-semibold text-brand-900">{values.adults_count}</dd>
+                    <dd className="font-semibold text-text-heading">{values.adults_count}</dd>
                   </div>
                 </dl>
               </div>
 
-              <div className="rounded-lg bg-accent-100 p-4 text-sm text-brand-900">
+              <div className="rounded-lg bg-surface-accent p-4 text-sm text-text-heading">
                 Payment does not guarantee provider acceptance. SafePair reviews every case independently.
               </div>
             </div>
@@ -351,7 +351,7 @@ export default function StartPage() {
               <button
                 type="button"
                 onClick={() => setStep((s) => s - 1)}
-                className="rounded-lg border border-brand-500 bg-white px-6 py-3 text-base font-semibold text-brand-900 hover:bg-brand-100 transition-colors"
+                className="rounded-lg border border-border-default bg-surface-card px-6 py-3 text-base font-semibold text-text-heading hover:bg-surface-muted transition-colors"
               >
                 Back
               </button>

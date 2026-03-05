@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { faqSchema } from "@/lib/seo/schemas";
@@ -80,20 +79,20 @@ export default function ForAttorneysPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
 
           {/* SafeProvider handles vs does not handle */}
-          <div className="mt-12 rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
-            <div className="grid grid-cols-2">
-              <div className="bg-brand-100 p-4 font-semibold text-brand-900 border-b border-brand-500/20">
+          <div className="mt-12 rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
+            <div className="grid grid-cols-1 sm:grid-cols-2">
+              <div className="bg-surface-muted p-4 font-semibold text-text-heading border-b border-border-default">
                 SafeProvider Handles
               </div>
-              <div className="bg-brand-100 p-4 font-semibold text-brand-900 border-b border-brand-500/20">
+              <div className="bg-surface-muted p-4 font-semibold text-text-heading border-b border-border-default">
                 SafeProvider Does Not Handle
               </div>
               {WE_HANDLE.map((item, i) => (
                 <div key={i} className="contents">
-                  <div className="p-4 text-brand-700 border-b border-brand-500/10">
+                  <div className="p-4 text-text-body border-b border-border-default">
                     {item}
                   </div>
-                  <div className="p-4 text-brand-700 border-b border-brand-500/10">
+                  <div className="p-4 text-text-body border-b border-border-default">
                     {WE_DO_NOT_HANDLE[i]}
                   </div>
                 </div>
@@ -102,7 +101,7 @@ export default function ForAttorneysPage() {
           </div>
 
           {/* SafePair handles — image integrated */}
-          <div className="mt-8 rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-hidden">
+          <div className="mt-8 rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden">
             <div className="flex flex-col sm:flex-row">
               <div className="shrink-0 sm:w-48">
                 <video
@@ -117,10 +116,10 @@ export default function ForAttorneysPage() {
                 </video>
               </div>
               <div className="p-6">
-                <h2 className="text-xl font-semibold text-brand-900 mb-4">SafePair Handles</h2>
+                <h2 className="text-xl font-semibold text-text-heading mb-4">SafePair Handles</h2>
                 <ul className="space-y-2">
                   {SAFEPAIR_HANDLES.map((item, i) => (
-                    <li key={i} className="text-brand-700 flex items-start gap-2">
+                    <li key={i} className="text-text-body flex items-start gap-2">
                       <span className="text-accent-600 mt-1">&#10003;</span>
                       {item}
                     </li>
@@ -132,7 +131,7 @@ export default function ForAttorneysPage() {
 
           {/* Referral steps */}
           <div className="mt-12">
-            <h2 className="text-2xl font-semibold text-brand-900 text-center mb-8">How to Refer</h2>
+            <h2 className="text-2xl font-semibold text-text-heading text-center mb-8">How to Refer</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {[
                 { step: "1", title: "Direct Your Client", desc: "Send your client to safeprovider.org/start or share referral details via our contact page." },
@@ -144,8 +143,8 @@ export default function ForAttorneysPage() {
                   <div className="mx-auto w-10 h-10 rounded-full bg-accent-600 text-white flex items-center justify-center text-lg font-bold">
                     {item.step}
                   </div>
-                  <h3 className="mt-3 text-base font-semibold text-brand-900">{item.title}</h3>
-                  <p className="mt-1 text-sm text-brand-700">{item.desc}</p>
+                  <h3 className="mt-3 text-base font-semibold text-text-heading">{item.title}</h3>
+                  <p className="mt-1 text-sm text-text-body">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -153,13 +152,13 @@ export default function ForAttorneysPage() {
 
           {/* County quick-links */}
           <div className="mt-12">
-            <h2 className="text-2xl font-semibold text-brand-900 text-center mb-4">Counties We Serve</h2>
+            <h2 className="text-2xl font-semibold text-text-heading text-center mb-4">Counties We Serve</h2>
             <div className="flex flex-wrap justify-center gap-3">
               {liveCounties.map((county) => (
                 <Link
                   key={county.slug}
                   href={`/counties/${county.slug}`}
-                  className="rounded-lg border border-brand-500/20 bg-white px-4 py-2 text-sm text-brand-700 hover:bg-brand-100 transition-colors"
+                  className="rounded-lg border border-border-default bg-surface-card px-4 py-2 text-sm text-text-body hover:bg-surface-muted transition-colors"
                 >
                   {county.name}
                 </Link>
@@ -169,7 +168,7 @@ export default function ForAttorneysPage() {
 
           {/* FAQ */}
           <div className="mt-12">
-            <h2 className="text-2xl font-semibold text-brand-900 text-center mb-8">Attorney FAQ</h2>
+            <h2 className="text-2xl font-semibold text-text-heading text-center mb-8">Attorney FAQ</h2>
             <FaqAccordion items={ATTORNEY_FAQ} />
           </div>
 
@@ -182,12 +181,12 @@ export default function ForAttorneysPage() {
             </Link>
             <Link
               href="/start"
-              className="rounded-lg border border-brand-500/20 px-6 py-3 text-base font-semibold text-brand-900 hover:bg-brand-100 transition-colors"
+              className="rounded-lg border border-border-default px-6 py-3 text-base font-semibold text-text-heading hover:bg-surface-muted transition-colors"
             >
               Start Intake Now
             </Link>
           </div>
-          <p className="mt-3 text-sm text-brand-500 text-center">
+          <p className="mt-3 text-sm text-text-muted text-center">
             Intake response within 8 business hours.
           </p>
         </div>

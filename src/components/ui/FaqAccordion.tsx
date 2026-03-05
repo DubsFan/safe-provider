@@ -13,26 +13,27 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
       {items.map((item, index) => (
         <div
           key={index}
-          className="rounded-xl border border-brand-500/20 bg-white shadow-sm"
+          className="rounded-xl border border-border-default bg-surface-card shadow-sm"
         >
           <button
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
             className="flex w-full items-center justify-between p-6 text-left"
             aria-expanded={openIndex === index}
           >
-            <span className="text-base font-semibold text-brand-900 pr-4">
+            <span className="text-base font-semibold text-text-heading pr-4">
               {item.question}
             </span>
             <ChevronDown
-              className={`h-5 w-5 shrink-0 text-brand-500 transition-transform ${
+              className={`h-5 w-5 shrink-0 text-text-muted transition-transform ${
                 openIndex === index ? "rotate-180" : ""
               }`}
             />
           </button>
           {openIndex === index && (
-            <div className="px-6 pb-6 text-brand-700">
-              {item.answer}
-            </div>
+            <div
+              className="px-6 pb-6 text-text-body [&_a]:text-accent-600 [&_a]:underline [&_a]:hover:text-accent-500"
+              dangerouslySetInnerHTML={{ __html: item.answer }}
+            />
           )}
         </div>
       ))}

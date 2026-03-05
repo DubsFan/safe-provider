@@ -49,30 +49,30 @@ export default function AdminCasesPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-brand-900 mb-4">Cases</h1>
+      <h1 className="text-2xl font-bold text-text-heading mb-4">Cases</h1>
 
       {loading ? (
-        <p className="text-brand-500">Loading...</p>
+        <p className="text-text-muted">Loading...</p>
       ) : (
-        <div className="rounded-xl border border-brand-500/20 bg-white shadow-sm overflow-auto">
+        <div className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-brand-500/10 bg-brand-100">
-                <th className="text-left p-3 font-semibold text-brand-900">Case ID</th>
-                <th className="text-left p-3 font-semibold text-brand-900">County</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Service</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Provider Status</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Provider Gross</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Platform Fee</th>
-                <th className="text-left p-3 font-semibold text-brand-900">Date</th>
+              <tr className="border-b border-border-default bg-surface-muted">
+                <th className="text-left p-3 font-semibold text-text-heading">Case ID</th>
+                <th className="text-left p-3 font-semibold text-text-heading">County</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Service</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Provider Status</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Provider Gross</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Platform Fee</th>
+                <th className="text-left p-3 font-semibold text-text-heading">Date</th>
               </tr>
             </thead>
             <tbody>
               {cases.map((c) => (
-                <tr key={c.id} className="border-b border-brand-500/5 hover:bg-brand-100/50">
-                  <td className="p-3 text-brand-900 font-mono text-xs">{c.id.slice(0, 8)}</td>
-                  <td className="p-3 text-brand-700">{c.county_slug}</td>
-                  <td className="p-3 text-brand-700">{c.service_slug}</td>
+                <tr key={c.id} className="border-b border-border-default hover:bg-surface-muted/50">
+                  <td className="p-3 text-text-heading font-mono text-xs">{c.id.slice(0, 8)}</td>
+                  <td className="p-3 text-text-body">{c.county_slug}</td>
+                  <td className="p-3 text-text-body">{c.service_slug}</td>
                   <td className="p-3">
                     <select
                       value={c.provider_status}
@@ -84,14 +84,14 @@ export default function AdminCasesPage() {
                       ))}
                     </select>
                   </td>
-                  <td className="p-3 text-brand-700">${(c.provider_gross_cents / 100).toFixed(2)}</td>
-                  <td className="p-3 text-brand-700">${(c.platform_fee_cents / 100).toFixed(2)}</td>
-                  <td className="p-3 text-brand-500">{new Date(c.created_at).toLocaleDateString()}</td>
+                  <td className="p-3 text-text-body">${(c.provider_gross_cents / 100).toFixed(2)}</td>
+                  <td className="p-3 text-text-body">${(c.platform_fee_cents / 100).toFixed(2)}</td>
+                  <td className="p-3 text-text-muted">{new Date(c.created_at).toLocaleDateString()}</td>
                 </tr>
               ))}
               {cases.length === 0 && (
                 <tr>
-                  <td colSpan={7} className="p-8 text-center text-brand-500">No cases found</td>
+                  <td colSpan={7} className="p-8 text-center text-text-muted">No cases found</td>
                 </tr>
               )}
             </tbody>
