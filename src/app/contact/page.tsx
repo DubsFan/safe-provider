@@ -38,7 +38,7 @@ export default function ContactPage() {
           muted
           playsInline
           poster="/images/grandma-coffee.webp"
-          className="w-full h-56 sm:h-72 object-cover object-[center_35%] opacity-30"
+          className="w-full h-56 sm:h-72 object-cover object-[center_25%] opacity-30"
         >
           <source src="/images/father-daughter-loop.mp4" type="video/mp4" />
         </video>
