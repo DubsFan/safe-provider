@@ -65,39 +65,37 @@ const VIDEOS = [
 export default function AboutSafePairPage() {
   return (
     <>
-      {/* Hero — safepair family boardwalk image */}
+      {/* Hero — safepair family boardwalk image + logo */}
       <section className="relative bg-brand-900 overflow-hidden">
         <Image
           src="/images/safepair-hero.avif"
           alt="Family walking together — SafePair supervised visitation"
           width={1920}
           height={600}
-          className="w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[28rem] object-cover object-[center_40%] opacity-40"
+          className="absolute inset-0 w-full h-full object-cover object-[center_40%] opacity-30"
           priority
         />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center px-4">
-            <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              Our Provider Partner
-            </h1>
-            <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
-              All supervised visitation and exchange services booked through
-              SafeProvider are delivered by SafePair.
-            </p>
-          </div>
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 py-16 sm:py-20 md:py-24 lg:py-32">
+          <Image
+            src="/images/safepair-logo.png"
+            alt="SafePair"
+            width={160}
+            height={160}
+            className="w-24 sm:w-28 md:w-32 lg:w-36 h-auto mb-6 invert brightness-0 invert"
+          />
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+            Our Provider Partner
+          </h1>
+          <p className="mt-4 text-base sm:text-lg text-gray-200 max-w-2xl mx-auto">
+            All supervised visitation and exchange services booked through
+            SafeProvider are delivered by SafePair.
+          </p>
         </div>
       </section>
 
-      {/* Mission — logo large, centered, calming layout */}
+      {/* Mission */}
       <section className="py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <Image
-            src="/images/safepair-logo.png"
-            alt="SafePair — professional supervised visitation provider"
-            width={200}
-            height={200}
-            className="w-32 sm:w-40 md:w-48 h-auto mx-auto mb-8 safepair-logo"
-          />
           <h2 className="text-3xl sm:text-4xl font-bold text-text-heading mb-8">
             SafePair&apos;s Mission
           </h2>
