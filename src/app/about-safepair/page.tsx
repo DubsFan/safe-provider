@@ -157,23 +157,33 @@ export default function AboutSafePairPage() {
               {
                 title: "Witness Testimony",
                 desc: "Witness testimonies provided as needed or requested by parents, attorneys, or courts.",
-                video: "/images/father-daughter-loop.mp4",
-                alt: "Professional supervision during family visit",
+                img: "/images/witness-testimony.webp",
+                alt: "Professional providing witness testimony in courtroom",
               },
             ].map((item) => (
               <div
                 key={item.title}
                 className="rounded-2xl border border-border-default bg-surface-card shadow-sm overflow-hidden"
               >
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-48 object-cover object-[center_35%]"
-                >
-                  <source src={item.video} type="video/mp4" />
-                </video>
+                {"video" in item ? (
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-48 object-cover object-[center_35%]"
+                  >
+                    <source src={item.video} type="video/mp4" />
+                  </video>
+                ) : (
+                  <Image
+                    src={item.img}
+                    alt={item.alt}
+                    width={400}
+                    height={200}
+                    className="w-full h-48 object-cover object-[center_35%]"
+                  />
+                )}
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-text-heading mb-2">
                     {item.title}
@@ -215,7 +225,7 @@ export default function AboutSafePairPage() {
                 alt="Monitored Custody Exchanges — protocol-driven, documented, confidential"
                 width={320}
                 height={320}
-                className="w-56 sm:w-64 md:w-72 h-auto rounded-2xl shadow-lg"
+                className="w-64 sm:w-72 md:w-80 h-auto rounded-2xl shadow-lg"
               />
             </div>
           </div>
