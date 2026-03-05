@@ -68,11 +68,11 @@ export default function AboutSafePairPage() {
       {/* Hero */}
       <section className="relative bg-brand-900 overflow-hidden">
         <Image
-          src="/images/safepair hero image.jpg.avif"
+          src="/images/safepair-hero.avif"
           alt="SafePair supervised visitation services"
           width={1920}
           height={600}
-          className="w-full h-64 sm:h-80 object-cover object-center opacity-40"
+          className="w-full h-64 sm:h-80 object-cover object-[center_35%] opacity-40"
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -91,6 +91,15 @@ export default function AboutSafePairPage() {
       {/* Mission */}
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/images/safepair-logo.png"
+              alt="SafePair — professional supervised visitation provider"
+              width={300}
+              height={300}
+              className="w-48 sm:w-64 h-auto safepair-logo"
+            />
+          </div>
           <h2 className="text-3xl font-bold text-text-heading mb-6">
             SafePair&apos;s Mission
           </h2>
