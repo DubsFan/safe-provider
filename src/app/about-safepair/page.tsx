@@ -89,23 +89,25 @@ export default function AboutSafePairPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-16">
+      <section className="bg-surface-accent py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-            <div className="shrink-0">
-              <Image
-                src="/images/safepair-logo.png"
-                alt="SafePair — professional supervised visitation provider"
-                width={300}
-                height={300}
-                className="w-40 sm:w-52 md:w-60 h-auto safepair-logo"
-              />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-text-heading mb-6">
+          <div className="rounded-2xl border border-accent-200 bg-surface-card p-8 md:p-12 shadow-sm">
+            <div className="flex flex-col items-center text-center mb-8">
+              <div className="rounded-full bg-surface-accent p-5 mb-6">
+                <Image
+                  src="/images/safepair-logo.png"
+                  alt="SafePair — professional supervised visitation provider"
+                  width={120}
+                  height={120}
+                  className="w-20 md:w-24 h-auto safepair-logo"
+                />
+              </div>
+              <h2 className="text-3xl font-bold text-text-heading">
                 SafePair&apos;s Mission
               </h2>
-              <p className="text-text-body text-lg leading-relaxed mb-6">
+            </div>
+            <div className="max-w-2xl mx-auto space-y-5">
+              <p className="text-text-body text-lg leading-relaxed">
                 At SafePair, our mission is to provide professional, reliable, and
                 child-focused supervised visitation services that ensure families can
                 maintain meaningful connections in a safe and neutral environment.
@@ -124,9 +126,9 @@ export default function AboutSafePairPage() {
       </section>
 
       {/* Services */}
-      <section className="bg-surface-subtle py-16">
+      <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-text-heading mb-8">
+          <h2 className="text-2xl font-bold text-text-heading text-center mb-8">
             What SafePair Provides
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -134,24 +136,38 @@ export default function AboutSafePairPage() {
               {
                 title: "Home & Community Visits",
                 desc: "Supervised visitation at home or within the community — wherever is safest and most comfortable for the child.",
+                video: "/images/library-loop.mp4",
               },
               {
                 title: "Reports to Parents & Courts",
                 desc: "Detailed documentation provided to parents and/or courts after each visit or exchange.",
+                video: "/images/clipboard-loop.mp4",
               },
               {
                 title: "Witness Testimony",
                 desc: "Witness testimonies provided as needed or requested by parents, attorneys, or courts.",
+                video: "/images/father-daughter-loop.mp4",
               },
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-xl border border-border-default bg-surface-card p-6 shadow-sm"
+                className="rounded-xl border border-border-default bg-surface-card shadow-sm overflow-hidden"
               >
-                <h3 className="text-lg font-semibold text-text-heading mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-text-body text-sm">{item.desc}</p>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-36 object-cover object-[center_35%]"
+                >
+                  <source src={item.video} type="video/mp4" />
+                </video>
+                <div className="p-5">
+                  <h3 className="text-base font-semibold text-text-heading mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-text-body text-sm">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
