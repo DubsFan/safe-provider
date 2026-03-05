@@ -26,38 +26,55 @@
 }
 
 @theme {
-  /* Semantic tokens — use CSS variables so .dark can override */
-  --color-surface-page: #FFFFFF;
-  --color-surface-card: #FFFFFF;
-  --color-surface-muted: #F4F1EC;
-  --color-surface-subtle: #F9F7F4;
-  --color-surface-accent: #E6F7F7;
-  --color-surface-input: #FFFFFF;
-  --color-surface-footer: #0F2C3D;
+  /* Semantic tokens — reference intermediate vars so .dark can override */
+  --color-surface-page: var(--sp-surface-page);
+  --color-surface-card: var(--sp-surface-card);
+  --color-surface-muted: var(--sp-surface-muted);
+  --color-surface-subtle: var(--sp-surface-subtle);
+  --color-surface-accent: var(--sp-surface-accent);
+  --color-surface-input: var(--sp-surface-input);
+  --color-surface-footer: var(--sp-surface-footer);
 
-  --color-text-heading: #0F2C3D;
-  --color-text-body: #2F3A40;
-  --color-text-muted: #64748B;
+  --color-text-heading: var(--sp-text-heading);
+  --color-text-body: var(--sp-text-body);
+  --color-text-muted: var(--sp-text-muted);
 
-  --color-border-default: rgba(100, 116, 139, 0.2);
-  --color-border-input: rgba(100, 116, 139, 0.3);
+  --color-border-default: var(--sp-border-default);
+  --color-border-input: var(--sp-border-input);
+}
+
+:root {
+  --sp-surface-page: #FFFFFF;
+  --sp-surface-card: #FFFFFF;
+  --sp-surface-muted: #F4F1EC;
+  --sp-surface-subtle: #F9F7F4;
+  --sp-surface-accent: #E6F7F7;
+  --sp-surface-input: #FFFFFF;
+  --sp-surface-footer: #0F2C3D;
+
+  --sp-text-heading: #0F2C3D;
+  --sp-text-body: #2F3A40;
+  --sp-text-muted: #64748B;
+
+  --sp-border-default: rgba(100, 116, 139, 0.2);
+  --sp-border-input: rgba(100, 116, 139, 0.3);
 }
 
 .dark {
-  --color-surface-page: #0F1A24;
-  --color-surface-card: #162230;
-  --color-surface-muted: #1A2B3A;
-  --color-surface-subtle: #152030;
-  --color-surface-accent: #0D2F2F;
-  --color-surface-input: #1A2B3A;
-  --color-surface-footer: #0A1E2C;
+  --sp-surface-page: #0F1A24;
+  --sp-surface-card: #162230;
+  --sp-surface-muted: #1A2B3A;
+  --sp-surface-subtle: #152030;
+  --sp-surface-accent: #0D2F2F;
+  --sp-surface-input: #1A2B3A;
+  --sp-surface-footer: #0A1E2C;
 
-  --color-text-heading: #E8E4DF;
-  --color-text-body: #C0BDB8;
-  --color-text-muted: #8896A5;
+  --sp-text-heading: #E8E4DF;
+  --sp-text-body: #C0BDB8;
+  --sp-text-muted: #8896A5;
 
-  --color-border-default: rgba(200, 210, 220, 0.12);
-  --color-border-input: rgba(200, 210, 220, 0.2);
+  --sp-border-default: rgba(200, 210, 220, 0.12);
+  --sp-border-input: rgba(200, 210, 220, 0.2);
 }
 
 body {
