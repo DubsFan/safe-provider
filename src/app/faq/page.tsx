@@ -53,8 +53,8 @@ export default function FaqPage() {
       {/* Hero banner */}
       <section className="relative bg-brand-900 overflow-hidden">
         <Image
-          src="/images/hero-visitation.webp"
-          alt="Parent and child during a supervised visitation session with a professional monitor"
+          src="/images/virtual-visit.webp"
+          alt="Child participating in a supervised video visit with headphones on a laptop"
           width={1400}
           height={500}
           className="w-full h-64 sm:h-72 object-cover opacity-40"
@@ -75,28 +75,58 @@ export default function FaqPage() {
 
           <div className="mt-12 space-y-12">
             <div>
-              <h2 className="text-xl font-semibold text-brand-900 mb-4">Cost and Pricing</h2>
+              <div className="flex items-baseline justify-between mb-4">
+                <h2 className="text-xl font-semibold text-brand-900">Cost and Pricing</h2>
+                <Link href="/pricing" className="text-sm font-semibold text-accent-600 hover:text-accent-500">See full pricing &rarr;</Link>
+              </div>
               <FaqAccordion items={COST_FAQ} />
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-brand-900 mb-4">Process</h2>
+              <div className="flex items-baseline justify-between mb-4">
+                <h2 className="text-xl font-semibold text-brand-900">Process</h2>
+                <Link href="/how-it-works" className="text-sm font-semibold text-accent-600 hover:text-accent-500">See 5-step process &rarr;</Link>
+              </div>
               <FaqAccordion items={PROCESS_FAQ} />
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-brand-900 mb-4">Trust and Safety</h2>
+              <div className="flex items-baseline justify-between mb-4">
+                <h2 className="text-xl font-semibold text-brand-900">Trust and Safety</h2>
+                <Link href="/counties" className="text-sm font-semibold text-accent-600 hover:text-accent-500">View counties &rarr;</Link>
+              </div>
               <FaqAccordion items={TRUST_FAQ} />
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-brand-900 mb-4">For Attorneys</h2>
+              <div className="flex items-baseline justify-between mb-4">
+                <h2 className="text-xl font-semibold text-brand-900">For Attorneys</h2>
+                <Link href="/for-attorneys" className="text-sm font-semibold text-accent-600 hover:text-accent-500">Attorney resources &rarr;</Link>
+              </div>
               <FaqAccordion items={ATTORNEY_FAQ} />
             </div>
           </div>
 
+          {/* Inline images */}
+          <div className="mt-12 grid grid-cols-2 gap-4">
+            <Image
+              src="/images/park-visit-1.webp"
+              alt="Father and daughter drawing together on a park bench"
+              width={400}
+              height={300}
+              className="w-full rounded-xl shadow-sm"
+            />
+            <Image
+              src="/images/private-hallway.webp"
+              alt="Private office hallway with secure door — discretion and safety"
+              width={400}
+              height={300}
+              className="w-full rounded-xl shadow-sm"
+            />
+          </div>
+
           {/* Trust badges */}
-          <div className="mt-12">
+          <div className="mt-8">
             <Image
               src="/images/trust-icons.webp"
               alt="Trust icons: background checks, certified training, strict confidentiality, neutral supervision, flexible scheduling, court-ready documentation"

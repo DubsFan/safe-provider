@@ -107,7 +107,7 @@ export default function StartPage() {
     <div className="relative py-16">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-[0.06]"
-        style={{ backgroundImage: "url(/images/hero-visitation.webp)" }}
+        style={{ backgroundImage: "url(/images/intake-flatlay.webp)" }}
       />
       <div className="relative mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-brand-900 text-center">Start Your Intake</h1>

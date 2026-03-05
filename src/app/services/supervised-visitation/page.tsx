@@ -87,6 +87,24 @@ export default async function SupervisedVisitationPage() {
             </p>
           </div>
 
+          {/* Inline images */}
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="/images/service-visitation.webp"
+              alt="Parent and child reading together at a library table"
+              width={400}
+              height={300}
+              className="w-full rounded-xl shadow-sm"
+            />
+            <Image
+              src="/images/community-coloring.webp"
+              alt="Parent and child drawing together at a community center"
+              width={400}
+              height={300}
+              className="w-full rounded-xl shadow-sm"
+            />
+          </div>
+
           <div className="rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm">
             <h2 className="text-xl font-semibold text-brand-900 mb-4">Pricing</h2>
             <ul className="space-y-2 text-brand-700">

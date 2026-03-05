@@ -30,8 +30,8 @@ export default function PricingPage() {
       {/* Hero banner */}
       <section className="relative bg-brand-900 overflow-hidden">
         <Image
-          src="/images/hero-visitation.webp"
-          alt="Parent and child during a supervised visitation session with a professional monitor"
+          src="/images/community-coloring.webp"
+          alt="Parent and child drawing together at a community center table"
           width={1400}
           height={500}
           className="w-full h-64 sm:h-80 object-cover opacity-40"
@@ -88,13 +88,20 @@ export default function PricingPage() {
             </ul>
           </div>
 
-          {/* Service cards image */}
-          <div className="mt-12 max-w-4xl mx-auto">
+          {/* Inline images */}
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Image
               src="/images/service-visitation.webp"
-              alt="Parent and child reading together during a supervised visitation session"
-              width={1200}
-              height={400}
+              alt="Parent and child reading together at a library table"
+              width={600}
+              height={450}
+              className="w-full rounded-xl shadow-sm"
+            />
+            <Image
+              src="/images/park-visit-1.webp"
+              alt="Father and daughter drawing together on a park bench"
+              width={600}
+              height={450}
               className="w-full rounded-xl shadow-sm"
             />
           </div>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { PHONE, EMAIL, COUNTIES } from "@/lib/site-config";
+import { PHONE, EMAIL, COUNTIES, SITE_URL } from "@/lib/site-config";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
 
 export const metadata = buildMetadata({
@@ -12,14 +12,28 @@ export const metadata = buildMetadata({
 
 const liveCounties = COUNTIES.filter((c) => c.status === "live");
 
+const contactSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ContactPoint",
+  telephone: PHONE,
+  email: EMAIL,
+  contactType: "customer service",
+  availableLanguage: "English",
+  url: `${SITE_URL}/contact`,
+});
+
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: contactSchema }}
+      />
       {/* Hero banner */}
       <section className="relative bg-brand-900 overflow-hidden">
         <Image
-          src="/images/hero-visitation.webp"
-          alt="Parent and child during a supervised visitation session"
+          src="/images/intake-flatlay.webp"
+          alt="Notebook, pen, and ID badge on a desk — ready for intake"
           width={1400}
           height={500}
           className="w-full h-48 sm:h-64 object-cover opacity-40"
@@ -83,6 +97,17 @@ export default function ContactPage() {
               ))}
             </ul>
           </div>
+        </div>
+
+        {/* Inline image */}
+        <div className="mt-8 max-w-md mx-auto">
+          <Image
+            src="/images/community-coloring.webp"
+            alt="Parent and child drawing together at a community center"
+            width={500}
+            height={375}
+            className="w-full rounded-xl shadow-sm"
+          />
         </div>
 
         <div className="mt-8 text-center">

@@ -55,8 +55,8 @@ export default function ForAttorneysPage() {
       {/* Hero with image */}
       <section className="relative bg-brand-900 overflow-hidden">
         <Image
-          src="/images/service-documentation.webp"
-          alt="Professional documentation and clipboard for court-ready supervised visitation reports"
+          src="/images/attorney-review.webp"
+          alt="Attorney reviewing court documents and scheduling calendar at desk"
           width={1400}
           height={500}
           className="w-full h-64 sm:h-80 object-cover opacity-60"
@@ -97,6 +97,24 @@ export default function ForAttorneysPage() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Inline images */}
+          <div className="mt-8 grid grid-cols-2 gap-4">
+            <Image
+              src="/images/service-documentation.webp"
+              alt="Professional writing on a court documentation clipboard"
+              width={400}
+              height={300}
+              className="w-full rounded-xl shadow-sm"
+            />
+            <Image
+              src="/images/private-hallway.webp"
+              alt="Private office hallway with secure door — discretion and safety"
+              width={400}
+              height={300}
+              className="w-full rounded-xl shadow-sm"
+            />
           </div>
 
           {/* SafePair handles */}

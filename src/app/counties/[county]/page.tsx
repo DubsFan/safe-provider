@@ -100,8 +100,8 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
       {/* Hero banner */}
       <section className="relative bg-brand-900 overflow-hidden">
         <Image
-          src="/images/hero-visitation.webp"
-          alt={`Supervised visitation services in ${countyData.name}`}
+          src="/images/landing-hero-alt2.webp"
+          alt={`Supervised visitation and custody exchange services in ${countyData.name}`}
           width={1400}
           height={500}
           className="w-full h-64 sm:h-80 object-cover opacity-40"
@@ -168,6 +168,24 @@ export default async function CountyPage({ params }: { params: Promise<{ county:
                     </Link>
                   ))}
                 </div>
+              </div>
+
+              {/* Inline images */}
+              <div className="mt-8 grid grid-cols-2 gap-4">
+                <Image
+                  src="/images/service-visitation.webp"
+                  alt="Parent and child reading together at a library table"
+                  width={400}
+                  height={300}
+                  className="w-full rounded-xl shadow-sm"
+                />
+                <Image
+                  src="/images/hero-exchange.webp"
+                  alt="Neutral monitor facilitating a supervised custody exchange"
+                  width={400}
+                  height={300}
+                  className="w-full rounded-xl shadow-sm"
+                />
               </div>
 
               {/* What to have ready */}

@@ -17,8 +17,8 @@ export default function CountiesPage() {
       {/* Hero banner */}
       <section className="relative bg-brand-900 overflow-hidden">
         <Image
-          src="/images/hero-visitation.webp"
-          alt="Parent and child during a supervised visitation session"
+          src="/images/landing-hero-alt1.webp"
+          alt="Supervised visitation session and diverse families served across Bay Area counties"
           width={1400}
           height={500}
           className="w-full h-64 sm:h-72 object-cover opacity-40"
@@ -36,6 +36,10 @@ export default function CountiesPage() {
 
     <div className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <p className="mt-8 text-brand-700 text-center max-w-3xl mx-auto">
+          SafePair currently serves families in four Bay Area counties. Each county has its own family court system, and your court order specifies which county has jurisdiction. Select your county below to see local details, pricing, and how to start intake.
+        </p>
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
           {liveCounties.map((county) => (
@@ -64,13 +68,27 @@ export default function CountiesPage() {
           </p>
         </div>
 
-        {/* Service cards */}
-        <div className="mt-12 max-w-4xl mx-auto">
+        {/* Inline images */}
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <Image
             src="/images/service-visitation.webp"
-            alt="Parent and child reading together during a supervised visitation session"
-            width={1200}
-            height={400}
+            alt="Parent and child reading together at a library table"
+            width={400}
+            height={300}
+            className="w-full rounded-xl shadow-sm"
+          />
+          <Image
+            src="/images/hero-exchange.webp"
+            alt="Neutral monitor facilitating a supervised custody exchange"
+            width={400}
+            height={300}
+            className="w-full rounded-xl shadow-sm"
+          />
+          <Image
+            src="/images/park-visit-2.webp"
+            alt="Father and son drawing together at an outdoor park table"
+            width={400}
+            height={300}
             className="w-full rounded-xl shadow-sm"
           />
         </div>

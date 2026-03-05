@@ -118,3 +118,10 @@ supabase/
 6. Do not rewrite working code without a concrete reason.
 7. Do not invent page copy, FAQ answers, or disclosure wording. Use content-seed.md.
 8. Do not invent colors, fonts, or spacing. Use design-tokens.md.
+
+## Plan and memory rules
+1. When the user gives a task or plan, STOP and log it to memory/plan.md IMMEDIATELY before starting any code changes.
+2. Before context compression, always write the current plan and progress to memory files.
+3. Keep memory/plan.md up to date with what is done, what is in progress, and what remains.
+4. Do not skip plan items. Execute every item or explicitly flag it as blocked with a reason.
+5. If a task has multiple phases, track each phase in memory/plan.md with status (done/in-progress/pending).

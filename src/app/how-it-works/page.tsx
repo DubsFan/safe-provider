@@ -10,11 +10,11 @@ export const metadata = buildMetadata({
 });
 
 const STEPS = [
-  { step: "1", title: "Check Your Eligibility", desc: "You need a court order or stipulation requiring supervised visitation or custody exchange. If you are unsure, consult your attorney. You do not need a court order to start intake, but most families have one." },
-  { step: "2", title: "Complete Intake", desc: "Fill out the intake form with your county, service type, family details, and contact information. About 5 minutes. Have your court order ready." },
-  { step: "3", title: "Pay Securely", desc: "Pay the intake fee, first session fee, and platform fee through our secure checkout. Your total is calculated before you pay. No surprises." },
+  { step: "1", title: "Check Your Eligibility", desc: "You need a court order or stipulation requiring supervised visitation or custody exchange. If you are unsure, consult your attorney. You do not need a court order to start intake, but most families have one.", link: "/faq", linkLabel: "See FAQ" },
+  { step: "2", title: "Complete Intake", desc: "Fill out the intake form with your county, service type, family details, and contact information. About 5 minutes. Have your court order ready.", link: "/start", linkLabel: "Start intake" },
+  { step: "3", title: "Pay Securely", desc: "Pay the intake fee, first session fee, and platform fee through our secure checkout. Your total is calculated before you pay. No surprises.", link: "/pricing", linkLabel: "See pricing" },
   { step: "4", title: "SafePair Reviews Your Case", desc: "SafePair reviews your case within 1-2 business days. This is not automatic. SafePair decides independently whether to accept based on their professional assessment." },
-  { step: "5", title: "Scheduling Begins", desc: "Once accepted, SafePair contacts you to schedule. Typical time from payment to first session is 3-7 business days." },
+  { step: "5", title: "Scheduling Begins", desc: "Once accepted, SafePair contacts you to schedule. Typical time from payment to first session is 3-7 business days.", link: "/contact", linkLabel: "Questions? Contact us" },
 ];
 
 const CHECKLIST = [
@@ -66,9 +66,39 @@ export default function HowItWorksPage() {
               <div>
                 <h2 className="text-xl font-semibold text-brand-900">{item.title}</h2>
                 <p className="mt-1 text-brand-700">{item.desc}</p>
+                {"link" in item && item.link && (
+                  <Link href={item.link} className="mt-1 inline-block text-sm font-semibold text-accent-600 hover:text-accent-500">
+                    {item.linkLabel} &rarr;
+                  </Link>
+                )}
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Inline images */}
+        <div className="mt-12 grid grid-cols-3 gap-4">
+          <Image
+            src="/images/community-coloring.webp"
+            alt="Parent and child drawing together at a community center"
+            width={300}
+            height={225}
+            className="w-full rounded-xl shadow-sm"
+          />
+          <Image
+            src="/images/service-visitation.webp"
+            alt="Parent and child reading together at a library table"
+            width={300}
+            height={225}
+            className="w-full rounded-xl shadow-sm"
+          />
+          <Image
+            src="/images/park-visit-1.webp"
+            alt="Father and daughter drawing together on a park bench"
+            width={300}
+            height={225}
+            className="w-full rounded-xl shadow-sm"
+          />
         </div>
 
         {/* Process steps graphic */}
