@@ -133,3 +133,16 @@ supabase/
 3. Keep memory/plan.md up to date with what is done, what is in progress, and what remains.
 4. Do not skip plan items. Execute every item or explicitly flag it as blocked with a reason.
 5. If a task has multiple phases, track each phase in memory/plan.md with status (done/in-progress/pending).
+6. After context compression or starting a new session, ALWAYS read memory/MEMORY.md and memory/plan.md FIRST before doing anything else.
+7. MEMORY.md truncates at 200 lines. Keep it lean — pointers and quick-reference only. Put all detailed/institutional knowledge (hero map, asset inventory, locked pages, phase tracking) in memory/plan.md.
+
+## User rules (non-negotiable)
+1. ALWAYS user-test before declaring done — simulate 3 user journeys minimum.
+2. Log plans/tasks to memory IMMEDIATELY before starting code.
+3. Write plan.md and memory before context compression.
+4. Port 3000 is NEVER yours — another project uses it. SafeProvider dev runs on port 3001. NEVER touch port 3000. NEVER.
+5. NEVER say "done" without verifying on the deployed site — WebFetch the live URL and check rendering. No exceptions.
+6. TRUST THE USER — when they say something is wrong, BELIEVE THEM. Don't argue, don't claim it looks fine, don't gaslight. Read the screenshot, check the rules, fix it. Period.
+7. NEVER guess image positions — always check the actual image first (convert if needed), then apply object-[center_35%] per the rules. Never use object-top or object-center for people images.
+8. NEVER lie about having verified something — if you can't verify, say so honestly.
+9. ALWAYS commit and PR — after every completed task, commit the changes and create a PR. No exceptions.
