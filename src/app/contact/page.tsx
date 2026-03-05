@@ -30,16 +30,18 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: contactSchema }}
       />
 
-      {/* Hero banner */}
+      {/* Hero banner — video */}
       <section className="relative bg-brand-900 overflow-hidden">
-        <Image
-          src="/images/intake-flatlay.webp"
-          alt="Notebook, pen, and ID badge on a desk — ready for intake"
-          width={1400}
-          height={500}
-          className="w-full h-48 sm:h-64 object-cover opacity-40"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/landing-hero.webp"
+          className="w-full h-48 sm:h-64 object-cover object-[center_35%] opacity-40"
+        >
+          <source src="/images/father-daughter-loop.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
             <h1 className="text-3xl sm:text-4xl font-bold text-white">Contact Us</h1>

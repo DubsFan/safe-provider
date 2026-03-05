@@ -36,6 +36,16 @@ yarn-error.log*
 # source images (large PNGs, converted to WebP in public/images/)
 /images/
 
+# source assets in public/images/ (keep only .webp and compressed .mp4 loops)
+public/images/*.png
+public/images/HERO.mp4
+public/images/ASDFE.mp4
+public/images/ASEHYDN.mp4
+public/images/CLIPBOARD.mp4
+public/images/FATHER AND DAUTHER.mp4
+public/images/HANDOFF TWO BETTER.mp4
+public/images/*.txt
+
 # vercel
 .vercel
 
