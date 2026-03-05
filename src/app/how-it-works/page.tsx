@@ -132,17 +132,6 @@ export default function HowItWorksPage() {
                   </div>
                 </div>
 
-                {/* Trust badge */}
-                <div className="rounded-xl bg-brand-100 p-4">
-                  <p className="text-xs font-semibold text-brand-900 mb-2">California Standard 5.20</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {["Background Checks", "Certified Training", "Confidentiality", "Neutral Supervision", "Court-Ready Docs"].map((label) => (
-                      <span key={label} className="rounded-full bg-white px-2.5 py-0.5 text-[10px] font-medium text-brand-700 shadow-sm">
-                        {label}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
           </div>
