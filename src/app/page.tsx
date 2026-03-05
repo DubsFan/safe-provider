@@ -309,6 +309,9 @@ export default function HomePage() {
                 <Link href="/how-it-works" className="inline-block rounded-lg border border-brand-500/20 px-4 py-2 text-sm font-semibold text-brand-900 hover:bg-brand-50 transition-colors">
                   How It Works &rarr;
                 </Link>
+                <Link href="/contact" className="inline-block rounded-lg border border-brand-500/20 px-4 py-2 text-sm font-semibold text-brand-900 hover:bg-brand-50 transition-colors">
+                  Contact Us &rarr;
+                </Link>
               </div>
             </div>
           </div>
