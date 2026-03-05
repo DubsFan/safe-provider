@@ -188,41 +188,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust & Compliance — real graphic */}
+      {/* Trust & Compliance — clean badges + 5.20 integrated */}
       <section className="py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-brand-900 text-center mb-3">Trust &amp; Compliance</h2>
-          <p className="text-brand-600 text-center max-w-2xl mx-auto mb-8">
-            Every provider passes background checks and completes mandated training before supervising a single visit.
-          </p>
-          <Image
-            src="/images/trust-compliance.webp"
-            alt="Four compliance pillars: Rigorous Background Checks, Certified Structured Training, Strict Confidentiality, Unbiased Neutral Supervision — plus court order documentation"
-            width={2752}
-            height={1536}
-            className="w-full rounded-xl shadow-md"
-          />
-          <div className="mt-6 rounded-xl bg-brand-50 p-6">
-            <div className="flex flex-col sm:flex-row gap-6 items-start">
-              <Image
-                src="/images/secure-entrance.webp"
-                alt="Secure entrance to supervised visitation facility with family safety icon on door and staff member in background"
-                width={400}
-                height={224}
-                className="shrink-0 w-full sm:w-48 h-32 sm:h-full rounded-lg object-cover object-[center_35%]"
-              />
-              <div>
-                <h3 className="text-lg font-semibold text-brand-900 mb-2">California Standard 5.20 Compliant</h3>
-                <p className="text-sm text-brand-700">
-                  Standard 5.20 means the person supervising your visit has passed a criminal background check, completed 24+ hours of mandated training on child safety and domestic violence, and follows court-defined rules for neutrality, confidentiality, and documentation.
-                </p>
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-10 items-center">
+            <div className="lg:w-1/2">
+              <div className="relative rounded-2xl overflow-hidden shadow-md">
+                <Image
+                  src="/images/secure-entrance.webp"
+                  alt="Secure entrance to supervised visitation facility"
+                  width={600}
+                  height={400}
+                  className="w-full h-72 sm:h-80 object-cover object-[center_35%]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-900/60 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <p className="text-white font-semibold">California Standard 5.20</p>
+                  <p className="text-gray-200 text-sm mt-1">Court-defined rules for safety, neutrality, and documentation.</p>
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-1/2">
+              <h2 className="text-2xl font-semibold text-brand-900 mb-3">Trust &amp; Compliance</h2>
+              <p className="text-brand-700 mb-6">
+                Every provider passes a criminal background check, completes 24+ hours of mandated training on child safety and domestic violence, and follows court-defined rules for neutrality, confidentiality, and documentation.
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { label: "Background Checks", desc: "Criminal history verified" },
+                  { label: "Certified Training", desc: "24+ hours mandated" },
+                  { label: "Strict Confidentiality", desc: "Protected information" },
+                  { label: "Neutral Supervision", desc: "Unbiased monitoring" },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-lg bg-brand-50 p-3">
+                    <p className="text-sm font-semibold text-brand-900">{item.label}</p>
+                    <p className="text-xs text-brand-600 mt-0.5">{item.desc}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How it works — 3 steps as clean cards */}
+      {/* 3 Simple Steps — image-topped cards */}
       <section className="bg-brand-50 py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-brand-900 text-center mb-3">3 Simple Steps</h2>
@@ -232,7 +241,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { step: "1", title: "Complete Intake", desc: "Fill out the online intake form with your county, service, and family details. About 5 minutes.", image: "/images/intake-poster.webp", alt: "Hands filling out intake form on tablet" },
-              { step: "2", title: "Pay Securely", desc: "See your exact total before you pay. Intake, first session, and platform fees — all upfront, no surprises.", image: "/images/secure-entrance.webp", alt: "Secure payment and privacy" },
+              { step: "2", title: "Pay Securely", desc: "See your exact total before you pay. Intake, first session, and platform fees — all upfront, no surprises.", image: "/images/private-hallway.webp", alt: "Private office hallway — secure and discreet" },
               { step: "3", title: "Get Scheduled", desc: "SafePair reviews your case within 1-2 business days. Once accepted, they contact you directly to schedule.", image: "/images/provider-review.webp", alt: "Provider reviewing case documentation" },
             ].map((item) => (
               <div key={item.step} className="rounded-xl overflow-hidden bg-white shadow-sm border border-brand-500/10">
@@ -261,16 +270,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About SafeProvider + Team — combined section */}
+      {/* About SafeProvider + Team — balanced 50/50 */}
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-10 items-start">
-            {/* Team image with gradient overlay */}
+          <div className="flex flex-col lg:flex-row gap-10 items-center">
             <div className="lg:w-1/2">
               <div className="relative rounded-2xl overflow-hidden shadow-md">
                 <Image
                   src="/images/team-headshots.webp"
-                  alt="Four SafePair supervised visitation providers — professional headshots"
+                  alt="Four SafePair supervised visitation providers"
                   width={600}
                   height={500}
                   className="w-full h-80 object-cover object-[center_35%]"
@@ -282,9 +290,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-
-            {/* About copy */}
-            <div className="lg:w-1/2 flex flex-col justify-center">
+            <div className="lg:w-1/2">
               <h2 className="text-2xl font-semibold text-brand-900 mb-4">About SafeProvider</h2>
               <p className="text-brand-700 mb-4">
                 SafeProvider manages intake, scheduling, and payment for supervised visitation
@@ -309,23 +315,44 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Counties */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-brand-900 text-center mb-8">
-            Counties We Serve
-          </h2>
+      {/* Counties — image cards */}
+      <section className="bg-brand-50 py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-brand-900 text-center mb-3">Counties We Serve</h2>
+          <p className="text-brand-600 text-center max-w-2xl mx-auto mb-10">
+            Court-compliant supervised visitation and exchange across the Bay Area.
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {liveCounties.map((county) => (
-              <Link
-                key={county.slug}
-                href={`/counties/${county.slug}`}
-                className="rounded-xl border border-brand-500/20 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <h3 className="text-lg font-semibold text-brand-900">{county.name}</h3>
-                <p className="mt-2 text-sm text-brand-500">Supervised visitation &amp; exchange</p>
-              </Link>
-            ))}
+            {liveCounties.map((county) => {
+              const images: Record<string, { src: string; alt: string }> = {
+                "santa-clara": { src: "/images/father-son-library.webp", alt: "Father and son reading at a library" },
+                alameda: { src: "/images/community-coloring.webp", alt: "Parent and child coloring together" },
+                "contra-costa": { src: "/images/park-visit-1.webp", alt: "Father and daughter at a park" },
+                "san-francisco": { src: "/images/virtual-visit-boy.webp", alt: "Boy on a supervised virtual visit" },
+              };
+              const img = images[county.slug];
+              return (
+                <Link
+                  key={county.slug}
+                  href={`/counties/${county.slug}`}
+                  className="group rounded-xl border border-brand-500/20 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+                >
+                  {img && (
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={400}
+                      height={200}
+                      className="w-full h-32 object-cover object-[center_35%] group-hover:scale-[1.02] transition-transform duration-300"
+                    />
+                  )}
+                  <div className="p-4">
+                    <h3 className="text-base font-semibold text-brand-900">{county.name}</h3>
+                    <span className="mt-1 inline-block text-xs font-semibold text-accent-600 group-hover:text-accent-500">View details &rarr;</span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
