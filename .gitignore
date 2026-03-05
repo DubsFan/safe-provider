@@ -39,6 +39,7 @@ yarn-error.log*
 # source assets in public/images/ (keep only .webp and compressed .mp4 loops)
 public/images/*.png
 public/images/*.txt
+public/images/mother and child reading.mp4
 public/images/Child_Walking_Between_Adults_Loop.mp4
 public/images/Hands_Filling_Form_On_Tablet.mp4
 public/images/Mother_And_Son_Reading_Together.mp4

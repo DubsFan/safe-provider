@@ -84,14 +84,17 @@ export default async function SupervisedVisitationPage() {
 
         {/* What happens during a visit — image alongside copy */}
         <div className="mt-12 flex flex-col sm:flex-row gap-6 items-start">
-          <div className="shrink-0 w-full sm:w-48">
-            <Image
-              src="/images/community-coloring.webp"
-              alt="Parent and child drawing together at a community center"
-              width={192}
-              height={144}
-              className="w-full rounded-xl shadow-sm"
-            />
+          <div className="shrink-0 w-full sm:w-48 rounded-xl overflow-hidden shadow-sm">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="/images/reading-poster.webp"
+              className="w-full h-36 sm:h-full object-cover object-[center_35%]"
+            >
+              <source src="/images/reading-loop.mp4" type="video/mp4" />
+            </video>
           </div>
           <div>
             <h2 className="text-xl font-semibold text-brand-900">What the Monitor Does</h2>
