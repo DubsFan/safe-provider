@@ -222,84 +222,88 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Meet the Team */}
+      {/* How it works — 3 steps as clean cards */}
       <section className="bg-brand-50 py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-brand-900 text-center mb-3">Meet the Team</h2>
-          <p className="text-brand-600 text-center max-w-2xl mx-auto mb-8">
-            SafePair&apos;s supervised visitation providers are trained professionals — background-checked, certified, and committed to your child&apos;s safety.
-          </p>
-          <Image
-            src="/images/team-headshots.webp"
-            alt="Four SafePair supervised visitation providers — professional headshots showing diverse team members"
-            width={1024}
-            height={1536}
-            className="w-full max-w-md mx-auto rounded-xl shadow-md"
-          />
-        </div>
-      </section>
-
-      {/* How it works — provider reviewing documentation */}
-      <section className="py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-brand-900 text-center mb-8">3 Simple Steps</h2>
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="shrink-0 w-full md:w-2/5">
-              <Image
-                src="/images/provider-review.webp"
-                alt="SafePair provider reviewing case documentation in a conference room"
-                width={3398}
-                height={1248}
-                className="w-full rounded-xl shadow-sm"
-              />
-              <p className="mt-3 text-xs text-brand-500 text-center">SafePair reviews every case independently before accepting.</p>
-            </div>
-            <div className="flex-1 space-y-6">
-              {[
-                { step: "1", title: "Complete Intake", desc: "Fill out the online intake form with your county, service, and family details. About 5 minutes." },
-                { step: "2", title: "Pay Securely", desc: "See your exact total before you pay. Intake, first session, and platform fees — all upfront, no surprises." },
-                { step: "3", title: "Get Scheduled", desc: "SafePair reviews your case within 1-2 business days. Once accepted, they contact you directly to schedule." },
-              ].map((item) => (
-                <div key={item.step} className="flex gap-4 items-start">
-                  <div className="shrink-0 w-10 h-10 rounded-full bg-accent-600 text-white flex items-center justify-center text-lg font-bold">
+          <h2 className="text-2xl font-semibold text-brand-900 text-center mb-3">3 Simple Steps</h2>
+          <p className="text-brand-600 text-center max-w-2xl mx-auto mb-10">
+            From intake to your first scheduled visit in 3-7 business days.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { step: "1", title: "Complete Intake", desc: "Fill out the online intake form with your county, service, and family details. About 5 minutes.", image: "/images/intake-poster.webp", alt: "Hands filling out intake form on tablet" },
+              { step: "2", title: "Pay Securely", desc: "See your exact total before you pay. Intake, first session, and platform fees — all upfront, no surprises.", image: "/images/secure-entrance.webp", alt: "Secure payment and privacy" },
+              { step: "3", title: "Get Scheduled", desc: "SafePair reviews your case within 1-2 business days. Once accepted, they contact you directly to schedule.", image: "/images/provider-review.webp", alt: "Provider reviewing case documentation" },
+            ].map((item) => (
+              <div key={item.step} className="rounded-xl overflow-hidden bg-white shadow-sm border border-brand-500/10">
+                <div className="relative">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    width={400}
+                    height={200}
+                    className="w-full h-40 object-cover object-[center_35%]"
+                  />
+                  <div className="absolute top-3 left-3 w-9 h-9 rounded-full bg-accent-600 text-white flex items-center justify-center text-sm font-bold shadow-md">
                     {item.step}
                   </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-brand-900">{item.title}</h3>
-                    <p className="mt-1 text-sm text-brand-700">{item.desc}</p>
-                  </div>
                 </div>
-              ))}
-              <Link href="/how-it-works" className="inline-block text-sm font-semibold text-accent-600 hover:text-accent-500 ml-14">See the full 5-step process &rarr;</Link>
-            </div>
+                <div className="p-5">
+                  <h3 className="text-base font-semibold text-brand-900">{item.title}</h3>
+                  <p className="mt-2 text-sm text-brand-700">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/how-it-works" className="text-sm font-semibold text-accent-600 hover:text-accent-500">See the full 5-step process &rarr;</Link>
           </div>
         </div>
       </section>
 
-      {/* About SafeProvider — with attorney scene */}
-      <section className="bg-brand-100 py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row gap-6 items-center">
-            <Image
-              src="/images/attorney-review-2.webp"
-              alt="Professional reviewing court documents at a conference table"
-              width={500}
-              height={280}
-              className="shrink-0 w-full sm:w-1/2 rounded-xl shadow-sm"
-            />
-            <div>
-              <h2 className="text-xl font-semibold text-brand-900 mb-3">About SafeProvider</h2>
-              <p className="text-sm text-brand-700 mb-3">
+      {/* About SafeProvider + Team — combined section */}
+      <section className="py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-10 items-start">
+            {/* Team image with gradient overlay */}
+            <div className="lg:w-1/2">
+              <div className="relative rounded-2xl overflow-hidden shadow-md">
+                <Image
+                  src="/images/team-headshots.webp"
+                  alt="Four SafePair supervised visitation providers — professional headshots"
+                  width={600}
+                  height={500}
+                  className="w-full h-80 object-cover object-[center_35%]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-900/70 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <p className="text-white font-semibold">Meet the Team</p>
+                  <p className="text-gray-200 text-sm mt-1">Background-checked, certified, and committed to your child&apos;s safety.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* About copy */}
+            <div className="lg:w-1/2 flex flex-col justify-center">
+              <h2 className="text-2xl font-semibold text-brand-900 mb-4">About SafeProvider</h2>
+              <p className="text-brand-700 mb-4">
                 SafeProvider manages intake, scheduling, and payment for supervised visitation
                 and custody exchange services. We are not a law firm and we are not the
                 court-listed provider.
               </p>
-              <p className="text-sm text-brand-700">
+              <p className="text-brand-700 mb-6">
                 All services are delivered by SafePair, a professional
                 supervised visitation provider operating in compliance with California Standard 5.20.
                 SafePair independently reviews and accepts each case.
               </p>
-              <Link href="/for-attorneys" className="mt-3 inline-block text-sm font-semibold text-accent-600 hover:text-accent-500">Attorney resources &rarr;</Link>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/for-attorneys" className="inline-block rounded-lg border border-brand-500/20 px-4 py-2 text-sm font-semibold text-brand-900 hover:bg-brand-50 transition-colors">
+                  Attorney Resources &rarr;
+                </Link>
+                <Link href="/how-it-works" className="inline-block rounded-lg border border-brand-500/20 px-4 py-2 text-sm font-semibold text-brand-900 hover:bg-brand-50 transition-colors">
+                  How It Works &rarr;
+                </Link>
+              </div>
             </div>
           </div>
         </div>
